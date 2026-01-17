@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safachatt Scripts</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Safachatt Scripts Logo" class="logo-img">
+                <h1 class="logo-text">Safachatt Scripts</h1>
+            </div>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact-form">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Neural lines SVG -->
+        <svg class="hero-bg-lines" width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <line x1="0" y1="50" x2="1200" y2="50" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
+            <line x1="0" y1="150" x2="1200" y2="150" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
+            <line x1="0" y1="250" x2="1200" y2="250" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
+        </svg>
+        <div class="container hero-content">
+            <h2>Master IT Skills with Safachatt Scripts</h2>
+            <p>Core Java, Advanced Java, Manual & Automation Testing, API Testing, SQL, Excel, and more!</p>
+            <a href="#contact-form" class="btn-primary">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- About / Features Section -->
+    <section id="about" class="features">
+        <div class="container">
+            <h2>Why Choose Safachatt Scripts?</h2>
+            <div class="feature-list">
+                <div class="feature-card">
+                    <i class="fa-solid fa-chalkboard-user fa-2x"></i>
+                    <h3>Experienced Trainers</h3>
+                    <p>Learn from industry experts with real-world experience.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-laptop-code fa-2x"></i>
+                    <h3>Hands-On Projects</h3>
+                    <p>Practice on live projects to build your skills effectively.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-briefcase fa-2x"></i>
+                    <h3>Placement Support</h3>
+                    <p>Get guidance and assistance for interviews and job placements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <div class="course-buttons">
+                <a href="courses/core-java.html" class="course-btn">Java</a>
+                <a href="courses/test-automation.html" class="course-btn">Test Automation</a>
+                <a href="courses/manual-testing.html" class="course-btn">Manual Testing</a>
+                <a href="courses/api-testing.html" class="course-btn">API Testing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <div class="testimonial-list hidden-scrollbar">
+                <div class="testimonial-card">
+                    <p>"The trainers at Safachatt Scripts are amazing! I learned Core & Advanced Java in just 3 months."
+                    </p>
+                    <h4>- Priya Sharma</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Hands-on projects helped me gain real skills. Placement support was excellent!"</p>
+                    <h4>- Rohit Verma</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I recommend Safachatt Scripts to anyone looking to master Manual & Automation Testing."</p>
+                    <h4>- Anjali Singh</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">Do you provide placement support?</button>
+                <div class="faq-answer">
+                    <p>Yes! We provide full placement guidance, interview preparation, and resume help.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Are classes online or offline?</button>
+                <div class="faq-answer">
+                    <p>We provide both online and offline classes based on your preference.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you provide certifications?</button>
+                <div class="faq-answer">
+                    <p>Yes, every course completion comes with a recognized certification from Safachatt Scripts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form" class="contact-form">
+        <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfdZn052yb88bmFNrASC-vSk9dPacLrgV8lHdAHZxyafeYXsw/formResponse"
+            method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+            <input type="text" name="entry.184000970" placeholder="Your Name" required>
+            <input type="email" name="entry.1913632354" placeholder="Your Email" required>
+            <textarea name="entry.776368716" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <p id="successMsg" style="display:none;">✔ Thank you! Your inquiry has been sent successfully.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Safachatt Scripts. All Rights Reserved.</p>
+            <p>Email: info@safachattscripts.com | Phone: +91-XXXXXXXXXX</p>
+        </div>
+    </footer>
+    <!-- JS for particles -->
+    <script src="js/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#00ffe7" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.7, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00ffe7", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "straight": false }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 4 } } },
+            "retina_detect": true
+        });
+    </script>
+
+    <!-- FAQ Accordion -->
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('.faq-question');
+            button.addEventListener('click', () => {
+                faqItems.forEach(i => { if (i !== item) i.classList.remove('active'); });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- Contact Form Response -->
+    <script>
+        let submitted = false;
+        document.querySelector("form").addEventListener("submit", function () {
+            setTimeout(() => {
+                document.getElementById("successMsg").style.display = "block";
+                this.reset();
+            }, 800);
+        });
+    </script>
+
+</body>
+
+</html>
