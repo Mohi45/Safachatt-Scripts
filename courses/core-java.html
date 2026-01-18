@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Course - Safachatt Coaching Center</title>
+
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,114 +19,118 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo-container">
-                <img src="../images/logo.jpg" alt="Safachatt Scripts Logo" class="logo-img">
+                <img src="../images/logo.jpg" class="logo-img">
                 <a href="../index.html" class="logo-text">Safachatt Scripts</a>
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#course-details">Course</a></li>
-                    <li><a href="#syllabus">Syllabus</a></li>
-                    <li><a href="#instructor">Instructor</a></li>
-                    <li><a href="#contact-form">Enroll</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="#course">Course</a></li>
+                <li><a href="#syllabus">Syllabus</a></li>
+                <li><a href="#instructor">Instructor</a></li>
+                <li><a href="#contact-form">Enroll</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <!-- Neural network lines -->
-        <svg class="hero-bg-lines" width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="none">
-            <line x1="0" y1="50" x2="1200" y2="50" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
-            <line x1="0" y1="150" x2="1200" y2="150" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
-            <line x1="0" y1="250" x2="1200" y2="250" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
-            <line x1="0" y1="350" x2="1200" y2="350" stroke="#00ffe7" stroke-opacity="0.3" stroke-width="2" />
+        <svg class="hero-bg-lines" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <line x1="0" y1="50" x2="1200" y2="50" />
+            <line x1="0" y1="150" x2="1200" y2="150" />
+            <line x1="0" y1="250" x2="1200" y2="250" />
+            <line x1="0" y1="350" x2="1200" y2="350" />
         </svg>
 
         <div class="container hero-content">
             <h1>Master Core Java Programming</h1>
-            <p>Join our hands-on Java course designed for beginners and intermediate learners. Learn fundamentals,
-                OOP concepts, collections, exception handling, and multithreading.</p>
+            <p>Hands-on Java training with real projects, OOP, collections & multithreading.</p>
             <a href="#contact-form" class="btn-primary">Enroll Now</a>
         </div>
     </section>
 
-    <!-- Course Details -->
-    <section id="course-details" class="course-details container">
-        <h2>Course Details</h2>
-        <div class="course-info">
-            <div>
-                <h3>Duration</h3>
-                <p>3 Months (Weekend & Weekday Batches Available)</p>
+    <!-- Course Row -->
+    <section id="course" class="container">
+        <div class="course-top-row">
+
+            <div class="course-info-card">
+                <div class="info-item">
+                    <div class="icon">⏳</div>
+                    <h3>Duration</h3>
+                    <p><strong>3 Months</strong><br>Weekend & Weekday</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">🎓</div>
+                    <h3>Mode</h3>
+                    <p><strong>Online / Offline</strong><br>Live Classes</p>
+                </div>
             </div>
-            <div>
-                <h3>Mode</h3>
-                <p>Online / Offline Classes</p>
+
+            <div class="fee-card">
+                <div class="ribbon">🔥 HOT DEAL</div>
+
+                <h3 class="fee-title">Course Fee</h3>
+
+                <div class="price-box">
+                    <span class="old">₹15,000</span>
+                    <span class="new">₹9,999</span>
+                    <span class="off">33% OFF</span>
+                </div>
+
+                <div class="countdown-box">
+                    ⏰ Offer ends in <span id="timer">12:00:00</span>
+                </div>
+
+                <span class="installment">💳 Installment Available</span>
+                <div class="status">✅ Seats Available</div>
             </div>
-            <div>
-                <h3>Fee</h3>
-                <p>₹15,000 (Installment Available)</p>
-            </div>
-        </div>
-        <div class="course-features">
-            <h3>What You’ll Learn</h3>
-            <ul>
-                <li>Java Basics & Syntax</li>
-                <li>Object-Oriented Programming (OOP)</li>
-                <li>Collections Framework</li>
-                <li>Exception Handling</li>
-                <li>Multithreading & Concurrency</li>
-                <li>File Handling & Streams</li>
-                <li>Practical Project Work</li>
-            </ul>
+
         </div>
     </section>
 
-    <!-- Syllabus Section -->
+    <!-- Syllabus -->
     <section id="syllabus" class="syllabus container">
         <h2>Course Syllabus</h2>
         <div class="syllabus-cards">
             <div class="card">
-                <h3>Module 1: Java Basics</h3>
-                <p>Introduction, Data Types, Variables, Operators, Control Statements</p>
+                <h3>Java Basics</h3>
+                <p>Syntax, Variables, Control Statements</p>
             </div>
             <div class="card">
-                <h3>Module 2: Object-Oriented Programming</h3>
-                <p>Classes, Objects, Inheritance, Polymorphism, Encapsulation, Abstraction</p>
+                <h3>OOP</h3>
+                <p>Inheritance, Polymorphism, Abstraction</p>
             </div>
             <div class="card">
-                <h3>Module 3: Collections Framework</h3>
-                <p>List, Set, Map, Queue, Iterators, Generics</p>
+                <h3>Collections</h3>
+                <p>List, Set, Map, Generics</p>
             </div>
             <div class="card">
-                <h3>Module 4: Exception Handling</h3>
-                <p>Try, Catch, Finally, Custom Exceptions, Checked & Unchecked Exceptions</p>
+                <h3>Exceptions</h3>
+                <p>Try/Catch, Custom Exceptions</p>
             </div>
             <div class="card">
-                <h3>Module 5: Multithreading</h3>
-                <p>Threads, Runnable, Synchronization, Concurrency Utilities</p>
+                <h3>Multithreading</h3>
+                <p>Threads & Concurrency</p>
             </div>
             <div class="card">
-                <h3>Module 6: Project Work</h3>
-                <p>Build real-world Java applications with best practices</p>
+                <h3>Project</h3>
+                <p>Real-world Java Application</p>
             </div>
         </div>
     </section>
 
-    <!-- Instructor Section -->
+    <!-- Instructor -->
     <section id="instructor" class="instructor container">
         <h2>Meet the Instructor</h2>
         <div class="instructor-profile">
-            <img src="../images/photo.jpeg" alt="Instructor Photo">
+            <img src="../images/photo.jpeg">
             <div class="instructor-info">
                 <h3>Mr. Mohit Kumar</h3>
-                <p>Java Expert with 6+ years of experience in software Testing and training. Passionate about making
-                    learning easy and practical.</p>
+                <p>6+ years Java expert in software testing & training.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Contact -->
     <section id="contact-form" class="contact-form">
         <form
             action="https://docs.google.com/forms/d/e/1FAIpQLSfdZn052yb88bmFNrASC-vSk9dPacLrgV8lHdAHZxyafeYXsw/formResponse"
@@ -139,37 +144,44 @@
         <p id="successMsg" style="display:none;">✔ Thank you! Your inquiry has been sent successfully.</p>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Safachatt Scripts. All Rights Reserved.</p>
-            <p>Email: mjsafachattgroup@gmail.com | Phone: +91-9625290733</p>
-        </div>
+        <p>© 2026 Safachatt Scripts | +91-9625290733</p>
     </footer>
 
-    <!-- JS Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Countdown -->
     <script>
-        /* Initialize Particles.js */
+        let time = 12 * 60 * 60;
+        const timer = document.getElementById("timer");
+
+        setInterval(() => {
+            if (time <= 0) return;
+            time--;
+            const h = String(Math.floor(time / 3600)).padStart(2, '0');
+            const m = String(Math.floor((time % 3600) / 60)).padStart(2, '0');
+            const s = String(time % 60).padStart(2, '0');
+            timer.textContent = `${h}:${m}:${s}`;
+        }, 1000);
+    </script>
+
+    <script src="../js/particles.min.js"></script>
+    <script>
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#00ffe7" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.7, "random": true },
                 "size": { "value": 3, "random": true },
                 "line_linked": { "enable": true, "distance": 150, "color": "#00ffe7", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false }
+                "move": { "enable": true, "speed": 2, "direction": "none", "straight": false }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 4 } }
-            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 4 } } },
             "retina_detect": true
         });
+    </script>
 
-        /* Show success message on form submit */
+    <!-- Contact Form Response -->
+    <script>
         let submitted = false;
         document.querySelector("form").addEventListener("submit", function () {
             setTimeout(() => {
@@ -178,6 +190,7 @@
             }, 800);
         });
     </script>
+
 </body>
 
 </html>

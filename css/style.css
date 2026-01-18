@@ -16,7 +16,7 @@ body {
     background: #0f0f0f;
 }
 
-/* Particle Background */
+/* ===== Particle Background ===== */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -26,14 +26,14 @@ body {
     left: 0;
 }
 
-/* Container */
+/* ===== Container ===== */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Header */
+/* ===== Header ===== */
 .site-header {
     background-color: rgba(26, 115, 232, 0.95);
     color: #fff;
@@ -87,7 +87,7 @@ body {
     text-shadow: 0 0 10px #ffdd57;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
     position: relative;
     overflow: hidden;
@@ -157,85 +157,211 @@ body {
     box-shadow: 0 0 25px #00ffe7, 0 0 35px #00ffe7;
 }
 
-/* Course Details */
-.course-details {
-    background-color: rgba(255, 255, 255, 0.98);
-    color: #0f2027;
-    padding: 50px 20px;
-    margin: 30px auto;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 255, 231, 0.3);
-}
-
-.course-details h2 {
-    color: #1a73e8;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.course-details p {
-    color: #0f2027;
-}
-
-.course-info {
+/* ===== Course Top Row ===== */
+.course-top-row {
     display: flex;
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 30px;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 30px;
 }
 
-.course-info div {
-    background-color: #e0f7ff;
-    padding: 20px;
-    border-radius: 12px;
-    flex: 1 1 250px;
+/* ===== Duration & Mode Cards ===== */
+.course-info-card {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.info-item {
+    background: linear-gradient(135deg, #f0fbff, #ffffff);
+    color: #000;
+    border-radius: 16px;
+    padding: 18px;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.course-info h3 {
-    color: #1a73e8;
-    margin-bottom: 10px;
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 180, 216, 0.35);
 }
 
-.course-features ul {
-    list-style: disc inside;
-    max-width: 700px;
-    margin: 0 auto;
+.icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: #00b4d8;
+    color: #fff;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.course-features li {
-    margin-bottom: 10px;
-    color: #0f2027;
+.info-item h3 {
+    color: #0077b6;
+    margin-bottom: 6px;
 }
 
-/* Syllabus */
-.syllabus {
+.info-item strong {
+    color: #e63946;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* ===== Fee Card ===== */
+.fee-card {
+    flex: 0 0 340px;
+    background: linear-gradient(135deg, #e0f7ff, #ffffff);
+    color: #000;
+    border-radius: 18px;
+    padding: 22px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.35);
+    animation: popIn 0.6s ease;
+}
+
+.fee-card.visible {
+    /* For discount animation */
+    animation: popIn 0.6s ease;
+}
+
+.ribbon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff006e;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(255, 0, 110, 0.6);
+    animation: pulse 1.4s infinite;
+}
+
+.fee-title {
+    font-size: 1.3rem;
+    color: #0077b6;
+    margin-bottom: 14px;
+}
+
+.price-box {
+    background: #fff;
+    padding: 14px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    box-shadow: inset 0 0 0 2px #e6f6ff;
+}
+
+.old {
+    text-decoration: line-through;
+    color: #9aa6b2;
+    font-size: 1rem;
+}
+
+.new {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #e63946;
+    animation: glow 1.5s infinite;
+}
+
+.off {
+    background: #00b4d8;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 999px;
+}
+
+.countdown-box {
+    margin: 14px 0;
+    background: #fff3cd;
+    color: #856404;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+    animation: shake 3s infinite;
+}
+
+.countdown-box span {
+    color: #d90429;
+    font-size: 1.1rem;
+}
+
+.installment {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.status {
+    margin-top: 12px;
+    color: #2a9d8f;
+    font-weight: 900;
+    font-size: 0.95rem;
+}
+
+/* ===== Syllabus ===== */
+.syllabus,
+.instructor {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 50px 20px;
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0, 255, 231, 0.2);
+    margin-top: 30px;
 }
 
-.syllabus h2 {
+.syllabus h2,
+.instructor h2 {
     color: #1a73e8;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.syllabus-cards {
+.syllabus-cards,
+.instructor-profile {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    align-items: center;
 }
+
+.syllabus .card,
+.instructor-profile img {
+    width: 80px;
+    /* reduced from 100px */
+    height: auto;
+    /* maintains aspect ratio */
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 231, 0.4);
+}
+
 
 .syllabus .card {
     flex: 1 1 250px;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(12, 178, 249, 0.98);
     padding: 20px;
-    border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 255, 231, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -243,43 +369,6 @@ body {
 .syllabus .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(0, 255, 231, 0.5);
-}
-
-.syllabus .card h3 {
-    color: #1a73e8;
-    margin-bottom: 10px;
-}
-
-.syllabus .card p {
-    color: #0f2027;
-}
-
-/* Instructor */
-.instructor {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 50px 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 255, 231, 0.2);
-}
-
-.instructor h2 {
-    color: #1a73e8;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.instructor-profile {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.instructor-profile img {
-    width: 100px;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0, 255, 231, 0.4);
 }
 
 .instructor-info h3 {
@@ -292,7 +381,7 @@ body {
     max-width: 500px;
 }
 
-/* Contact Form */
+/* ===== Contact Form ===== */
 .contact-form {
     background-color: rgba(255, 255, 255, 0.98);
     padding: 50px 20px;
@@ -337,17 +426,84 @@ body {
     margin-top: 15px;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 .site-footer {
     background-color: rgba(26, 115, 232, 0.95);
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
     border-radius: 12px 12px 0 0;
 }
 
-/* Responsive */
-@media (max-width:768px) {
+/* ===== Animations ===== */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 0 rgba(230, 57, 70, 0);
+    }
+
+    50% {
+        text-shadow: 0 0 12px rgba(230, 57, 70, 0.8);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    95% {
+        transform: translateX(-2px);
+    }
+
+    97% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .course-top-row {
+        flex-direction: column;
+    }
+
+    .course-info-card {
+        grid-template-columns: 1fr;
+    }
+
+    .fee-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
 
     .course-info,
     .syllabus-cards,
@@ -364,7 +520,7 @@ body {
     }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
     .nav-links {
         display: none;
     }
