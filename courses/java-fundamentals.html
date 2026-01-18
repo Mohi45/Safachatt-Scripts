@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Complete Tutorial</title>
+    <link rel="stylesheet" href="../css/basics.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="../images/logo.jpg" class="logo-img" alt="Logo">
+                <a href="../index.html" class="logo-text">Safachatt Scripts</a>
+            </div>
+            <div class="site-title-description">
+                <h1>Java Complete Tutorial</h1>
+                <p>All-in-One Java Notes for Learning & Revision</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav>
+            <h3>Contents</h3>
+            <ul>
+                <li><a href="#what-is-java">What is Java?</a></li>
+                <li><a href="#jre-jdk-jvm">JRE, JDK & JVM</a></li>
+                <li><a href="#jvm-memory">JVM Memory Structure</a></li>
+                <li><a href="#garbage-collection">Garbage Collection</a></li>
+                <li><a href="#first-program">First Java Program</a></li>
+                <li><a href="#variables">Java Variables</a></li>
+                <li><a href="#keywords">Java Keywords</a></li>
+                <li><a href="#throw-throws">throw vs throws</a></li>
+                <li><a href="#while-loop">While Loop Example</a></li>
+                <li><a href="#reserved">Reserved Keywords</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <!-- What is Java -->
+            <section id="what-is-java">
+                <h2>What is Java?</h2>
+                <p>Java is a programming language and a platform. It is high-level, robust, object-oriented, and secure.
+                </p>
+                <p>Developed by Sun Microsystems (now Oracle) in 1995. James Gosling is the father of Java. Earlier
+                    called <b>Oak</b>.</p>
+                <p>Java is 99% object-oriented. Primitive types like <code>int</code>, <code>float</code>, and
+                    <code>double</code> make up the remaining 1%.
+                </p>
+                <img src="https://via.placeholder.com/600x200?text=Java+Logo" alt="Java Logo">
+            </section>
+
+            <!-- JRE, JDK & JVM -->
+            <section id="jre-jdk-jvm">
+                <h2>JRE, JDK & JVM</h2>
+                <h3>JRE (Java Runtime Environment)</h3>
+                <p>Package to run compiled Java programs. Cannot create new programs.</p>
+                <img src="https://via.placeholder.com/600x200?text=JRE+Diagram" alt="JRE Diagram">
+                <h3>JDK (Java Development Kit)</h3>
+                <p>Includes JRE + compiler + tools to create programs.</p>
+                <img src="https://via.placeholder.com/600x200?text=JDK+Diagram" alt="JDK Diagram">
+            </section>
+
+            <!-- JVM Memory -->
+            <section id="jvm-memory">
+                <h2>JVM Memory Structure</h2>
+                <h3>Heap Area</h3>
+                <p>Stores actual objects.</p>
+                <pre><code>Scanner sc = new Scanner(System.in);</code></pre>
+                <img src="https://via.placeholder.com/600x200?text=Heap+Memory" alt="Heap Memory">
+
+                <h3>Stack Area</h3>
+                <p>Thread-specific memory for local variables and references.</p>
+                <img src="https://via.placeholder.com/600x200?text=Stack+Memory" alt="Stack Memory">
+
+                <h3>Method Area</h3>
+                <p>Stores class-level data.</p>
+                <img src="https://via.placeholder.com/600x200?text=Method+Area" alt="Method Area">
+
+                <h3>Native Stack & PC Registers</h3>
+                <p>Used for native methods and instruction addresses.</p>
+                <img src="https://via.placeholder.com/600x200?text=Native+Stack+PC" alt="Native Stack & PC">
+            </section>
+
+            <!-- Garbage Collection -->
+            <section id="garbage-collection">
+                <h2>Garbage Collection</h2>
+                <p>JVM automatically cleans up unused memory.</p>
+                <img src="https://via.placeholder.com/600x200?text=Garbage+Collection" alt="Garbage Collection">
+            </section>
+
+            <!-- First Program -->
+            <section id="first-program">
+                <h2>First Java Program</h2>
+                <pre><code>class Simple {
+  public static void main(String args[]) {
+    System.out.println("Hello Java");
+  }
+}</code></pre>
+                <img src="https://via.placeholder.com/600x200?text=Hello+Java+Output" alt="Hello Java Output">
+            </section>
+
+            <!-- Java Variables -->
+            <section id="variables">
+                <h2>Java Variables</h2>
+                <p>A variable is a container that holds data.</p>
+                <ul>
+                    <li><b>Local:</b> Declared inside a method, accessible only there.</li>
+                    <li><b>Instance:</b> Declared inside class, outside method, non-static.</li>
+                    <li><b>Static:</b> Declared with <code>static</code> keyword, shared across all instances.</li>
+                </ul>
+                <pre><code>public class A {
+  static int m = 100; // static variable
+  void method() {
+    int n = 90; // local variable
+  }
+  public static void main(String args[]) {
+    int data = 50; // instance variable
+  }
+}</code></pre>
+            </section>
+
+            <!-- Java Keywords -->
+            <section id="keywords">
+                <h2>Java Keywords</h2>
+                <p>Java keywords are reserved words with predefined meanings. Examples:</p>
+                <ul>
+                    <li><b>abstract</b> – declare abstract classes or methods</li>
+                    <li><b>assert</b> – for assertions</li>
+                    <li><b>boolean</b> – true/false values</li>
+                    <li><b>break</b> – exit loop or switch</li>
+                    <li><b>byte</b> – 8-bit integer</li>
+                    <li>… (all other keywords can be added similarly)</li>
+                </ul>
+            </section>
+
+            <!-- throw vs throws -->
+            <section id="throw-throws">
+                <h2>throw vs throws</h2>
+                <p><b>throw:</b> explicitly throws an exception.</p>
+                <p><b>throws:</b> declares that a method may throw an exception.</p>
+            </section>
+
+            <!-- While Loop -->
+            <section id="while-loop">
+                <h2>While Loop Example</h2>
+                <pre><code>int n = 10;
+while (n > 0) {
+  System.out.println("tick " + n);
+  n--;
+}</code></pre>
+            </section>
+
+            <!-- Reserved Keywords -->
+            <section id="reserved">
+                <h2>Reserved Keywords</h2>
+                <p>Some reserved words in Java not used: <code>goto</code>, <code>const</code></p>
+            </section>
+        </article>
+    </main>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <footer>
+        <p>© 2026 Java Tutorial | Designed for Learning</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+
+</html>

@@ -216,7 +216,7 @@
         <h2>Course Syllabus</h2>
         <div class="syllabus-cards">
 
-            <div class="card">
+            <div class="card" onclick="checkPassword('java-fundamentals.html')">
                 <h3>Java Fundamentals</h3>
                 <p>JVM, JDK, JRE, Data Types, Variables, Operators</p>
             </div>
@@ -373,6 +373,19 @@
                 this.reset();
             }, 800);
         });
+    </script>
+    <script>
+        function checkPassword(url) {
+            const correctPassword = "12345"; // set your password here
+            const userPassword = prompt("Enter password to access this page:");
+
+            if (userPassword === correctPassword) {
+                // Redirect if password is correct
+                window.location.href = url;
+            } else {
+                alert("Incorrect password!");
+            }
+        }
     </script>
 
 </body>
