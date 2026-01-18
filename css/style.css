@@ -158,168 +158,238 @@ body {
 }
 
 /* ===== Course Top Row ===== */
-.course-top-row {
+/* ===== Course Section: 3-column horizontal layout ===== */
+#course {
     display: flex;
-    gap: 24px;
-    align-items: stretch;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    /* keep all cards in one line */
+    justify-content: space-between;
+    /* spread cards evenly */
+    gap: 2rem;
+    padding: 60px 20px;
+    overflow-x: auto;
+    /* horizontal scroll on small screens */
+    scroll-behavior: smooth;
 }
 
-/* ===== Duration & Mode Cards ===== */
-.course-info-card {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-}
-
-.info-item {
-    background: linear-gradient(135deg, #f0fbff, #ffffff);
-    color: #000;
-    border-radius: 16px;
-    padding: 18px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(0, 180, 216, 0.35);
-}
-
-.icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 10px;
-    border-radius: 50%;
-    background: #00b4d8;
+/* ===== Card Styles (common for all cards) ===== */
+.course-info-card,
+.mode-card,
+.fee-card {
+    background: #0f1620;
     color: #fff;
-    font-size: 1.8rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    flex: 0 0 32%;
+    /* 3 cards per row */
+    max-width: 350px;
+    min-width: 280px;
+    /* prevents shrinking too much */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.info-item h3 {
-    color: #0077b6;
-    margin-bottom: 6px;
+/* Hover effect */
+.course-info-card:hover,
+.mode-card:hover,
+.fee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
 }
 
-.info-item strong {
-    color: #e63946;
+/* ===== Card Headings ===== */
+.course-info-card h3,
+.mode-card .mode-title,
+.fee-card .fee-title {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #00d8ff;
+    margin-bottom: 1rem;
 }
 
-.info-item p {
-    font-size: 0.95rem;
-    color: #444;
+/* ===== Roadmap Cards ===== */
+.roadmap .icon {
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.month {
+    background: #1a1f2a;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.month-header strong {
+    color: #ff6b81;
+}
+
+.topics li {
+    font-size: 1.05rem;
+    color: #cbd5e1;
+    margin-left: 20px;
+    margin-bottom: 4px;
+}
+
+.schedule {
+    background: #111827;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    color: #00ffb3;
+    text-align: center;
+}
+
+/* ===== Mode Cards ===== */
+.mode-card .mode-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mode-card .mode-features li {
+    margin: 0.5rem 0;
+    font-size: 1.05rem;
     line-height: 1.4;
 }
 
-/* ===== Fee Card ===== */
-.fee-card {
-    flex: 0 0 340px;
-    background: linear-gradient(135deg, #e0f7ff, #ffffff);
-    color: #000;
-    border-radius: 18px;
-    padding: 22px;
-    position: relative;
+.mode-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.35);
-    animation: popIn 0.6s ease;
 }
 
-.fee-card.visible {
-    /* For discount animation */
-    animation: popIn 0.6s ease;
+.online .badge {
+    background-color: #ff4500;
+    text-align: center;
 }
 
-.ribbon {
+.offline .badge {
+    background-color: #ff9800;
+    text-align: center;
+}
+
+/* ===== Fee Cards ===== */
+.fee-card .ribbon {
     position: absolute;
     top: -10px;
     right: -10px;
-    background: #ff006e;
+    background-color: #ff4500;
     color: #fff;
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 6px 12px;
-    border-radius: 999px;
-    box-shadow: 0 6px 20px rgba(255, 0, 110, 0.6);
-    animation: pulse 1.4s infinite;
-}
-
-.fee-title {
-    font-size: 1.3rem;
-    color: #0077b6;
-    margin-bottom: 14px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.05rem;
 }
 
 .price-box {
-    background: #fff;
-    padding: 14px;
-    border-radius: 16px;
     display: flex;
     justify-content: center;
+    align-items: baseline;
     gap: 10px;
-    align-items: center;
-    box-shadow: inset 0 0 0 2px #e6f6ff;
 }
 
-.old {
+.price-box .old {
     text-decoration: line-through;
-    color: #9aa6b2;
-    font-size: 1rem;
+    color: #999;
+    font-weight: 500;
 }
 
-.new {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #e63946;
-    animation: glow 1.5s infinite;
+.price-box .new {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #28a745;
 }
 
-.off {
-    background: #00b4d8;
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 800;
-    padding: 5px 10px;
-    border-radius: 999px;
+.price-box .off {
+    color: #ff4500;
+    font-weight: 600;
 }
 
 .countdown-box {
-    margin: 14px 0;
-    background: #fff3cd;
-    color: #856404;
-    font-size: 1rem;
-    font-weight: 800;
-    padding: 10px;
-    border-radius: 14px;
-    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
-    animation: shake 3s infinite;
+    font-size: 1.05rem;
+    color: #f48e08;
+    margin-bottom: 10px;
 }
 
-.countdown-box span {
-    color: #d90429;
-    font-size: 1.1rem;
+/* Highlight the timer */
+.countdown-box .highlight-timer {
+    color: #ff6b81;
+    /* bright pink/red to stand out */
+    font-weight: bold;
+    /* bold text */
+    font-size: 2.05rem;
+    /* slightly larger than normal */
 }
 
-.installment {
-    background: #fff;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+.fee-card .installment,
+.fee-card .status {
+    color: #00ffb3;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
-.status {
-    margin-top: 12px;
-    color: #2a9d8f;
-    font-weight: 900;
-    font-size: 0.95rem;
+/* ===== Progress Bars ===== */
+.progress-bar {
+    height: 8px;
+    background: #1a1f2a;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
 }
+
+.progress {
+    height: 100%;
+    background: #00d8ff;
+    border-radius: 5px;
+    transition: width 0.6s ease;
+}
+
+/* ===== Responsive Adjustments ===== */
+
+/* Medium screens: 2 cards visible */
+@media (max-width: 1024px) {
+
+    .course-info-card,
+    .mode-card,
+    .fee-card {
+        flex: 0 0 45%;
+        /* 2 cards per row */
+    }
+}
+
+/* Small screens: horizontal scroll with 1 card per “view” */
+@media (max-width: 768px) {
+
+    .course-info-card,
+    .mode-card,
+    .fee-card {
+        flex: 0 0 80%;
+        /* almost full width per card */
+    }
+}
+
+/* Extra small screens: fixed width for scroll */
+@media (max-width: 480px) {
+    #course {
+        justify-content: flex-start;
+    }
+
+    .course-info-card,
+    .mode-card,
+    .fee-card {
+        flex: 0 0 280px;
+        /* fixed width for horizontal scroll */
+    }
+}
+
+
 
 /* ===== Syllabus ===== */
 .syllabus,
@@ -338,7 +408,44 @@ body {
     margin-bottom: 30px;
 }
 
-.syllabus-cards,
+/* 🔹 RESPONSIVE GRID INSTEAD OF FLEX */
+.syllabus-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ❌ REMOVE FIXED WIDTH */
+.syllabus .card {
+    background: linear-gradient(135deg, #0cb2f9, #0072ff);
+    padding: 24px 20px;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Hover effect */
+.syllabus .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(0, 255, 231, 0.55);
+}
+
+/* Typography */
+.syllabus .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.syllabus .card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ===== Instructor (unchanged behavior, responsive) ===== */
 .instructor-profile {
     display: flex;
     flex-wrap: wrap;
@@ -347,29 +454,28 @@ body {
     align-items: center;
 }
 
-.syllabus .card,
 .instructor-profile img {
     width: 80px;
-    /* reduced from 100px */
     height: auto;
-    /* maintains aspect ratio */
     border-radius: 12px;
     box-shadow: 0 0 25px rgba(0, 255, 231, 0.4);
 }
 
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+    .syllabus {
+        padding: 40px 15px;
+    }
 
-.syllabus .card {
-    flex: 1 1 250px;
-    background-color: rgba(12, 178, 249, 0.98);
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 255, 231, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .syllabus .card {
+        padding: 20px 16px;
+    }
+
+    .syllabus .card h3 {
+        font-size: 1.05rem;
+    }
 }
 
-.syllabus .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(0, 255, 231, 0.5);
-}
 
 .instructor-info h3 {
     color: #1a73e8;

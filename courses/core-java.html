@@ -47,76 +47,238 @@
         </div>
     </section>
 
-    <!-- Course Row -->
+    <!-- Course Section -->
     <section id="course" class="container">
-        <div class="course-top-row">
 
-            <div class="course-info-card">
-                <div class="info-item">
-                    <div class="icon">⏳</div>
-                    <h3>Duration</h3>
-                    <p><strong>3 Months</strong><br>Weekend & Weekday</p>
+        <!-- Course Card -->
+        <div class="course-info-card">
+
+            <!-- Roadmap / Duration -->
+            <div class="info-item roadmap">
+                <div class="icon">⏳</div>
+                <h3>Course Duration & Roadmap</h3>
+
+                <!-- Month 1 -->
+                <div class="month">
+                    <div class="month-header">
+                        <span class="month-icon" aria-label="Book">📘</span>
+                        <strong>Month 1:</strong> Basics & OOP
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                    <ul class="topics">
+                        <li>Java Fundamentals</li>
+                        <li>Control Statements</li>
+                        <li>Arrays & Strings</li>
+                        <li>OOP Concepts</li>
+                    </ul>
                 </div>
 
-                <div class="info-item">
-                    <div class="icon">🎓</div>
-                    <h3>Mode</h3>
-                    <p><strong>Online / Offline</strong><br>Live Classes</p>
+                <!-- Month 2 -->
+                <div class="month">
+                    <div class="month-header">
+                        <span class="month-icon" aria-label="Tools">🛠️</span>
+                        <strong>Month 2:</strong> Advanced OOP & Core APIs
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                    <ul class="topics">
+                        <li>Interfaces & Packages</li>
+                        <li>Exception Handling</li>
+                        <li>Collections Framework</li>
+                    </ul>
+                </div>
+
+                <!-- Month 3 -->
+                <div class="month">
+                    <div class="month-header">
+                        <span class="month-icon" aria-label="Rocket">🚀</span>
+                        <strong>Month 3:</strong> Modern Java & Project
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                    <ul class="topics">
+                        <li>Multithreading</li>
+                        <li>File Handling</li>
+                        <li>Java 8 Features</li>
+                        <li>Utility & Final Project</li>
+                    </ul>
+                </div>
+
+                <!-- Schedule -->
+                <p class="schedule">
+                    <strong>Weekday:</strong> 5 days/week, 1–1.5 hrs/day<br>
+                    <strong>Weekend:</strong> Sat & Sun, 3 hrs/day
+                </p>
+            </div>
+        </div>
+
+        <!-- Mode Cards Wrapper -->
+        <div class="mode-container">
+
+            <!-- Online Mode Card -->
+            <div class="mode-card online">
+                <div class="badge">HOT</div>
+                <h3 class="mode-title">Online Mode</h3>
+                <ul class="mode-features">
+                    <li>💻 Live Interactive Sessions</li>
+                    <li>📼 Recorded Classes for Revision</li>
+                    <li>❓ Doubt Clearing & Q&A</li>
+                    <li>🌐 Access from Anywhere</li>
+                </ul>
+                <div class="mode-footer">
+                    <span class="status available">Seats Available ✅</span>
+                    <span class="installment">Installment Available 💳</span>
                 </div>
             </div>
 
-            <div class="fee-card">
-                <div class="ribbon">🔥 HOT DEAL</div>
-
-                <h3 class="fee-title">Course Fee</h3>
-
-                <div class="price-box">
-                    <span class="old">₹15,000</span>
-                    <span class="new">₹9,999</span>
-                    <span class="off">33% OFF</span>
+            <!-- Offline Mode Card -->
+            <div class="mode-card offline">
+                <div class="badge">NEW</div>
+                <h3 class="mode-title">Offline Mode</h3>
+                <ul class="mode-features">
+                    <li>🏫 Classroom Learning</li>
+                    <li>🛠 Hands-on Practice</li>
+                    <li>👥 Group Exercises & Projects</li>
+                    <li>👨‍🏫 Direct Instructor Interaction</li>
+                </ul>
+                <div class="mode-footer">
+                    <span class="status available">Seats Available ✅</span>
+                    <span class="installment">Installment Available 💳</span>
                 </div>
-
-                <div class="countdown-box">
-                    ⏰ Offer ends in <span id="timer">12:00:00</span>
-                </div>
-
-                <span class="installment">💳 Installment Available</span>
-                <div class="status">✅ Seats Available</div>
             </div>
 
         </div>
+
+        <!-- Fee Card -->
+        <div class="fee-card">
+            <div class="ribbon">🔥 HOT DEAL</div>
+            <h3 class="fee-title">Course Fee</h3>
+
+            <!-- Price -->
+            <div class="price-box">
+                <span class="old" id="oldPrice">₹15,000</span>
+                <span class="new" id="newPrice"></span>
+                <span class="off" id="discount">65% OFF</span>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown-box">
+                ⏰ Offer ends in <time id="timer">12:00:00</time>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="payment-options">
+                <strong>Payment Options:</strong>
+                <ul>
+                    <li>💳 Credit/Debit Card</li>
+                    <li>🏦 Net Banking</li>
+                    <li>💵 UPI / Wallets</li>
+                    <li>💰 EMI Installments Available</li>
+                </ul>
+            </div>
+
+            <!-- Included in Fee -->
+            <div class="included-perks">
+                <strong>What’s Included:</strong>
+                <ul>
+                    <li>📚 Complete Course Materials</li>
+                    <li>🎥 Access to Recorded Sessions</li>
+                    <li>🛠 Hands-on Assignments & Projects</li>
+                    <li>👨‍🏫 Expert Instructor Support</li>
+                    <li>📝 Certification on Completion</li>
+                </ul>
+            </div>
+
+            <!-- Refund Policy -->
+            <div class="refund-policy">
+                <strong>Refund Policy:</strong>
+                <p>✅ 7-day money-back guarantee if not satisfied</p>
+            </div>
+
+            <!-- Installment & Seats -->
+            <div class="fee-footer">
+                <span class="installment">💳 Installment Available</span>
+                <span class="status">✅ Seats Available</span>
+            </div>
+        </div>
+
+
     </section>
+
+
 
     <!-- Syllabus -->
     <section id="syllabus" class="syllabus container">
         <h2>Course Syllabus</h2>
         <div class="syllabus-cards">
+
             <div class="card">
-                <h3>Java Basics</h3>
-                <p>Syntax, Variables, Control Statements</p>
+                <h3>Java Fundamentals</h3>
+                <p>JVM, JDK, JRE, Data Types, Variables, Operators</p>
             </div>
+
             <div class="card">
-                <h3>OOP</h3>
-                <p>Inheritance, Polymorphism, Abstraction</p>
+                <h3>Control Statements</h3>
+                <p>if-else, switch, loops, break & continue</p>
             </div>
+
             <div class="card">
-                <h3>Collections</h3>
-                <p>List, Set, Map, Generics</p>
+                <h3>Arrays & Strings</h3>
+                <p>Arrays, String, StringBuffer, StringBuilder</p>
             </div>
+
             <div class="card">
-                <h3>Exceptions</h3>
-                <p>Try/Catch, Custom Exceptions</p>
+                <h3>OOP Concepts</h3>
+                <p>Encapsulation, Inheritance, Polymorphism, Abstraction</p>
             </div>
+
+            <div class="card">
+                <h3>Interfaces & Packages</h3>
+                <p>Interfaces, Abstract Classes, Access Modifiers</p>
+            </div>
+
+            <div class="card">
+                <h3>Exception Handling</h3>
+                <p>try-catch, finally, throw, throws, Custom Exceptions</p>
+            </div>
+
+            <div class="card">
+                <h3>Collections Framework</h3>
+                <p>List, Set, Map, Iterator, Generics</p>
+            </div>
+
             <div class="card">
                 <h3>Multithreading</h3>
-                <p>Threads & Concurrency</p>
+                <p>Thread Lifecycle, Synchronization, Concurrency</p>
             </div>
+
             <div class="card">
-                <h3>Project</h3>
-                <p>Real-world Java Application</p>
+                <h3>File Handling</h3>
+                <p>I/O Streams, Serialization & Deserialization</p>
             </div>
+
+            <div class="card">
+                <h3>Java 8 Features</h3>
+                <p>Lambda Expressions, Stream API, Functional Interfaces</p>
+            </div>
+
+            <div class="card">
+                <h3>Utility & Memory</h3>
+                <p>Date-Time API, Wrapper Classes, Garbage Collection</p>
+            </div>
+
+            <div class="card">
+                <h3>Final Project</h3>
+                <p>Real-world Core Java Application</p>
+            </div>
+
         </div>
     </section>
+
 
     <!-- Instructor -->
     <section id="instructor" class="instructor container">
@@ -137,7 +299,7 @@
             method="POST" target="hidden_iframe" onsubmit="submitted=true;">
             <input type="text" name="entry.184000970" placeholder="Your Name" required>
             <input type="email" name="entry.1913632354" placeholder="Your Email" required>
-            <textarea name="entry.776368716" placeholder="Your Message" required></textarea>
+            <textarea name="entry.776368716" placeholder="Your Mobile Number" required></textarea>
             <button type="submit">Send Inquiry</button>
         </form>
         <iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -145,7 +307,10 @@
     </section>
 
     <footer class="site-footer">
-        <p>© 2026 Safachatt Scripts | +91-9625290733</p>
+        <div class="container">
+            <p>&copy; 2026 Safachatt Scripts. All Rights Reserved.</p>
+            <p>Email: mjsafachattgroup@gmail.com | Phone: +91-9625290733</p>
+        </div>
     </footer>
 
     <!-- Countdown -->
@@ -178,6 +343,25 @@
             "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 4 } } },
             "retina_detect": true
         });
+    </script>
+
+    <script>
+        // Get elements
+        const oldPriceEl = document.getElementById('oldPrice');
+        const newPriceEl = document.getElementById('newPrice');
+        const discountEl = document.getElementById('discount');
+
+        // Extract old price number
+        const oldPrice = parseFloat(oldPriceEl.textContent.replace(/[^0-9.]/g, ''));
+
+        // Extract discount percentage number from text
+        const discountPercent = parseFloat(discountEl.textContent.replace(/[^0-9.]/g, ''));
+
+        // Calculate new price
+        const newPrice = oldPrice - (oldPrice * discountPercent / 100);
+
+        // Update new price element
+        newPriceEl.textContent = '₹' + newPrice.toLocaleString('en-IN', { maximumFractionDigits: 0 });
     </script>
 
     <!-- Contact Form Response -->
