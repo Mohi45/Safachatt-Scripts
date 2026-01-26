@@ -35,7 +35,7 @@
                 <li><a href="#variables">Java Variables</a></li>
                 <li><a href="#keywords">Java Keywords</a></li>
                 <li><a href="#throw-throws">throw vs throws</a></li>
-                <li><a href="#while-loop">While Loop Example</a></li>
+                <li><a href="#while-loop">Control statements</a></li>
                 <li><a href="#reserved">Reserved Keywords</a></li>
             </ul>
         </nav>
@@ -44,54 +44,95 @@
             <!-- What is Java -->
             <section id="what-is-java">
                 <h2>What is Java?</h2>
-                <p>Java is a programming language and a platform. It is high-level, robust, object-oriented, and secure.
+                <p>Java is a <b>programming language</b> and a platform. Java is a high level, robust, object-oriented
+                    and
+                    secure programming language.
                 </p>
-                <p>Developed by Sun Microsystems (now Oracle) in 1995. James Gosling is the father of Java. Earlier
-                    called <b>Oak</b>.</p>
-                <p>Java is 99% object-oriented. Primitive types like <code>int</code>, <code>float</code>, and
-                    <code>double</code> make up the remaining 1%.
+                <p>Java was developed by Sun Microsystems (which is now the subsidiary of Oracle) in the year 1995.
+                    James Gosling is known as the father of Java. Before Java, its name was Oak. Since Oak was already a
+                    registered company, James Gosling and his team changed the name from <b>Oak</b> to Java.</p>
+                <p>
+                    <mine>Java is 99% object-oriented. Primitive types like int,float, and
+                        double make up the remaining 1%.
+                    </mine>
                 </p>
-                <img src="https://via.placeholder.com/600x200?text=Java+Logo" alt="Java Logo">
+                <img src="/images/basicImg/java.png" alt="Java Logo">
             </section>
 
             <!-- JRE, JDK & JVM -->
             <section id="jre-jdk-jvm">
                 <h2>JRE, JDK & JVM</h2>
                 <h3>JRE (Java Runtime Environment)</h3>
-                <p>Package to run compiled Java programs. Cannot create new programs.</p>
-                <img src="https://via.placeholder.com/600x200?text=JRE+Diagram" alt="JRE Diagram">
+                <p><b>Runtime Environment</b>. It is a package of everything necessary to run a compiled Java program,
+                    including the Java Virtual Machine (JVM), the Java Class Library, the java command, and other
+                    infrastructure. However, it cannot be used to create new programs.
+                </p>
+                <img src="/images/basicImg/jre.png" alt="JRE Diagram">
                 <h3>JDK (Java Development Kit)</h3>
-                <p>Includes JRE + compiler + tools to create programs.</p>
-                <img src="https://via.placeholder.com/600x200?text=JDK+Diagram" alt="JDK Diagram">
+                <p><b>Java Development Kit</b>, the full-featured SDK for Java. It has everything the JRE has, but also
+                    the compiler (javac) and tools (like javadoc and jdb). It is capable of creating and compiling
+                    programs.</p>
             </section>
 
             <!-- JVM Memory -->
             <section id="jvm-memory">
                 <h2>JVM Memory Structure</h2>
+                <h2>JVM Architecture</h2>
+                <img src="/images/basicImg/jvm.png" alt="JVM Architecture">
                 <h3>Heap Area</h3>
-                <p>Stores actual objects.</p>
-                <pre><code>Scanner sc = new Scanner(System.in);</code></pre>
-                <img src="https://via.placeholder.com/600x200?text=Heap+Memory" alt="Heap Memory">
+                <p>Heap stores the actual objects. It is created when the JVM starts up. The user can control the heap
+                    if needed. It can be of fixed or dynamic size. When you use a new keyword, the JVM creates an
+                    instance for the object in a heap. While the reference of that object stores in the stack. There
+                    exists only one heap for each running JVM process. When the heap becomes full, the garbage is
+                    collected. <b>(Garbage collection in heap areas is mandatory.)</b></p>
+                <h3>For Example :: </h3>
+                <example>Scanner sc = new Scanner(System.in);</example>
+                <p><b>
+                        The above statement creates the object of Scanner class which gets allocated to heap whereas the
+                        reference ‘sc’ gets pushed to the stack
+                    </b></p>
 
                 <h3>Stack Area</h3>
-                <p>Thread-specific memory for local variables and references.</p>
-                <img src="https://via.placeholder.com/600x200?text=Stack+Memory" alt="Stack Memory">
-
+                <p>Stack Area generates when a thread is created. It can be of either fixed or dynamic size. The stack
+                    memory is allocated per thread. It is used to store data and partial results. It contains references
+                    to heap objects. It also holds the value itself rather than a reference to an object from the heap.
+                    The variables which are stored in the stack have certain visibility, called scope
+                </p>
                 <h3>Method Area</h3>
-                <p>Stores class-level data.</p>
-                <img src="https://via.placeholder.com/600x200?text=Method+Area" alt="Method Area">
-
-                <h3>Native Stack & PC Registers</h3>
-                <p>Used for native methods and instruction addresses.</p>
-                <img src="https://via.placeholder.com/600x200?text=Native+Stack+PC" alt="Native Stack & PC">
+                <p>It is a logical part of the heap area and is created on virtual machine startup.
+                    This memory is allocated for class structures, method data and constructor field data, and also for
+                    interfaces or special methods used in class. Heap can be of fixed or dynamic size depending upon the
+                    system’s configuration.
+                </p>
+                <h3>Native Stack</h3>
+                <p>Also called as C stacks, native method stacks are not written in Java language. This memory is
+                    allocated for each thread when it's created. And it can be of fixed or dynamic nature.
+                </p>
+                <h3>Program counter (PC) registers:</h3>
+                <p>
+                    Each JVM thread which carries out the task of a specific method has a program counter register
+                    associated with it. The non native method has a PC which stores the address of the available JVM
+                    instruction whereas in a native method, the value of the program counter is undefined. PC register
+                    is capable of storing the return address or a native pointer on some specific platform.
+                </p>
             </section>
 
             <!-- Garbage Collection -->
             <section id="garbage-collection">
                 <h2>Garbage Collection</h2>
-                <p>JVM automatically cleans up unused memory.</p>
-                <img src="https://via.placeholder.com/600x200?text=Garbage+Collection" alt="Garbage Collection">
+                <p>JVM triggers this process and as per the JVM garbage collection process is done or else withheld. It
+                    reduces the burden of programmers by automatically performing the allocation or deallocation of
+                    memory.
+                    Note: <b>System.gc()</b> and <b>Runtime.gc()</b> are the methods which requests for Garbage
+                    collection to JVM
+                    explicitly but it doesn’t ensure garbage collection as the final decision of garbage collection is
+                    of JVM only.
+                </p>
+                <img src="/images/basicImg/garbage.png" alt="Garbage Collection">
             </section>
+
+            <h2>Features of Java</h2>
+            <img src="/images/basicImg/feature.png" alt="Features of Java">
 
             <!-- First Program -->
             <section id="first-program">
@@ -101,17 +142,25 @@
     System.out.println("Hello Java");
   }
 }</code></pre>
-                <img src="https://via.placeholder.com/600x200?text=Hello+Java+Output" alt="Hello Java Output">
+                <pre><output>Hello Java</output></pre>
             </section>
 
             <!-- Java Variables -->
             <section id="variables">
                 <h2>Java Variables</h2>
+                <img src="/images/basicImg/var.png" alt="Variables of Java">
                 <p>A variable is a container that holds data.</p>
                 <ul>
-                    <li><b>Local:</b> Declared inside a method, accessible only there.</li>
-                    <li><b>Instance:</b> Declared inside class, outside method, non-static.</li>
-                    <li><b>Static:</b> Declared with <code>static</code> keyword, shared across all instances.</li>
+                    <li><b>Local:</b> A variable declared inside the body of the method is called local variable. You
+                        can use this variable only within that method and the other methods in the class aren't even
+                        aware that the variable exists.</li>
+                    <li><b>Instance:</b> A variable declared inside the class but outside the body of the method, is
+                        called an instance variable. It is not declared as static</li>
+                    <li><b>Static:</b> Declared with <code>static</code> is called a static variable. It cannot be
+                        local. You can create a single copy of the static variable and share it among all the instances
+                        of the class. Memory allocation for static variables happens only once when the class is loaded
+                        in the memory.
+                    </li>
                 </ul>
                 <pre><code>public class A {
   static int m = 100; // static variable
@@ -124,35 +173,385 @@
 }</code></pre>
             </section>
 
+            <section>
+                <h2>Java Data types</h2>
+                <p>
+                    Java divides its data types into two main categories:
+                </p>
+                <h3>Primitive Data Types ::</h3>
+                <p>These are the basic built-in types that store simple values.</p>
+                <h3>Non-Primitive Data Types ::</h3>
+                <p>These include Objects, Strings, Arrays, Classes, Interfaces.They store references (addresses) to the
+                    actual data in memory.</p>
+
+                <img src="/images/basicImg/datatypes.png" alt="datatypes of Java">
+            </section>
+
+
             <!-- Java Keywords -->
             <section id="keywords">
                 <h2>Java Keywords</h2>
-                <p>Java keywords are reserved words with predefined meanings. Examples:</p>
-                <ul>
-                    <li><b>abstract</b> – declare abstract classes or methods</li>
-                    <li><b>assert</b> – for assertions</li>
-                    <li><b>boolean</b> – true/false values</li>
-                    <li><b>break</b> – exit loop or switch</li>
-                    <li><b>byte</b> – 8-bit integer</li>
-                    <li>… (all other keywords can be added similarly)</li>
-                </ul>
+                <img src="/images/basicImg/keywords.png" alt="Keywords of Java">
+                <h3>abstract Java Keyword</h3>
+                <p>The abstract keyword is used to declare a class or a method as abstract. An abstract class is a
+                    class that is declared abstract means it may or may not include abstract methods. Abstract classes
+                    cannot be instantiated, but they can be subclassed.
+                    An abstract method is a method that is declared without an implementation.</p>
+                <h3>assert Java Keyword</h3>
+                <p>Assert describes a predicate (a true-false statement) placed in a Java program to indicate that the
+                    developer thinks that the predicate is always true at that place. If an assertion evaluates to false
+                    at run-time, an assertion failure results, which typically causes execution to abort. Optionally
+                    enable by ClassLoader method.</p>
+                <h3>boolean Java Keyword</h3>
+                <p>Defines a boolean variable for the values "true" or "false" only. By default, the value of boolean
+                    primitive type is false. This keyword is also used to declare that a method returns a value of the
+                    primitive type boolean.</p>
+
+                <h3>break Keyword</h3>
+                <p>The break keyword is used to prematurely exit a for, while, or do while loop or to mark the end of a
+                    case block in a switch statement.</p>
+
+                <h3>Java Keyword</h3>
+                The byte keyword is used to declare a field that can hold an 8-bit signed two's complement integer.
+                This keyword is also used to declare that a method returns a value of the primitive type byte.
+
+                <h3>case Java Keyword</h3>
+                A statement in the switch block can be labeled with one or more case or default labels. The switch
+                statement evaluates its expression, then executes all statements that follow the matching case
+                label.
+
+                <h3>catch Java Keyword</h3>
+                Used in conjunction with a try block and an optional finally block. The statements in the catch
+                block specify what to do if a specific type of exception is thrown by the try block.
+
+                <h3>char Java Keyword</h3>
+                The char keyword is used to declare character variable.
+                char is a Java primitive type.
+                In Java, the data type used to store characters is char. The char data type is a single 16-bit
+                Unicode character.
+                It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).
+                The Wrapper Character class represents char primitive type as an object.
+                <h3>class Java Keyword</h3>
+                The class keyword is used to define the classes in Java. A class is a group of objects which have
+                common properties. It is a template or blueprint from which objects are created. In short, a class
+                is the specification or template of an object.
+
+                <h3>continue Java Keyword</h3>
+                Used to resume program execution at the end of the current loop body. If followed by a label,
+                continue resumes execution at the end of the enclosing labeled loop body.
+
+                The continue statement skips the current iteration of a for, while or do-while loop. The unlabeled
+                form skips to the end of the innermost loop's body and evaluates the boolean expression that
+                controls the loop.
+                <h3>default Java Keyword</h3>
+                The default keyword can optionally be used in a switch statement to label a block of statements to
+                be executed if no case matches the specified value; see a switch. Alternatively, the default keyword
+                can also be used to declare default values in a Java annotation. From Java 8 onwards, the default
+                keyword is also used to specify that a method in an interface provides the default implementation of
+                a method.
+
+                <h3>do Java Keyword</h3>
+                The do keyword is used in conjunction with while to create a do-while loop, which executes a block
+                of statements associated with the loop and then tests a boolean expression associated with the
+                while. If the expression evaluates to true, the block is executed again; this continues until the
+                expression evaluates to false.
+
+                <h3>double Java Keyword</h3>
+                The double keyword is used to create a double primitive type.
+                A double variable may store a double−precision floating point value. Double precision, as denoted by
+                the double keyword, uses 64 bits to store a value.
+                Double precision is actually faster than single precision on some modern processors that have been
+                optimized for high-speed mathematical calculations.
+                The Double class wraps a value of the primitive type double in an object. An object of type Double
+                contains a single field whose type is double.
+                <h3>else Java Keyword</h3>
+                The Java if-else statement also tests the condition. It executes the if block if a condition is true
+                otherwise else block, is executed.
+                Syntex
+                if(condition){
+                statement 1; //code if condition is true
+                }else{
+                statement 2; //code if condition is false
+                }
+                <h3>enum Java Keyword</h3>
+                An enum Java keyword used to declare an enumerated type. Enumerations extend the base class Enum.
+
+                public enum Day {
+                SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+                THURSDAY, FRIDAY, SATURDAY;
+                }
+
+                <h3>extends Java Keyword</h3>
+                The extends keyword is used in a class or interface declaration to indicate that the class or
+                interface being declared is a subclass of the class or interface whose name follows the extends
+                keyword.
+
+                <h3>final Java Keyword</h3>
+                The final keyword in Java is used to restrict the user. The final keyword can be used with variable,
+                method, and class.
+                The final keyword may be applied to a variable, indicating the value of the final variable can not
+                be changed (It will be constant).
+                The final keyword may be applied to a class, indicating the class may not be extended (subclassed).
+                The final keyword may be applied to a method, indicating the method may not be overridden in any
+                subclass
+                <h3>finally Java Keyword</h3>
+                The finally used to define a block of statements for a block defined previously by the try keyword.
+                The finally block is executed after execution exits the try block and any associated catch clauses
+                regardless of whether an exception was thrown or caught, or execution left method in the middle of
+                the try or catch blocks using the return keyword.
+
+                Java finally block is a block that is used to execute important code such as closing connection,
+                streametc.
+                Java finally block is always executed whether an exception is handled or not.
+                Java finally block follows try/catch block.
+                For each try block, there can be zero or more catch blocks, but only one finally block.
+                The finally block will not be executed if program exits(either by calling System.exit() or by
+                causing a fatal error that causes the process to abort).
+                <h3>float Java Keyword</h3>
+                The float keyword is used to declare float primitive variable. A float variable may store a
+                single−precision floating point value. The type float specifies a single-precision value that uses
+                32 bits of storage. Single precision is faster on some processors and takes half as much space as
+                double precision, but will become imprecise when the values are either very large or very small.
+
+                <h3>for Java Keyword</h3>
+                The for keyword is used to create a for loop, which specifies a variable initialization, a boolean
+                expression, and an incrementation. The variable initialization is performed first, and then the
+                boolean expression is evaluated. If the expression evaluates to true, the block of statements
+                associated with the loop is executed, and then the incrementation is performed. The boolean
+                expression is then evaluated again; this continues until the expression evaluates to false.
+                <h3>if Java Keyword</h3>
+                The if keyword is used to create an if statement, which tests a boolean expression; if the
+                expression evaluates to true, the block of statements associated with the if statement is executed.
+                This keyword can also be used to create an if-else statement.
+
+                <h3>implements Java Keyword</h3>
+                The implements keyword is used in a class declaration to indicate that the class being declared
+                provides implementations for all methods declared in the interface whose name follows the implements
+                keyword.
+
+                <h3>import Java Keyword</h3>
+                The import keyword makes one class or all classes in a package visible in the current Java source
+                file. Imported classes can be referenced without the use of fully−qualified class names.
+                In simple words, if a class wants to use another class in the same package, the package name does
+                not need to be used. Classes in the same package find each other.
+
+                <h3>instanceof Java Keyword</h3>
+                The Java instanceof keyword is used to test whether the object is an instance of the specified type
+                (class or subclass or interface).
+                Syntex:
+                obj instanceOf Object
+                The left side is the instance and right side is the Java class name. Java instanceof operator
+                returns a boolean result.
+                The instanceof in Java is also known as type comparison operator because it compares the instance
+                with type. It returns either true or false. If we apply the instanceof operator with any variable
+                that has a null value, it returns false.
+                <h3>int Java Keyword</h3>
+                The int keyword is used to declare a variable as a numeric type. For example, int a = 10;
+                A int variable is a signed 32-bit type that has a range from –2,147,483,648 to 2,147,483,647.
+                The Integer class is a wrapper class for the int primitive type. It defines MIN_VALUE and MAX_VALUE
+                constants representing the range of values for this type.
+                <h3>interface Java Keyword</h3>
+                Used to declare a special type of class that only contains abstract or default methods, constant
+                (static final) fields and static interfaces. It can later be implemented by classes that declare the
+                interface with the implements keyword. As multiple inheritance is not allowed in Java, interfaces
+                are used to circumvent it. An interface can be defined within another interface.
+
+                public interface Vehicle {
+                String getBrand();
+                String speedUp();
+                String slowDown();
+                default String turnAlarmOn() {
+                return "Turning the vehice alarm on.";
+                }
+                default String turnAlarmOff() {
+                return "Turning the vehicle alarm off.";
+                }
+                static int getHorsePower(int rpm, int torque) {
+                return (rpm * torque) / 5252;
+                }
+                }
+
+                <h3>long Java Keyword</h3>
+                The long keyword is used to declare a variable as a long primitive type.
+                The long primitive type is a signed 64-bit type and is useful for those occasions where an int type
+                is not large enough to hold the desired value.
+                The Long class is a wrapper class for the long primitive type. It defines MIN_VALUE and MAX_VALUE
+                constants representing the range of values for this type.
+                <h3>native Java Keyword</h3>
+                The native keyword may be applied to a method to indicate that the method is implemented in a
+                language other than Java.
+                The native keyword is used to declare a method which is implemented in platform-dependent code such
+                as C or C++. When a method is marked as native, it cannot have a body and must ends with a semicolon
+                instead.
+                The Java Native Interface (JNI) specification governs rules and guidelines for implementing native
+                methods, such as data type conversion between Java and the native application.
+                <h3>new Java Keyword</h3>
+                The new keyword is used to create a new instance of a class.
+
+                The new Java Keyword Examples
+
+
+
+                The new keyword is used to create a new instance of a class.
+                Student student = new Student("Tom", 20);
+                The new keyword can be used to create a new array object:
+                // use the new keyword to create an int array object
+                int[] intArray = new int[10];
+                The new keyword can be used to create a new String array object:
+                // use the new keyword to create a String object
+                String string = new String();
+                <h3>package Java Keyword</h3>
+                Java package is a group of similar classes and interfaces. Packages are declared with the package
+                keyword.
+
+                For example:
+
+                package java.lang;
+                package java.util;
+                <h3>private Java Keyword</h3>
+                The private keyword is used in the declaration of a method, field, or inner class; private members
+                can only be accessed by other members of their own class
+                <h3>protected Java Keyword</h3>
+                The protected keyword is used in the declaration of a method, field, or inner class; protected
+                members can only be accessed by members of their own class, that class's subclasses or classes from
+                the same package
+                <h3> public Java Keyword</h3>
+                The public keyword is an access control modifier that may be applied to a class, a method or a field
+                (a variable declared in a class).
+                If a class or its members are declared as public, they can be accessed from any other class
+                regardless of the package boundary. It is comparable to a public place in the real world, such as a
+                company cafeteria that all employees can use irrespective of their department.
+                <h3>return Java Keyword</h3>
+                The return keyword causes a method to return to the method that called it, passing a value that
+                matches the return type of the returning method.
+                <h3>short Java Keyword</h3>
+                The short keyword is used to declare a variable as a numeric type.
+                short is a signed 16-bit type.
+                It has a range from –32,768 to 32,767.
+                The Short class is a wrapper class for the short primitive type. It defines MIN_VALUE and MAX_VALUE
+                constants representing the range of values for this type.
+                <h3>static Java Keyword</h3>
+                The static keyword is used to declare a field, method, or inner class as a class field. Classes
+                maintain one copy of class fields regardless of how many instances exist of that class. static also
+                is used to define a method as a class method. Class methods are bound to the class instead of to a
+                specific instance, and can only operate on class fields.
+
+                <h3>strictfp Java Keyword</h3>
+                strictfp is a keyword in the Java programming language that restricts floating-point calculations to
+                ensure portability.
+
+                <h3>super Java Keyword</h3>
+                The super keyword in Java is a reference variable that is used to refer parent class object.
+                The super has two general forms:
+                The first calls the superclass constructor.
+                The second is used to access methods or instance variables of the superclass that has been hidden by
+                a member of a subclass.
+                <h3>switch Java Keyword</h3>
+                The switch statement is Java’s multiway branch statement. It provides an easy way to dispatch
+                execution to different parts of your code based on the value of an expression. As such, it often
+                provides a better alternative than a large series of if-else-if statements.
+                synchronized Java Keyword
+                Used in the declaration of a method or code block to acquire the mutex lock for an object while the
+                current thread executes the code.
+
+                We can synchronize our code in either of two ways. Both involve the use of the synchronized keyword.
+                Using Synchronized Methods
+                Using Synchronized Statement Or Block
+                <h3>this Java Keyword</h3>
+                In Java, this is a reference variable that refers to the current object.</p>
+
             </section>
 
             <!-- throw vs throws -->
             <section id="throw-throws">
                 <h2>throw vs throws</h2>
-                <p><b>throw:</b> explicitly throws an exception.</p>
-                <p><b>throws:</b> declares that a method may throw an exception.</p>
+                <p><b>throw:</b> Causes the declared exception instance to be thrown. This causes execution to continue
+                    with the first enclosing exception handler declared by the catch keyword to handle an assignment
+                    compatible exception type. If no such exception handler is found in the current method, then the
+                    method returns and the process is repeated in the calling method. If no exception handler is found
+                    in any method call on the stack, then the exception is passed to the thread's uncaught exception
+                    handler.</p>
+                <p><b>throws:</b> The Java throws keyword is used to declare an exception. It gives information to the
+                    programmer that there may occur an exception so it is better for the programmer to provide the
+                    exception handling code so that normal flow can be maintained.
+                </p>
+                <h3>throw – Example</h3>
+                <mine>When you want to manually raise an exception based on some condition.</mine>
+                <code><p>public class ThrowExample {<br>
+                        static void checkAge(int age) {<br>
+                         if (age < 18) {<br>
+                            throw new ArithmeticException("Not eligible to vote");<br>
+                        }<br>
+                         System.out.println("Eligible to vote");<br>
+                         }<br>
+                         public static void main(String[] args) {<br>
+                             checkAge(16);<br>
+                         }<br>
+                    }   </p>
+</code>
+
+                <h3>🧠 Explanation (Hinglish)</h3>
+                <p>
+                    throw keyword exception ko khud se throw karta hai <br>
+                    <b>Agar age < 18 hai →</b> exception throw Program immediately stop ho jaata hai JVM stack trace
+                            print
+                            karega
+                </p>
+
+                <h3>throws – Example</h3>
+                <mine>When method khud exception handle nahi karega, instead caller ko responsibility dega.</mine>
+                <code><p>import java.io.FileInputStream;<br>
+                         import java.io.FileNotFoundException;<br>
+                         public class ThrowsExample {<br>
+                         static void readFile() throws FileNotFoundException {<br>
+                         FileInputStream fis = new FileInputStream("test.txt");<br>
+                        }<br>
+                        public static void main(String[] args) {<br>
+                            try {<br>
+                                 readFile();<br>
+                            } catch (FileNotFoundException e) {<br>
+                              System.out.println("File not found handled in main");<br>
+                            }<br>
+                        }<br>
+                    }
+</p></code>
+
+                <h3>🧠 Explanation (Hinglish)</h3>
+                <p>
+                    throws bolta hai: <br>
+                    Is method me exception aa sakta hai, caller sambhale
+                    <b>readFile():</b> exception handle nahi karta
+                    <b>main():</b> me try-catch likhna compulsory hai
+
+                </p>
             </section>
+
+            <h2>🚨 Important Interview Points (Must Remember)</h2>
+            <h3>✔ Checked vs Unchecked</h3>
+            <mine>// Checked exception → must handle or declare
+                throws IOException;
+                // Unchecked exception → optional
+                throw new NullPointerException();
+            </mine>
+
+            <h3>✔ Custom Exception Example (SDET Use Case)</h3>
+            <mine>class FrameworkException extends RuntimeException {<br>
+                FrameworkException(String message) {<br>
+                super(message);<br>
+                }<br>
+                }<br>
+                throw new FrameworkException("Browser not launched");
+            </mine>
+
+            <h2>👉 Common in Selenium frameworks</h2>
+            <h3>🧠 One-Line Difference (Interview Answer)
+                throw is used to explicitly throw an exception, while throws is used to declare an exception that may
+                occur in a method.</h3>
 
             <!-- While Loop -->
             <section id="while-loop">
-                <h2>While Loop Example</h2>
-                <pre><code>int n = 10;
-while (n > 0) {
-  System.out.println("tick " + n);
-  n--;
-}</code></pre>
+                <h2>Here need to work </h2>
+                </code></pre>
             </section>
 
             <!-- Reserved Keywords -->
