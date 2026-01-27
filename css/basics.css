@@ -1,31 +1,63 @@
+/* ================= BASE ================= */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
     background-color: #f8f9fa;
     color: #1f2937;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    background-color: #4f46e5;
-    color: white;
-    padding: 20px;
+/* ================= HEADER ================= */
+.site-header {
+    width: 100%;
+    background-color: #1499e1;
+    padding: 15px 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 45px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.site-title-description {
     text-align: center;
+    width: 100%;
+    margin-top: 10px;
 }
 
-header h1 {
-    margin: 0 0 5px;
-    font-size: 2.8rem;
-}
-
-header p {
+.site-title-description h1 {
     margin: 0;
-    font-size: 1.9rem;
-    opacity: 0.85;
+    font-size: 2rem;
 }
 
+.site-title-description p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    color: #eaffea;
+}
+
+/* ================= MAIN LAYOUT ================= */
 main {
     display: flex;
     max-width: 1200px;
@@ -40,25 +72,20 @@ nav {
     top: 20px;
     max-height: calc(100vh - 40px);
     overflow-y: auto;
-    padding-right: 10px;
 }
 
 nav h3 {
-    margin-top: 0;
     color: #4f46e5;
-    font-size: 2.8rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav ul li {
     margin: 8px 0;
-    font-size: 18px;
 }
 
 nav ul li a {
@@ -67,15 +94,12 @@ nav ul li a {
     font-weight: 500;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
 article {
     flex: 1;
     max-width: 900px;
 }
 
+/* ================= TEXT ================= */
 h2 {
     color: #1e40af;
     margin-top: 40px;
@@ -84,28 +108,20 @@ h2 {
 h3 {
     color: #3b82f6;
     margin-top: 25px;
-    font: 1.3em sans-serif;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
-p {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
+p,
 ul {
-    padding-left: 20px;
-    margin-bottom: 15px;
     font-size: 18px;
 }
 
 pre {
     background-color: #111827;
     color: #e5e7eb;
-    padding: 12px 15px;
-    overflow-x: auto;
+    padding: 12px;
     border-radius: 6px;
-    margin: 15px 0;
+    overflow-x: auto;
 }
 
 code {
@@ -115,12 +131,16 @@ code {
 mine {
     color: #e8323b;
     font-weight: bold;
-
 }
 
 example {
     color: #0ad1eb;
-    font: 1.2em sans-serif;
+    font-weight: bold;
+}
+
+explain {
+    color: #8deb0a;
+    font-style: italic;
     font-weight: bold;
 }
 
@@ -128,15 +148,56 @@ output {
     color: green;
 }
 
+/* ================= IMAGES ================= */
 img {
     max-width: 100%;
-    height: 800px;
+    height: auto;
+    /* ✅ FIXED */
     margin: 15px 0;
     border-radius: 6px;
-    background-color: #ddd;
     display: block;
 }
 
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #16a34a;
+    /* outer border */
+}
+
+th,
+td {
+    border: 2px solid #86efac;
+    /* inner borders */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    color: white;
+}
+
+td {
+    background-color: #f0fdf4;
+}
+
+tr:nth-child(even) td {
+    background-color: #dcfce7;
+}
+
+/* Optional hover effect */
+tr:hover td {
+    background-color: #bbf7d0;
+}
+
+
+
+/* ================= FOOTER ================= */
 footer {
     text-align: center;
     padding: 20px;
@@ -145,26 +206,7 @@ footer {
     margin-top: 40px;
 }
 
-.toggle-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #4f46e5;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
-}
-
-.toggle-btn:hover {
-    background-color: #6366f1;
-}
-
-/* Dark Mode */
+/* ================= DARK MODE ================= */
 .dark-mode {
     background-color: #1f2937;
     color: #e5e7eb;
@@ -178,80 +220,46 @@ footer {
     background-color: #1e293b;
 }
 
-.dark-mode header,
-.dark-mode footer {
+/* ================= BUTTON ================= */
+.toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
-@media(max-width: 900px) {
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 900px) {
     main {
         flex-direction: column;
     }
 
     nav {
-        width: 100%;
+        position: static;
         max-height: none;
-        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
 
+@media (max-width: 480px) {
 
-/* ===== Header ===== */
-/* Container for the header */
-.site-header {
-    width: 100%;
-    background-color: #1499e1;
-    /* optional background */
-    padding: 15px 20px;
-}
+    p,
+    ul {
+        font-size: 15px;
+    }
 
-/* Flex container to align logo on left and center title */
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    /* needed for centering the title absolutely */
-}
-
-/* Logo on the left */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* space between logo image and text */
-}
-
-.logo-img {
-    width: 50px;
-    /* adjust as needed */
-    height: auto;
-}
-
-.logo-text {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-}
-
-/* Center title & description */
-.site-title-description {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    /* perfectly center horizontally */
-    text-align: center;
-}
-
-.site-title-description h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: #222;
-}
-
-.site-title-description p {
-    margin: 5px 0 0 0;
-    font-size: 1.5rem;
-    color: #62f606;
+    .site-title-description h1 {
+        font-size: 1.5rem;
+    }
 }

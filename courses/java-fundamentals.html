@@ -36,7 +36,6 @@
                 <li><a href="#keywords">Java Keywords</a></li>
                 <li><a href="#throw-throws">throw vs throws</a></li>
                 <li><a href="#while-loop">Control statements</a></li>
-                <li><a href="#reserved">Reserved Keywords</a></li>
             </ul>
         </nav>
 
@@ -143,6 +142,86 @@
   }
 }</code></pre>
                 <pre><output>Hello Java</output></pre>
+
+                <h3>🔍 Detailed Explanation (Every Point)</h3>
+                <p>
+                    <b>class</b><br>
+                    <explain>A keyword in Java used to define a class.
+                        A class is a blueprint that contains variables and methods.
+                        Class name should start with a capital letter by convention.
+                        The filename should be Simple.java.</explain><br>
+
+                <p><b>👉 This line tells Java:</b> </p>
+                <p>“Create a class named Simple.”</p>
+
+                <mine>public static void main(String args[])</mine>
+
+                <p>This is the most important line in any Java program.</p>
+
+                <p><b>🔹 public</b> <br> An access modifier.
+
+                    Makes the method accessible from anywhere.
+
+                    Required so the JVM (Java Virtual Machine) can call it.<br>
+
+                    <b>🔹 static</b><br>
+
+                    Means the method belongs to the class, not to an object.
+
+                    JVM can call main() without creating an object.<br>
+
+                    <b>🔹 void</b><br>
+
+                    Return type of the method.
+
+                    void means the method returns nothing.<br>
+
+                    <b>🔹 main</b><br>
+
+                    The entry point of the program.
+
+                    Execution of a Java program always starts from main().<br>
+
+                    <b>🔹 String args[]</b><br>
+
+                    Used to accept command-line arguments.
+
+                    String → data type
+
+                    args → array name
+
+                    [] → indicates an array
+                </p>
+
+
+                <mine>System.out.println("Hello Java");</mine>
+                <p>
+                    This line prints output to the screen. <br>
+
+                    <b>🔹 System</b><br>
+
+                    A predefined class in java.lang package.
+
+                    Provides system-related resources.<br>
+
+                    <b>🔹 out</b><br>
+
+                    A static object of PrintStream.
+
+                    Represents the standard output (screen/console).<br>
+
+                    <b>🔹 println</b><br>
+
+                    A method of PrintStream.
+
+                    Prints the text and moves the cursor to a new line.<br>
+
+                    <b>🔹 "Hello Java"</b><br>
+
+                    A String literal (text).
+
+                    Displayed as output.
+                </p>
             </section>
 
             <!-- Java Variables -->
@@ -548,16 +627,127 @@
                 throw is used to explicitly throw an exception, while throws is used to declare an exception that may
                 occur in a method.</h3>
 
-            <!-- While Loop -->
+            <!-- Control  statements -->
             <section id="while-loop">
-                <h2>Here need to work </h2>
-                </code></pre>
-            </section>
+                <h2>Control Statement </h2>
+                <p>
+                    Control statements are used to control the order of execution of statements in a program.
+                    Normally, Java executes code line by line (top to bottom), but control statements allow us to:<br>
+                    👉make decisions<br>
+                    👉repeat code<br>
+                    👉jump to different parts of the program
+                </p>
+                <h3>📌 Types of Control Statements</h3>
+                <img src="../images/basicImg/controlStatement.png" alt="Keywords of Java">
+                <h3>Java control statements are divided into three main categories:</h3>
+                <p> <b>1: Selection (Decision-Making) Statements <br>
+                        2: Iteration (Looping) Statements <br>
+                        3: Jump (Branching) Statements</b></p>
 
-            <!-- Reserved Keywords -->
-            <section id="reserved">
-                <h2>Reserved Keywords</h2>
-                <p>Some reserved words in Java not used: <code>goto</code>, <code>const</code></p>
+                <mine>📊 Control Statements in Java – Complete Table</mine>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Statement</th>
+                            <th>Purpose / Use</th>
+                            <th>Condition Checked</th>
+                            <th>Key Points</th>
+                            <th>Example (Short)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5">Selection</td>
+                            <td>if</td>
+                            <td>Executes code when condition is true</td>
+                            <td>Before execution</td>
+                            <td>Simple decision making</td>
+                            <td>if(a &gt; b)</td>
+                        </tr>
+                        <tr>
+                            <td>if-else</td>
+                            <td>Chooses between two blocks</td>
+                            <td>Before execution</td>
+                            <td>True or false block</td>
+                            <td>if(x &gt; 0) else</td>
+                        </tr>
+                        <tr>
+                            <td>else if ladder</td>
+                            <td>Multiple condition checking</td>
+                            <td>Top to bottom</td>
+                            <td>First true block executes</td>
+                            <td>else if(marks &gt;= 75)</td>
+                        </tr>
+                        <tr>
+                            <td>Nested if</td>
+                            <td>if inside another if</td>
+                            <td>Multiple levels</td>
+                            <td>Used for complex logic</td>
+                            <td>if(a){ if(b) }</td>
+                        </tr>
+                        <tr>
+                            <td>switch</td>
+                            <td>Selects one case from many</td>
+                            <td>On expression</td>
+                            <td>Uses case, break, default</td>
+                            <td>switch(day)</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="4">Iteration</td>
+                            <td>for</td>
+                            <td>Repeats fixed number of times</td>
+                            <td>Before each iteration</td>
+                            <td>Init, condition, update</td>
+                            <td>for(i=0;i&lt;5;i++)</td>
+                        </tr>
+                        <tr>
+                            <td>while</td>
+                            <td>Repeats while condition is true</td>
+                            <td>Before each iteration</td>
+                            <td>Entry-controlled loop</td>
+                            <td>while(i&lt;5)</td>
+                        </tr>
+                        <tr>
+                            <td>do-while</td>
+                            <td>Executes at least once</td>
+                            <td>After execution</td>
+                            <td>Exit-controlled loop</td>
+                            <td>do{}while()</td>
+                        </tr>
+                        <tr>
+                            <td>Nested loops</td>
+                            <td>Loop inside another loop</td>
+                            <td>Depends on outer loop</td>
+                            <td>Used for patterns</td>
+                            <td>for(){for(){}}</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="3">Jump</td>
+                            <td>break</td>
+                            <td>Terminates loop or switch</td>
+                            <td>During execution</td>
+                            <td>Exits immediately</td>
+                            <td>break;</td>
+                        </tr>
+                        <tr>
+                            <td>continue</td>
+                            <td>Skips current iteration</td>
+                            <td>During execution</td>
+                            <td>Moves to next iteration</td>
+                            <td>continue;</td>
+                        </tr>
+                        <tr>
+                            <td>return</td>
+                            <td>Exits method and returns value</td>
+                            <td>During execution</td>
+                            <td>Ends method</td>
+                            <td>return x;</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </article>
     </main>
