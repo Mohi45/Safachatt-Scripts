@@ -14,6 +14,10 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="css/global.css">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+
 </head>
 
 <body>
@@ -196,6 +200,11 @@
                 this.reset();
             }, 800);
         });
+    </script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
     </script>
 
 </body>

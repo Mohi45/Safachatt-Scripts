@@ -435,19 +435,19 @@
                 interface with the implements keyword. As multiple inheritance is not allowed in Java, interfaces
                 are used to circumvent it. An interface can be defined within another interface.
 
-                public interface Vehicle {
-                String getBrand();
-                String speedUp();
-                String slowDown();
-                default String turnAlarmOn() {
-                return "Turning the vehice alarm on.";
-                }
-                default String turnAlarmOff() {
-                return "Turning the vehicle alarm off.";
-                }
-                static int getHorsePower(int rpm, int torque) {
-                return (rpm * torque) / 5252;
-                }
+                <b>public interface Vehicle</b> {<br>
+                String getBrand();<br>
+                String speedUp();<br>
+                String slowDown();<br>
+                default String turnAlarmOn() {<br>
+                return "Turning the vehice alarm on.";<br>
+                }<br>
+                default String turnAlarmOff() {<br>
+                return "Turning the vehicle alarm off.";<br>
+                }<br>
+                static int getHorsePower(int rpm, int torque) {<br>
+                return (rpm * torque) / 5252;<br>
+                }<br>
                 }
 
                 <h3>long Java Keyword</h3>
@@ -465,20 +465,18 @@
                 The Java Native Interface (JNI) specification governs rules and guidelines for implementing native
                 methods, such as data type conversion between Java and the native application.
                 <h3>new Java Keyword</h3>
-                The new keyword is used to create a new instance of a class.
+                <p>The new keyword is used to create a new instance of a class.<br>
+                    <b> new Java Keyword Examples</b><br>
+                    The new keyword is used to create a new instance of a class.<br>
+                    Student student = new Student("Tom", 20);<br>
+                    The new keyword can be used to create a new array object:<br>
+                    // use the new keyword to create an int array object<br>
+                    int[] intArray = new int[10];<br>
+                    The new keyword can be used to create a new String array object:<br>
+                    // use the new keyword to create a String object<br>
+                    String string = new String();
+                </p>
 
-                The new Java Keyword Examples
-
-
-
-                The new keyword is used to create a new instance of a class.
-                Student student = new Student("Tom", 20);
-                The new keyword can be used to create a new array object:
-                // use the new keyword to create an int array object
-                int[] intArray = new int[10];
-                The new keyword can be used to create a new String array object:
-                // use the new keyword to create a String object
-                String string = new String();
                 <h3>package Java Keyword</h3>
                 Java package is a group of similar classes and interfaces. Packages are declared with the package
                 keyword.
