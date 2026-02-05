@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java SDET AI Coding Workbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #1a1a1a;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .question-block {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s;
+        }
+
+        .question-block:hover {
+            transform: translateY(-3px);
+        }
+
+        .input-output {
+            background: #e8e8e8;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 10px;
+            overflow-x: auto;
+        }
+
+        .answer-box {
+            width: 100%;
+            min-height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Fira Code', monospace;
+            background: #f7f7f7;
+            color: #1a1a1a;
+            resize: vertical;
+            overflow: auto;
+        }
+
+        #password-container {
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        input[type="password"] {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 22px;
+            font-size: 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #questions-container {
+            display: none;
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .question-block {
+            background: #1e1e1e;
+        }
+
+        body.dark-mode .input-output {
+            background: #2a2a2a;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .answer-box {
+            background: #2a2a2a;
+            color: #f0f0f0;
+            border-color: #555;
+        }
+
+        body.dark-mode button {
+            background: #3a7bd5;
+        }
+
+        /* AI-style assistant look */
+        .question-block::before {
+            content: "🤖";
+            font-size: 22px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="password-container">
+        <h1>Enter Password to Access Java SDET AI Workbook</h1>
+        <input type="password" id="pwd" placeholder="Enter password" />
+        <br />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error" style="color:red;"></p>
+    </div>
+
+    <div id="questions-container" class="container">
+        <h1>Java SDET AI Coding Workbook</h1>
+        <div style="text-align:center; margin-bottom:20px;">
+            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
+
+        <!-- STRING QUESTIONS (20) -->
+        <h2>🔹 STRING QUESTIONS (20)</h2>
+        <div class="question-block">
+            <p>1. Reverse a string</p>
+            <div class="input-output">Input: "SDET" → Output: "TEDS"</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>2. Check palindrome</p>
+            <div class="input-output">Input: "level" → Output: true</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>3. First non‑repeating character</p>
+            <div class="input-output">Input: "aabbcdde" → Output: 'c'</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>4. Remove duplicates</p>
+            <div class="input-output">Input: "programming" → Output: "progamin"</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>5. Count character frequency</p>
+            <div class="input-output">Input: "automation" → Output: {a=2, u=1, t=2, …}</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>6. Check anagram</p>
+            <div class="input-output">Input: "listen","silent" → Output: true</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>7. Reverse words</p>
+            <div class="input-output">Input: "I love Java" → Output: "Java love I"</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>8. Largest word in sentence</p>
+            <div class="input-output">Input: "SDET interviews are fun" → Output: "interviews"</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>9. Count vowels + consonants</p>
+            <div class="input-output">Input: "Java QA" → Output: Vowels=3, Consonants=3</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>10. Shortest word length</p>
+            <div class="input-output">Input: "I love coding" → Output: 1</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>11. Check if string contains only digits</p>
+            <div class="input-output">Input: "12345" → Output: true</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>12. Replace spaces with %20</p>
+            <div class="input-output">Input: "Hello World" → Output: "Hello%20World"</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>13. Permutation of palindrome?</p>
+            <div class="input-output">Input: "carrace" → Output: true</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>14. Longest substring without repeat</p>
+            <div class="input-output">Input: "abcabcbb" → Output: 3</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>15. Count subsequences of “abc”</p>
+            <div class="input-output">Input: "abcabc" → Output: 4</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>16. Check rotation</p>
+            <div class="input-output">Input: "abcde","cdeab" → Output: true</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>17. Minimum insertions for palindrome</p>
+            <div class="input-output">Input: "abcda" → Output: 2</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>18. Valid number (digits + decimal)</p>
+            <div class="input-output">Input: "12.34" → Output: true</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>19. Count Palindromic substrings</p>
+            <div class="input-output">Input: "aaa" → Output: 6</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>20. Encode string counts</p>
+            <div class="input-output">Input: "aaabb" → Output: "a3b2"</div><textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- ARRAY QUESTIONS (20) -->
+        <h2>🔹 ARRAY QUESTIONS (20)</h2>
+        <div class="question-block">
+            <p>21. Find duplicates</p>
+            <div class="input-output">Input: [1,2,3,2,1] → Output: [1,2]</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>22. Missing number (1–N)</p>
+            <div class="input-output">Input: [1,2,4,5] → Output: 3</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>23. Move zeros to end</p>
+            <div class="input-output">Input: [0,1,0,3,12] → Output: [1,3,12,0,0]</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>24. Second largest number</p>
+            <div class="input-output">Input: [5,3,9,1] → Output: 5</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>25. Sort array without sort()</p>
+            <div class="input-output">Input: [4,2,1,3] → Output: [1,2,3,4]</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>26. Two sum (target 7)</p>
+            <div class="input-output">Input: [2,7,11,15] → Output: [0,1]</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>27. Intersection of arrays</p>
+            <div class="input-output">Input: [1,2,2,3],[2,2] → Output: [2,2]</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>28. Majority element</p>
+            <div class="input-output">Input: [3,3,4] → Output: 3</div><textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>29. Product of array except self</p>
+            <div class="input-output">Input: [1,2,3,4] → Output: [24,12,8,6]</div><textarea
+                class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>30. Max subarray sum (Kadane)</p>
+            <div class="input-output">Input: [-2,1,-3,4,-1] → Output: 6</div><textarea class="answer-box"></textarea>
+        </div>
+        <!-- HASHMAP / SET QUESTIONS (31-40) -->
+        <div class="question-block">
+            <p>31. Word frequency count</p>
+            <div class="input-output">Input: "java java QA" → Output: {java=2, QA=1}</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>32. Find first repeated element</p>
+            <div class="input-output">Input: [10,5,3,4,3,5] → Output: 3</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>33. Largest frequency element</p>
+            <div class="input-output">Input: [1,2,2,3,3,3] → Output: 3</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>34. Group anagrams</p>
+            <div class="input-output">Input: ["eat","tea","tan","ate"] → Output: [["eat","tea","ate"],["tan"]]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>35. Check subset</p>
+            <div class="input-output">Input: [1,2,3],[1,3] → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>36. Longest consecutive sequence</p>
+            <div class="input-output">Input: [100,4,200,1,3,2] → Output: 4</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>37. Happy number</p>
+            <div class="input-output">Input: 19 → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>38. Isomorphic strings</p>
+            <div class="input-output">Input: "egg","add" → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>39. Intersection of two lists (unique)</p>
+            <div class="input-output">Input: [4,9,5],[9,4,9] → Output: [4,9]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>40. Count good pairs</p>
+            <div class="input-output">Input: [1,2,3,1,1,3] → Output: 4</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- JAVA 8 STREAMS QUESTIONS (41-50) -->
+        <div class="question-block">
+            <p>41. Filter evens</p>
+            <div class="input-output">Input: [1,2,3,4] → Output: [2,4]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>42. Square list</p>
+            <div class="input-output">Input: [1,2,3] → Output: [1,4,9]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>43. Sum of numbers</p>
+            <div class="input-output">Input: [1,2,3,4] → Output: 10</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>44. Distinct values</p>
+            <div class="input-output">Input: [1,2,2,3] → Output: [1,2,3]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>45. Count elements &gt; 2</p>
+            <div class="input-output">Input: [1,3,4] → Output: 2</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>46. Average of ints</p>
+            <div class="input-output">Input: [2,4,6] → Output: 4</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>47. Sort list</p>
+            <div class="input-output">Input: [3,1,2] → Output: [1,2,3]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>48. Join strings</p>
+            <div class="input-output">Input: ["a","b"] → Output: "a,b"</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>49. Max number</p>
+            <div class="input-output">Input: [3,5,1] → Output: 5</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>50. Second max</p>
+            <div class="input-output">Input: [3,5,8,8] → Output: 8</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- RECURSION / MATH QUESTIONS (51-60) -->
+        <div class="question-block">
+            <p>51. Factorial</p>
+            <div class="input-output">Input: 5 → Output: 120</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>52. Fibonacci nth</p>
+            <div class="input-output">Input: 6 → Output: 8</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>53. Power x^n</p>
+            <div class="input-output">Input: 2,3 → Output: 8</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>54. Count digits</p>
+            <div class="input-output">Input: 12345 → Output: 5</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>55. Sum of digits</p>
+            <div class="input-output">Input: 4321 → Output: 10</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>56. Palindromic number</p>
+            <div class="input-output">Input: 121 → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>57. GCD</p>
+            <div class="input-output">Input: 12,18 → Output: 6</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>58. LCM</p>
+            <div class="input-output">Input: 4,6 → Output: 12</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>59. Prime check</p>
+            <div class="input-output">Input: 17 → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>60. Reverse number</p>
+            <div class="input-output">Input: 1234 → Output: 4321</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- MATRIX / 2D ARRAY QUESTIONS (61-70) -->
+        <div class="question-block">
+            <p>61. Transpose matrix</p>
+            <div class="input-output">Input: [[1,2],[3,4]] → Output: [[1,3],[2,4]]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>62. Spiral order</p>
+            <div class="input-output">Input: [[1,2],[3,4]] → Output: [1,2,4,3]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>63. Rotate matrix 90°</p>
+            <div class="input-output">Input: [[1,2],[3,4]] → Output: [[3,1],[4,2]]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>64. Count islands</p>
+            <div class="input-output">Input grid → Output: number of islands</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>65. Search in row-wise sorted matrix</p>
+            <div class="input-output">Input + target → Output: found/not found</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>66. Diagonal sum</p>
+            <div class="input-output">Input: [[1,2],[3,4]] → Output: 10</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>67. Max in matrix</p>
+            <div class="input-output">Input: [[1,8],[3,4]] → Output: 8</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>68. Zero matrix (set row/col zero)</p>
+            <div class="input-output">Input + rules → Output: updated matrix</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>69. Boundary traversal of matrix</p>
+            <div class="input-output">Input → Output: list elements</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>70. Boolean matrix problem</p>
+            <div class="input-output">Input boolean 2D → Output modified 2D</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <!-- LINKED LIST / TREES QUESTIONS (71-80) -->
+        <div class="question-block">
+            <p>71. Reverse linked list</p>
+            <div class="input-output">Input: 1->2->3->null → Output: 3->2->1->null</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>72. Detect cycle</p>
+            <div class="input-output">Input: LinkedList → Output: true/false</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>73. Remove nth from end</p>
+            <div class="input-output">Input: LinkedList, n → Output: updated list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>74. Merge two sorted lists</p>
+            <div class="input-output">Input: lists → Output: merged list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>75. Inorder traversal</p>
+            <div class="input-output">Input: Binary Tree → Output: list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>76. Preorder traversal</p>
+            <div class="input-output">Input: Binary Tree → Output: list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>77. Postorder traversal</p>
+            <div class="input-output">Input: Binary Tree → Output: list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>78. Height of binary tree</p>
+            <div class="input-output">Input: Binary Tree → Output: int</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>79. Check BST</p>
+            <div class="input-output">Input: Binary Tree → Output: true/false</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>80. Level order traversal</p>
+            <div class="input-output">Input: Binary Tree → Output: list of lists</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- MISC / LOGIC QUESTIONS (81-90) -->
+        <div class="question-block">
+            <p>81. FizzBuzz 1→n</p>
+            <div class="input-output">Input: 5 → Output: [1,2,Fizz,4,Buzz]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>82. Swap without temp</p>
+            <div class="input-output">Input: a=5,b=10 → Output: a=10,b=5</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>83. Valid parentheses</p>
+            <div class="input-output">Input: "()[]{}" → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>84. Evaluate postfix</p>
+            <div class="input-output">Input: "23*54*+" → Output: 26</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>85. Roman → Integer</p>
+            <div class="input-output">Input: "MCMXCIV" → Output: 1994</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>86. Integer → Roman</p>
+            <div class="input-output">Input: 1994 → Output: "MCMXCIV"</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>87. Valid IP address</p>
+            <div class="input-output">Input: "192.168.0.1" → Output: true</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>88. Count set bits</p>
+            <div class="input-output">Input: 7 → Output: 3</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>89. Binary to decimal</p>
+            <div class="input-output">Input: "1011" → Output: 11</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>90. Decimal to binary</p>
+            <div class="input-output">Input: 11 → Output: "1011"</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- EXTENDED PRACTICE / BONUS QUESTIONS (91-100) -->
+        <div class="question-block">
+            <p>91. Largest palindrome in string</p>
+            <div class="input-output">Input: "abaxyzzyxf" → Output: "xyzzyx"</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>92. Rotate linked list k positions</p>
+            <div class="input-output">Input: LinkedList, k=2 → Output: rotated list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>93. Flatten binary tree to linked list</p>
+            <div class="input-output">Input: Binary Tree → Output: flattened list</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>94. Subarray with given sum</p>
+            <div class="input-output">Input: [1,2,3,7,5], sum=12 → Output: [2,3,7]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>95. Largest rectangle in histogram</p>
+            <div class="input-output">Input: [2,1,5,6,2,3] → Output: 10</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>96. Next permutation</p>
+            <div class="input-output">Input: [1,2,3] → Output: [1,3,2]</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>97. Minimum window substring</p>
+            <div class="input-output">Input: "ADOBECODEBANC","ABC" → Output: "BANC"</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>98. Trapping rain water</p>
+            <div class="input-output">Input: [0,1,0,2,1,0,1,3,2,1,2,1] → Output: 6</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>99. Serialize and deserialize binary tree</p>
+            <div class="input-output">Input: Binary Tree → Output: serialized string / restored tree</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+        <div class="question-block">
+            <p>100. Longest valid parentheses</p>
+            <div class="input-output">Input: "(()" → Output: 2</div>
+            <textarea class="answer-box"></textarea>
+        </div>
+
+        <!-- The remaining questions 31–100 follow same AI-card pattern for HashMap/Set, Streams, Recursion/Math, Matrix/2D, LinkedList/Trees, Misc -->
+        <!-- For brevity, you can copy the same structure for all remaining questions -->
+
+    </div>
+
+    <script>
+        function checkPassword() {
+            const pwd = document.getElementById('pwd').value;
+            const correctPassword = "SDET2026";
+            if (pwd === correctPassword) {
+                document.getElementById('password-container').style.display = "none";
+                document.getElementById('questions-container').style.display = "block";
+            } else {
+                document.getElementById('error').innerText = "Incorrect password! Try again.";
+            }
+        }
+        function toggleDarkMode() { document.body.classList.toggle("dark-mode"); }
+    </script>
+</body>
+
+</html>
