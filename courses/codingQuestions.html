@@ -3,166 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Java SDET AI Workbook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java SDET AI Coding Workbook</title>
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1055/1055646.png">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600&display=swap"
         rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f0f2f5;
-            color: #1a1a1a;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        h1,
-        h2 {
-            text-align: center;
-            font-weight: 600;
-        }
-
-        h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
-        }
-
-        .question-block {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            transition: transform 0.2s;
-        }
-
-        .question-block:hover {
-            transform: translateY(-3px);
-        }
-
-        .input-output {
-            background: #e8e8e8;
-            padding: 12px;
-            border-radius: 8px;
-            font-family: 'Fira Code', monospace;
-            margin-bottom: 10px;
-            overflow-x: auto;
-        }
-
-        .answer-box {
-            width: 100%;
-            min-height: 100px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 12px;
-            font-family: 'Fira Code', monospace;
-            background: #f7f7f7;
-            color: #1a1a1a;
-            resize: vertical;
-            overflow: auto;
-        }
-
-        #password-container {
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        input[type="password"] {
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            padding: 10px 22px;
-            font-size: 16px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        #questions-container {
-            display: none;
-        }
-
-        body.dark-mode {
-            background: #121212;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .question-block {
-            background: #1e1e1e;
-        }
-
-        body.dark-mode .input-output {
-            background: #2a2a2a;
-            color: #f0f0f0;
-        }
-
-        body.dark-mode .answer-box {
-            background: #2a2a2a;
-            color: #f0f0f0;
-            border-color: #555;
-        }
-
-        body.dark-mode button {
-            background: #3a7bd5;
-        }
-
-        .question-block::before {
-            content: "🤖";
-            font-size: 22px;
-            margin-right: 10px;
-        }
-
-        #auto-save {
-            text-align: right;
-            font-size: 14px;
-            color: green;
-            margin-bottom: 10px;
-        }
-
-        #progress {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: 600;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/basics.css">
+    <link rel="stylesheet" href="../css/questions.css">
 </head>
 
 <body>
-    <div id="password-container">
-        <h1>Enter Password to Access Java SDET AI Workbook</h1>
-        <input type="password" id="pwd" placeholder="Enter password" />
-        <br />
-        <button onclick="checkPassword()">Submit</button>
-        <p id="error" style="color:red;"></p>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="../images/logo.jpg" class="logo-img" alt="Logo">
+                <a href="../index.html" class="logo-text">Safachatt Scripts</a>
+            </div>
+            <div class="site-title-description">
+                <h1>Java Complete Tutorial</h1>
+                <p>All-in-One Java Notes for Learning & Revision</p>
+            </div>
+            <button class="nav-btn" onclick="location.href='admin.html'">Admin Portal</button>
+        </div>
+    </header>
+    <div id="login" style="text-align:center;margin-top:120px">
+        <h1>Java SDET AI Workbook</h1>
+        <button id="loginBtn">Login with Google</button>
     </div>
 
-    <div id="questions-container" class="container">
-        <h1>Java SDET AI Coding Workbook</h1>
-        <div style="text-align:center; margin-bottom:10px;">
-            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-            <button onclick="clearAll()">Clear All Answers</button>
-            <button onclick="exportAnswers()">Export Answers</button>
+    <div id="questions-container" style="display:none;">
+        <h1 style="text-align: center;">Welcome, <span id="userName"></span></h1>
+        <div style="text-align:center; margin-bottom: 10px;">
+            <button onclick="logout()" class="nav-btn">Logout</button>
+            <button onclick="clearAll()" class="nav-btn">Clear All</button>
+            <button onclick="exportAnswers()" class="nav-btn">Export</button>
         </div>
         <div id="auto-save">Saved ✓</div>
-        <div id="progress">Progress: 0%</div>
 
         <!-- STRING QUESTIONS 1-20 -->
-        <h2>🔹 STRING QUESTIONS (1-20)</h2>
+        <h2 style="text-align: center;">🔹 STRING QUESTIONS </h2>
         <div class="question-block">
             <p>1. Reverse a string</p>
             <div class="input-output">Input: "SDET" → Output: "TEDS"</div><textarea class="answer-box"></textarea>
@@ -253,7 +131,7 @@
         </div>
 
         <!-- ARRAY QUESTIONS 21-25 -->
-        <h2>🔹 ARRAY QUESTIONS (21-25)</h2>
+        <h2 style="text-align: center;">🔹 ARRAY QUESTIONS</h2>
         <div class="question-block">
             <p>21. Find duplicates</p>
             <div class="input-output">Input: [1,2,3,2,1] → Output: [1,2]</div><textarea class="answer-box"></textarea>
@@ -276,7 +154,7 @@
             <div class="input-output">Input: [4,2,1,3] → Output: [1,2,3,4]</div><textarea class="answer-box"></textarea>
         </div>
         <!-- ARRAY QUESTIONS 26-35 -->
-        <h2>🔹 ARRAY QUESTIONS (26-35)</h2>
+        <h2 style="text-align: center;">🔹 ARRAY QUESTIONS </h2>
         <div class="question-block">
             <p>26. Maximum subarray sum</p>
             <div class="input-output">Input: [-2,1,-3,4,-1,2,1,-5,4] → Output: 6</div><textarea
@@ -303,7 +181,7 @@
         </div>
 
         <!-- LIST QUESTIONS 31-40 -->
-        <h2>🔹 LIST QUESTIONS (31-40)</h2>
+        <h2 style="text-align: center;">🔹 LIST QUESTIONS </h2>
         <div class="question-block">
             <p>31. Reverse a list</p>
             <div class="input-output">Input: [1,2,3,4] → Output: [4,3,2,1]</div><textarea class="answer-box"></textarea>
@@ -350,7 +228,7 @@
         </div>
 
         <!-- MAP / DICTIONARY QUESTIONS 41-50 -->
-        <h2>🔹 MAP / DICTIONARY QUESTIONS (41-50)</h2>
+        <h2 style="text-align: center;">🔹 MAP / DICTIONARY QUESTIONS </h2>
         <div class="question-block">
             <p>41. Count word frequency</p>
             <div class="input-output">Input: ["Java","QA","Java"] → Output: {Java=2, QA=1}</div><textarea
@@ -399,7 +277,7 @@
                 class="answer-box"></textarea>
         </div>
         <!-- STACK QUESTIONS 51-60 -->
-        <h2>🔹 STACK QUESTIONS (51-60)</h2>
+        <h2 style="text-align: center;">🔹 STACK QUESTIONS </h2>
         <div class="question-block">
             <p>51. Implement stack using array</p><textarea class="answer-box"></textarea>
         </div>
@@ -439,7 +317,7 @@
         </div>
 
         <!-- QUEUE QUESTIONS 61-70 -->
-        <h2>🔹 QUEUE QUESTIONS (61-70)</h2>
+        <h2 style="text-align: center;">🔹 QUEUE QUESTIONS </h2>
         <div class="question-block">
             <p>61. Implement queue using array</p><textarea class="answer-box"></textarea>
         </div>
@@ -481,7 +359,7 @@
         </div>
 
         <!-- RECURSION QUESTIONS 71-75 -->
-        <h2>🔹 RECURSION QUESTIONS (71-75)</h2>
+        <h2 style="text-align: center;">🔹 RECURSION QUESTIONS </h2>
         <div class="question-block">
             <p>71. Factorial of n</p>
             <div class="input-output">Input: 5 → Output: 120</div><textarea class="answer-box"></textarea>
@@ -504,7 +382,7 @@
             <div class="input-output">Input: "hello" → Output: "olleh"</div><textarea class="answer-box"></textarea>
         </div>
         <!-- TREE QUESTIONS 76-85 -->
-        <h2>🔹 TREE QUESTIONS (76-85)</h2>
+        <h2 style="text-align: center;">🔹 TREE QUESTIONS </h2>
         <div class="question-block">
             <p>76. Inorder traversal of binary tree</p>
             <div class="input-output">Input: Binary Tree → Output: list</div><textarea class="answer-box"></textarea>
@@ -552,7 +430,7 @@
         </div>
 
         <!-- GRAPH QUESTIONS 86-90 -->
-        <h2>🔹 GRAPH QUESTIONS (86-90)</h2>
+        <h2 style="text-align: center;">🔹 GRAPH QUESTIONS </h2>
         <div class="question-block">
             <p>86. BFS traversal</p>
             <div class="input-output">Input: Graph, start node → Output: visited order</div><textarea
@@ -578,7 +456,7 @@
         </div>
 
         <!-- DYNAMIC PROGRAMMING QUESTIONS 91-95 -->
-        <h2>🔹 DYNAMIC PROGRAMMING QUESTIONS (91-95)</h2>
+        <h2 style="text-align: center;">🔹 DYNAMIC PROGRAMMING QUESTIONS </h2>
         <div class="question-block">
             <p>91. Fibonacci using DP</p>
             <div class="input-output">Input: n=10 → Output: 55</div><textarea class="answer-box"></textarea>
@@ -605,7 +483,7 @@
         </div>
 
         <!-- MISC / LOGIC QUESTIONS 96-100 -->
-        <h2>🔹 MISC / LOGIC QUESTIONS (96-100)</h2>
+        <h2 style="text-align: center;">🔹 MISC / LOGIC QUESTIONS</h2>
         <div class="question-block">
             <p>96. Trapping rain water</p>
             <div class="input-output">Input: [0,1,0,2,1,0,1,3,2,1,2,1] → Output: 6</div><textarea
@@ -628,58 +506,138 @@
             <p>100. Longest valid parentheses</p>
             <div class="input-output">Input: "(()" → Output: 2</div><textarea class="answer-box"></textarea>
         </div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2026 Safachatt Scripts. All Rights Reserved.</p>
+                <p>Email: mjsafachattgroup@gmail.com | Phone: +91-9625290733</p>
+            </div>
+        </footer>
 
 
-        <script>
-            const correctPassword = "SDET2026";
-            function checkPassword() {
-                const pwd = document.getElementById('pwd').value;
-                if (pwd === correctPassword) {
-                    document.getElementById('password-container').style.display = "none";
-                    document.getElementById('questions-container').style.display = "block";
-                    updateProgress();
-                } else {
-                    document.getElementById('error').innerText = "Incorrect password! Try again.";
+        <!-- Firebase code stays untouched -->
+        <script type="module">
+            // Firebase imports
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+            import {
+                getAuth,
+                GoogleAuthProvider,
+                signInWithPopup,
+                signInWithRedirect,
+                onAuthStateChanged,
+                signOut,
+                setPersistence,
+                browserLocalPersistence
+            } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+            import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+            // Firebase config
+            const firebaseConfig = {
+                apiKey: "AIzaSyAVehMiV55ntnSUuWjclQNfJbr8PeCwgt4",
+                authDomain: "safachatt-scripts.firebaseapp.com",
+                databaseURL: "https://safachatt-scripts-default-rtdb.firebaseio.com",
+                projectId: "safachatt-scripts",
+                storageBucket: "safachatt-scripts.firebasestorage.app",
+                messagingSenderId: "737742037568",
+                appId: "1:737742037568:web:d7d487121e3e06d87cb5a5"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getDatabase(app);
+            const provider = new GoogleAuthProvider();
+            let currentUser = null;
+
+            async function initAuth() {
+                try {
+                    await setPersistence(auth, browserLocalPersistence);
+                } catch (err) {
+                    console.error("Failed to set persistence:", err);
                 }
             }
+            initAuth();
 
-            function toggleDarkMode() { document.body.classList.toggle("dark-mode"); }
-
-            function clearAll() {
-                document.querySelectorAll('.answer-box').forEach(box => box.value = "");
-                updateProgress();
-            }
-
-            function exportAnswers() {
-                const answers = {};
-                document.querySelectorAll('.question-block').forEach((block, i) => {
-                    const q = i + 1;
-                    answers["Q" + q] = block.querySelector('textarea').value;
-                });
-                const json = JSON.stringify(answers, null, 2);
-                const blob = new Blob([json], { type: "application/json" });
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = "SDET_Workbook_Answers.json";
-                link.click();
-            }
-
-            function updateProgress() {
-                const total = document.querySelectorAll('.answer-box').length;
-                const filled = Array.from(document.querySelectorAll('.answer-box')).filter(box => box.value.trim() !== "").length;
-                const percent = Math.round((filled / total) * 100);
-                document.getElementById('progress').innerText = "Progress: " + percent + "%";
-                document.getElementById('auto-save').innerText = "Saved ✓";
-            }
-
-            document.querySelectorAll('.answer-box').forEach(box => {
-                box.addEventListener('input', () => {
-                    updateProgress();
-                });
+            document.getElementById("loginBtn")?.addEventListener("click", async () => {
+                try {
+                    await signInWithPopup(auth, provider);
+                } catch (err) {
+                    console.warn("Popup failed, falling back to redirect:", err.code);
+                    signInWithRedirect(auth, provider);
+                }
             });
 
-            setInterval(updateProgress, 5000); // auto-update every 5 sec
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    currentUser = user;
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("questions-container").style.display = "block";
+                    document.getElementById("userName").innerText = user.displayName || "User";
+                    await loadAnswers();
+                } else {
+                    currentUser = null;
+                    document.getElementById("login").style.display = "block";
+                    document.getElementById("questions-container").style.display = "none";
+                }
+            });
+
+            async function saveAnswers() {
+                if (!currentUser) return;
+
+                const answers = {};
+                document.querySelectorAll(".answer-box").forEach((box, i) => {
+                    answers["Q" + (i + 1)] = box.value;
+                });
+
+                await set(ref(db, "answers/" + currentUser.uid), {
+                    name: currentUser.displayName || "Unknown User",
+                    email: currentUser.email || "",
+                    ...answers,
+                    lastUpdated: Date.now()
+                });
+            }
+
+            async function loadAnswers() {
+                if (!currentUser) return;
+                const snap = await get(ref(db, "answers/" + currentUser.uid));
+                if (!snap.exists()) return;
+                const data = snap.val();
+                document.querySelectorAll(".answer-box").forEach((box, i) => {
+                    box.value = data["Q" + (i + 1)] || "";
+                });
+            }
+
+            document.addEventListener("input", (e) => {
+                const target = e.target;
+                if (target.classList.contains("answer-box")) {
+                    saveAnswers();
+                }
+            });
+
+            window.clearAll = async () => {
+                document.querySelectorAll(".answer-box").forEach(b => b.value = "");
+                await saveAnswers();
+            };
+
+            window.exportAnswers = () => {
+                const data = {};
+                document.querySelectorAll(".answer-box").forEach((b, i) => {
+                    data["Q" + (i + 1)] = b.value;
+                });
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "answers.json";
+                a.click();
+            };
+
+            window.logout = async () => {
+                await signOut(auth);
+            };
+
         </script>
+
 </body>
 
 </html>

@@ -1,0 +1,292 @@
+/* ===================== Global Styles ===================== */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    /* AI futuristic gradient */
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* Smooth text & selection */
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+::selection {
+    background: #ff6ec7;
+    color: #fff;
+}
+
+/* ===================== Header ===================== */
+.site-header {
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+    margin-right: 12px;
+    border: 2px solid #fff;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.site-title-description h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.site-title-description p {
+    margin: 3px 0 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* ===================== Login Section ===================== */
+#login {
+    margin-top: 150px;
+}
+
+#login h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#loginBtn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6ec7, #7873f5);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#loginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================== Question Container ===================== */
+#questions-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Section Titles */
+#questions-container h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #ff6ec7;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Question Blocks */
+.question-block {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.question-block p {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #0fe45a;
+}
+
+.input-output {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 10px;
+    color: #e70bdc;
+    overflow-x: auto;
+}
+
+/* Answer Box */
+.answer-box {
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    resize: vertical;
+}
+
+.answer-box:focus {
+    outline: 2px solid #ff6ec7;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Nav Buttons */
+.nav-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff6ec7, #7873f5);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Auto Save Message */
+#auto-save {
+    text-align: center;
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* ===================== Scrollbar ===================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 110, 199, 0.7);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 110, 199, 0.9);
+}
+
+/* =================== Footer =================== */
+.site-footer {
+    width: 100%;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+}
+
+
+
+.site-footer p {
+    margin: 5px 0;
+    color: #e0e0ff;
+    /* soft AI glow color */
+    transition: color 0.3s ease;
+}
+
+.site-footer p:hover {
+    color: #7df9ff;
+    /* subtle neon glow effect on hover */
+}
+
+.site-footer a {
+    color: #7df9ff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #7df9ff, 0 0 16px #7df9ff;
+}
+
+/* Optional subtle animation for footer text glow */
+@keyframes footerGlow {
+    0% {
+        text-shadow: 0 0 5px #7df9ff;
+    }
+
+    50% {
+        text-shadow: 0 0 15px #7df9ff;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #7df9ff;
+    }
+}
+
+.site-footer p {
+    animation: footerGlow 6s infinite alternate;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site-footer {
+        font-size: 0.9rem;
+        padding: 15px 0;
+    }
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-title-description {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .logo-container {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
