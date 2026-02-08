@@ -2,369 +2,1298 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>60-Day Java Coaching Calendar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-            line-height: 1.6;
-        }
-
-        h1,
-        h2 {
-            text-align: center;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        th,
-        td {
-            border: 1px solid #000;
-            padding: 8px;
-            vertical-align: top;
-        }
-
-        th {
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        .note {
-            background: #f9f9f9;
-            padding: 10px;
-            border-left: 5px solid #333;
-            margin-bottom: 20px;
-        }
-
-        @media print {
-            body {
-                margin: 15mm;
-            }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Java Basics Calendar Plan</title>
+    <link rel="stylesheet" href="../css/syllabus.css">
 </head>
 
 <body>
-
-    <h1>60-Day Java Coaching Calendar</h1>
-    <h2>(1 Hour Per Day)</h2>
-
-    <div class="note">
-        <b>Customization:</b><br>
-        • <b>School:</b> Basic logic & output-based programs<br>
-        • <b>Diploma:</b> Logic building & structured programs<br>
-        • <b>Degree:</b> Concept depth & interview-oriented programs
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="../images/logo.jpg" class="logo-img" alt="Logo">
+                <a href="../courses/java-fundamentals.html" class="logo-text">Safachatt Scripts</a>
+            </div>
+            <div class="site-title-description">
+                <h1> Java Complete Tutorial</h1>
+                <p>All-in-One Java Notes for Learning & Revision</p>
+            </div>
+        </div>
+    </header>
+    <!-- AUTH BOX -->
+    <div id="authBox">
+        <h2>🔐 Login Required</h2>
+        <p>Sign in using Google to save your progress across devices.</p>
+        <button onclick="googleLogin()">Sign in with Google</button>
     </div>
 
-    <h2>Week 1 – Java Introduction</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Introduction to Java</td>
-            <td>Write Java features</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>JDK, JRE, JVM</td>
-            <td>Draw & explain JVM</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Program Structure</td>
-            <td>Write simple Java program</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Variables</td>
-            <td>Declare all data types</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Data Types</td>
-            <td>Program using data types</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Type Casting</td>
-            <td>Implicit & explicit casting</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>Revision</td>
-            <td>Practice basics</td>
-        </tr>
-    </table>
+    <!-- MAIN CONTENT -->
+    <div id="mainContent" class="hidden">
+        <div id="userInfo">
+            Logged in as: <span id="userName"></span> |
+            <button id="logoutBtn" onclick="logoutUser()">Logout</button>
+        </div>
 
-    <h2>Week 2 – Control Statements</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>if statement</td>
-            <td>Check even/odd</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>if-else</td>
-            <td>Greatest of two numbers</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>else-if ladder</td>
-            <td>Student grade program</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>switch</td>
-            <td>Simple calculator</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>for loop</td>
-            <td>Print 1 to 10</td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>while loop</td>
-            <td>Reverse a number</td>
-        </tr>
-        <tr>
-            <td>14</td>
-            <td>Revision</td>
-            <td>All condition programs</td>
-        </tr>
-    </table>
+        <div class="container">
+            <h1 style="text-align: center;">📘 Java Basics Calendar Plan</h1>
+            <h2 style="text-align: center;">By Safachatt Scripts</h2>
 
-    <h2>Week 3 – Arrays & Strings</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>15</td>
-            <td>1D Array</td>
-            <td>Sum of array elements</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>Array Programs</td>
-            <td>Find maximum element</td>
-        </tr>
-        <tr>
-            <td>17</td>
-            <td>2D Array</td>
-            <td>Matrix addition</td>
-        </tr>
-        <tr>
-            <td>18</td>
-            <td>for-each loop</td>
-            <td>Array traversal</td>
-        </tr>
-        <tr>
-            <td>19</td>
-            <td>String Class</td>
-            <td>Reverse a string</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>String Methods</td>
-            <td>Count vowels</td>
-        </tr>
-        <tr>
-            <td>21</td>
-            <td>Revision</td>
-            <td>Array & string practice</td>
-        </tr>
-    </table>
+            <!-- WEEK 1 -->
+            <div class="week-title">WEEK 1: Java Introduction + Setup + Basics</div>
 
-    <h2>Week 4 – OOP Basics</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>22</td>
-            <td>Class & Object</td>
-            <td>Create Student class</td>
-        </tr>
-        <tr>
-            <td>23</td>
-            <td>Methods</td>
-            <td>Calculator using methods</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>Constructors</td>
-            <td>Parameterized constructor</td>
-        </tr>
-        <tr>
-            <td>25</td>
-            <td>this keyword</td>
-            <td>Resolve variable conflict</td>
-        </tr>
-        <tr>
-            <td>26</td>
-            <td>Inheritance</td>
-            <td>Single inheritance demo</td>
-        </tr>
-        <tr>
-            <td>27</td>
-            <td>super keyword</td>
-            <td>Parent-child example</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>Revision</td>
-            <td>OOP practice</td>
-        </tr>
-    </table>
+            <!-- DAY 1 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 1</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day1_completed"> Completed</label>
+                </div>
 
-    <h2>Week 5 – OOP Concepts</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>29</td>
-            <td>Polymorphism</td>
-            <td>Method overloading</td>
-        </tr>
-        <tr>
-            <td>30</td>
-            <td>Overriding</td>
-            <td>Runtime polymorphism</td>
-        </tr>
-        <tr>
-            <td>31</td>
-            <td>Encapsulation</td>
-            <td>Getter & Setter</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>Abstraction</td>
-            <td>Abstract class demo</td>
-        </tr>
-        <tr>
-            <td>33</td>
-            <td>Interface</td>
-            <td>Multiple inheritance</td>
-        </tr>
-        <tr>
-            <td>34</td>
-            <td>Access Modifiers</td>
-            <td>Scope testing</td>
-        </tr>
-        <tr>
-            <td>35</td>
-            <td>Revision</td>
-            <td>OOP full practice</td>
-        </tr>
-    </table>
+                <div class="topic">Topic: Introduction to Java</div>
+                <div class="section"><b>Concepts:</b> Java features, JVM, JRE, JDK</div>
+                <div class="section"><b>Program:</b> Print "Hello Java"</div>
+                <div class="section"><b>Homework:</b> Print name, college, branch</div>
 
-    <h2>Week 6 – Core Java Advanced</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>Exception Handling</td>
-            <td>try-catch example</td>
-        </tr>
-        <tr>
-            <td>37</td>
-            <td>throw & throws</td>
-            <td>Custom exception</td>
-        </tr>
-        <tr>
-            <td>38</td>
-            <td>Packages</td>
-            <td>User-defined package</td>
-        </tr>
-        <tr>
-            <td>39</td>
-            <td>Wrapper Classes</td>
-            <td>Autoboxing demo</td>
-        </tr>
-        <tr>
-            <td>40</td>
-            <td>Collections</td>
-            <td>ArrayList program</td>
-        </tr>
-        <tr>
-            <td>41</td>
-            <td>HashMap</td>
-            <td>Key-value storage</td>
-        </tr>
-        <tr>
-            <td>42</td>
-            <td>Revision</td>
-            <td>Collections practice</td>
-        </tr>
-    </table>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day1_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day1_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day1_homework"> Homework Done</label>
+                </div>
 
-    <h2>Week 7 – Final Practice</h2>
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Homework Program</th>
-        </tr>
-        <tr>
-            <td>43–56</td>
-            <td>Program Practice</td>
-            <td>Prime, Palindrome, Fibonacci, Patterns</td>
-        </tr>
-        <tr>
-            <td>57</td>
-            <td>Mock Test</td>
-            <td>Written test</td>
-        </tr>
-        <tr>
-            <td>58</td>
-            <td>Doubt Clearing</td>
-            <td>Weak area programs</td>
-        </tr>
-        <tr>
-            <td>59</td>
-            <td>Final Revision</td>
-            <td>Important questions</td>
-        </tr>
-        <tr>
-            <td>60</td>
-            <td>Final Test</td>
-            <td>Complete assessment</td>
-        </tr>
-    </table>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day1_notes" placeholder="Write your notes here..."></textarea>
+            </div>
 
-    <p style="text-align:center;"><b>— End of 60-Day Java Coaching Plan —</b></p>
+            <!-- DAY 2 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 2</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day2_completed"> Completed</label>
+                </div>
 
+                <div class="topic">Topic: Java Installation + IDE Setup</div>
+                <div class="section"><b>Concepts:</b> JDK install, PATH, cmd compile/run</div>
+                <div class="section"><b>Program:</b> Run Java program using cmd</div>
+                <div class="section"><b>Homework:</b> Write 3 different print statements</div>
+
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day2_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day2_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day2_homework"> Homework Done</label>
+                </div>
+
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day2_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 1 CONTINUE -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 3</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day3_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Java Program Structure</div>
+                <div class="section"><b>Concepts:</b> class, main(), public static void, compilation process</div>
+                <div class="section"><b>Program:</b> Print student details using println()</div>
+                <div class="section"><b>Homework:</b> Print 5 lines poem using println()</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day3_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day3_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day3_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day3_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 4</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day4_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Variables and Data Types</div>
+                <div class="section"><b>Concepts:</b> primitive types, size, range, type casting basics</div>
+                <div class="section"><b>Program:</b> Declare variables and print values</div>
+                <div class="section"><b>Homework:</b> Calculate simple interest using variables</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day4_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day4_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day4_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day4_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 5</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day5_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Operators in Java</div>
+                <div class="section"><b>Concepts:</b> arithmetic, relational, logical, assignment, unary</div>
+                <div class="section"><b>Program:</b> Calculator using operators</div>
+                <div class="section"><b>Homework:</b> Find max of 2 numbers using operators</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day5_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day5_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day5_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day5_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 6</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day6_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Input in Java (Scanner)</div>
+                <div class="section"><b>Concepts:</b> Scanner class, nextInt, nextLine, input issues</div>
+                <div class="section"><b>Program:</b> Read name, age, marks and print result</div>
+                <div class="section"><b>Homework:</b> Read 3 numbers and print sum</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day6_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day6_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day6_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day6_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 7</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day7_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 1</div>
+                <div class="section"><b>Concepts:</b> Revise Day 1–6</div>
+                <div class="section"><b>Program:</b> Mini project: Student Report Card</div>
+                <div class="section"><b>Homework:</b> Write 10 MCQs + 5 programs practice</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day7_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day7_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day7_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day7_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 2 -->
+            <div class="week-title">WEEK 2: Conditional Statements + Loops</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 8</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day8_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: if, else, else-if</div>
+                <div class="section"><b>Concepts:</b> decision making, nested if</div>
+                <div class="section"><b>Program:</b> Check number is positive/negative</div>
+                <div class="section"><b>Homework:</b> Find biggest of 3 numbers</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day8_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day8_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day8_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day8_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 9</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day9_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: switch-case</div>
+                <div class="section"><b>Concepts:</b> switch syntax, break, default</div>
+                <div class="section"><b>Program:</b> Calculator using switch</div>
+                <div class="section"><b>Homework:</b> Weekday finder using switch</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day9_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day9_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day9_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day9_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 10</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day10_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: for loop</div>
+                <div class="section"><b>Concepts:</b> loop structure, iteration, nested loop</div>
+                <div class="section"><b>Program:</b> Print 1 to 100</div>
+                <div class="section"><b>Homework:</b> Print even numbers 1 to 100</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day10_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day10_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day10_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day10_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 11</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day11_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: while loop</div>
+                <div class="section"><b>Concepts:</b> entry-controlled loop, conditions</div>
+                <div class="section"><b>Program:</b> Reverse a number</div>
+                <div class="section"><b>Homework:</b> Check palindrome number</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day11_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day11_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day11_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day11_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 12</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day12_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: do-while loop</div>
+                <div class="section"><b>Concepts:</b> exit-controlled loop, difference from while</div>
+                <div class="section"><b>Program:</b> Menu driven program using do-while</div>
+                <div class="section"><b>Homework:</b> Sum of digits using do-while</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day12_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day12_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day12_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day12_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 13</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day13_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: break and continue</div>
+                <div class="section"><b>Concepts:</b> loop control statements</div>
+                <div class="section"><b>Program:</b> Find first prime number in range</div>
+                <div class="section"><b>Homework:</b> Skip multiples of 5 from 1 to 50</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day13_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day13_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day13_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day13_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 14</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day14_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 2</div>
+                <div class="section"><b>Concepts:</b> Revise conditionals + loops</div>
+                <div class="section"><b>Program:</b> Prime numbers between 1 to 100</div>
+                <div class="section"><b>Homework:</b> Pattern programs (triangle, pyramid)</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day14_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day14_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day14_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day14_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 3 -->
+            <div class="week-title">WEEK 3: Arrays + Strings</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 15</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day15_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Introduction to Arrays</div>
+                <div class="section"><b>Concepts:</b> array declaration, initialization, indexing</div>
+                <div class="section"><b>Program:</b> Print array elements</div>
+                <div class="section"><b>Homework:</b> Find sum of array elements</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day15_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day15_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day15_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day15_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- DAY 16 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 16</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day16_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Array Operations</div>
+                <div class="section"><b>Concepts:</b> max, min, average, searching</div>
+                <div class="section"><b>Program:</b> Find max and min in array</div>
+                <div class="section"><b>Homework:</b> Count even and odd numbers in array</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day16_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day16_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day16_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day16_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- DAY 17 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 17</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day17_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Sorting Arrays</div>
+                <div class="section"><b>Concepts:</b> bubble sort, selection sort</div>
+                <div class="section"><b>Program:</b> Sort array in ascending order</div>
+                <div class="section"><b>Homework:</b> Sort array in descending order</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day17_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day17_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day17_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day17_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- DAY 18 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 18</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day18_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: 2D Arrays (Matrix)</div>
+                <div class="section"><b>Concepts:</b> 2D array declaration, traversal</div>
+                <div class="section"><b>Program:</b> Matrix addition</div>
+                <div class="section"><b>Homework:</b> Matrix multiplication basics</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day18_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day18_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day18_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day18_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- DAY 19 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 19</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day19_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: String Basics</div>
+                <div class="section"><b>Concepts:</b> String class, immutability, methods</div>
+                <div class="section"><b>Program:</b> Reverse string</div>
+                <div class="section"><b>Homework:</b> Count vowels and consonants</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day19_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day19_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day19_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day19_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- DAY 20 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 20</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day20_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: StringBuilder and StringBuffer</div>
+                <div class="section"><b>Concepts:</b> mutable strings, append, insert, delete</div>
+                <div class="section"><b>Program:</b> Use StringBuilder to modify string</div>
+                <div class="section"><b>Homework:</b> Check palindrome string using StringBuilder</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day20_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day20_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day20_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day20_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- DAY 21 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 21</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day21_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 3</div>
+                <div class="section"><b>Concepts:</b> Arrays + Strings revision</div>
+                <div class="section"><b>Program:</b> Find duplicate elements in array</div>
+                <div class="section"><b>Homework:</b> String frequency count</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day21_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day21_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day21_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day21_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 4 -->
+            <div class="week-title">WEEK 4: OOP Concepts (Core Java)</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 22</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day22_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Introduction to OOP</div>
+                <div class="section"><b>Concepts:</b> class, object, attributes, methods</div>
+                <div class="section"><b>Program:</b> Create Student class and object</div>
+                <div class="section"><b>Homework:</b> Create Employee class with salary calculation</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day22_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day22_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day22_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day22_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 23</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day23_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Constructors</div>
+                <div class="section"><b>Concepts:</b> default constructor, parameterized, constructor overloading</div>
+                <div class="section"><b>Program:</b> Create class with constructor</div>
+                <div class="section"><b>Homework:</b> BankAccount class with deposit/withdraw</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day23_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day23_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day23_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day23_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 24</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day24_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: this keyword</div>
+                <div class="section"><b>Concepts:</b> reference current object, constructor chaining</div>
+                <div class="section"><b>Program:</b> Use this keyword example</div>
+                <div class="section"><b>Homework:</b> Create class with this() call</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day24_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day24_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day24_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day24_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 25</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day25_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Method Overloading</div>
+                <div class="section"><b>Concepts:</b> same method name, different parameters</div>
+                <div class="section"><b>Program:</b> Area calculation using overloading</div>
+                <div class="section"><b>Homework:</b> Create overloaded methods for add()</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day25_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day25_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day25_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day25_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 26</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day26_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Encapsulation + Getters/Setters</div>
+                <div class="section"><b>Concepts:</b> private variables, methods, data hiding</div>
+                <div class="section"><b>Program:</b> Create encapsulated Student class</div>
+                <div class="section"><b>Homework:</b> Encapsulated Product class with getters/setters</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day26_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day26_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day26_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day26_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 27</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day27_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Inheritance</div>
+                <div class="section"><b>Concepts:</b> extends, IS-A relation, types of inheritance</div>
+                <div class="section"><b>Program:</b> Create Parent and Child class</div>
+                <div class="section"><b>Homework:</b> Vehicle -> Car inheritance example</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day27_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day27_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day27_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day27_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 28</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day28_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 4</div>
+                <div class="section"><b>Concepts:</b> OOP basics revision</div>
+                <div class="section"><b>Program:</b> Student Management mini program</div>
+                <div class="section"><b>Homework:</b> Create Library class using OOP</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day28_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day28_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day28_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day28_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 5 -->
+            <div class="week-title">WEEK 5: Polymorphism + Abstraction + Interfaces</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 29</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day29_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Method Overriding</div>
+                <div class="section"><b>Concepts:</b> runtime polymorphism, @Override</div>
+                <div class="section"><b>Program:</b> Overriding example with Animal class</div>
+                <div class="section"><b>Homework:</b> Shape -> Circle overriding area()</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day29_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day29_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day29_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day29_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 30</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day30_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: super keyword</div>
+                <div class="section"><b>Concepts:</b> calling parent constructor/method</div>
+                <div class="section"><b>Program:</b> super keyword example</div>
+                <div class="section"><b>Homework:</b> Use super in inheritance program</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day30_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day30_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day30_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day30_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 31</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day31_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Abstraction (Abstract Class)</div>
+                <div class="section"><b>Concepts:</b> abstract methods, abstract class usage</div>
+                <div class="section"><b>Program:</b> Abstract class example</div>
+                <div class="section"><b>Homework:</b> Create abstract Bank class with withdraw()</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day31_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day31_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day31_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day31_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 32</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day32_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Interfaces</div>
+                <div class="section"><b>Concepts:</b> interface, implements, multiple inheritance</div>
+                <div class="section"><b>Program:</b> Interface example with printable</div>
+                <div class="section"><b>Homework:</b> Create interface Vehicle and implement Car</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day32_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day32_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day32_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day32_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 33</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day33_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Polymorphism</div>
+                <div class="section"><b>Concepts:</b> compile-time vs runtime polymorphism</div>
+                <div class="section"><b>Program:</b> Runtime polymorphism example</div>
+                <div class="section"><b>Homework:</b> Method overriding with dynamic binding</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day33_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day33_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day33_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day33_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 34</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day34_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Packages and Access Modifiers</div>
+                <div class="section"><b>Concepts:</b> public, private, protected, default</div>
+                <div class="section"><b>Program:</b> Create package and import class</div>
+                <div class="section"><b>Homework:</b> Use access modifiers in class example</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day34_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day34_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day34_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day34_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 35</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day35_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 5</div>
+                <div class="section"><b>Concepts:</b> OOP + abstraction revision</div>
+                <div class="section"><b>Program:</b> Employee salary system using polymorphism</div>
+                <div class="section"><b>Homework:</b> Create abstract + interface combined program</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day35_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day35_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day35_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day35_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 6 -->
+            <div class="week-title">WEEK 6: Exception Handling + File Handling</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 36</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day36_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Exception Handling Basics</div>
+                <div class="section"><b>Concepts:</b> try, catch, finally, throw, throws</div>
+                <div class="section"><b>Program:</b> Divide by zero exception handling</div>
+                <div class="section"><b>Homework:</b> Handle array index exception</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day36_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day36_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day36_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day36_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 37</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day37_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Multiple catch + Custom Exception</div>
+                <div class="section"><b>Concepts:</b> multiple catch blocks, user-defined exception</div>
+                <div class="section"><b>Program:</b> Create custom exception AgeNotValid</div>
+                <div class="section"><b>Homework:</b> Create custom exception InsufficientBalance</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day37_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day37_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day37_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day37_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 38</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day38_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: File Handling Basics</div>
+                <div class="section"><b>Concepts:</b> File class, create/read file intro</div>
+                <div class="section"><b>Program:</b> Create file and write data</div>
+                <div class="section"><b>Homework:</b> Read file content and print</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day38_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day38_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day38_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day38_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 39</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day39_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: FileReader and FileWriter</div>
+                <div class="section"><b>Concepts:</b> reading/writing text files</div>
+                <div class="section"><b>Program:</b> Write into file using FileWriter</div>
+                <div class="section"><b>Homework:</b> Copy file content into another file</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day39_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day39_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day39_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day39_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 40</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day40_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: BufferedReader and BufferedWriter</div>
+                <div class="section"><b>Concepts:</b> fast file reading, buffer concept</div>
+                <div class="section"><b>Program:</b> Read file line by line</div>
+                <div class="section"><b>Homework:</b> Count words in file</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day40_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day40_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day40_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day40_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 41</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day41_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 6</div>
+                <div class="section"><b>Concepts:</b> Exception + file handling revision</div>
+                <div class="section"><b>Program:</b> Student file record system</div>
+                <div class="section"><b>Homework:</b> Employee file storage program</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day41_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day41_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day41_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day41_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 7 -->
+            <div class="week-title">WEEK 7: Collections Framework</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 42</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day42_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Introduction to Collections</div>
+                <div class="section"><b>Concepts:</b> Collection vs Collections, List/Set/Map</div>
+                <div class="section"><b>Program:</b> ArrayList example</div>
+                <div class="section"><b>Homework:</b> Store student names in ArrayList</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day42_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day42_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day42_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day42_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 43</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day43_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: ArrayList Methods</div>
+                <div class="section"><b>Concepts:</b> add, remove, get, set, size, contains</div>
+                <div class="section"><b>Program:</b> CRUD operations using ArrayList</div>
+                <div class="section"><b>Homework:</b> Remove duplicates from list</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day43_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day43_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day43_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day43_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 44</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day44_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: LinkedList</div>
+                <div class="section"><b>Concepts:</b> LinkedList vs ArrayList</div>
+                <div class="section"><b>Program:</b> LinkedList example</div>
+                <div class="section"><b>Homework:</b> Add and remove elements in LinkedList</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day44_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day44_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day44_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day44_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 45</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day45_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: HashSet and TreeSet</div>
+                <div class="section"><b>Concepts:</b> Set properties, uniqueness, ordering</div>
+                <div class="section"><b>Program:</b> Remove duplicates using HashSet</div>
+                <div class="section"><b>Homework:</b> Sort elements using TreeSet</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day45_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day45_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day45_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day45_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 46</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day46_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: HashMap and TreeMap</div>
+                <div class="section"><b>Concepts:</b> key-value pairs, map operations</div>
+                <div class="section"><b>Program:</b> Store student marks in HashMap</div>
+                <div class="section"><b>Homework:</b> Count word frequency using HashMap</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day46_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day46_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day46_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day46_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 47</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day47_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Iterator and Enhanced for loop</div>
+                <div class="section"><b>Concepts:</b> Iterator, foreach, traversing collections</div>
+                <div class="section"><b>Program:</b> Traverse ArrayList using iterator</div>
+                <div class="section"><b>Homework:</b> Traverse HashMap keys and values</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day47_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day47_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day47_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day47_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 48</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day48_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Revision + Practice Test 7</div>
+                <div class="section"><b>Concepts:</b> Collections revision</div>
+                <div class="section"><b>Program:</b> Student list CRUD using ArrayList</div>
+                <div class="section"><b>Homework:</b> Map based inventory system</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day48_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day48_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day48_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day48_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- WEEK 8 -->
+            <div class="week-title">WEEK 8: Multithreading + Java 8 + Final Project</div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 49</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day49_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Introduction to Multithreading</div>
+                <div class="section"><b>Concepts:</b> thread lifecycle, Thread class, Runnable interface</div>
+                <div class="section"><b>Program:</b> Create thread using Thread class</div>
+                <div class="section"><b>Homework:</b> Create thread using Runnable</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day49_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day49_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day49_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day49_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 50</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day50_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Synchronization</div>
+                <div class="section"><b>Concepts:</b> synchronized keyword, race condition</div>
+                <div class="section"><b>Program:</b> Bank withdraw synchronization</div>
+                <div class="section"><b>Homework:</b> Ticket booking synchronization program</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day50_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day50_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day50_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day50_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 51</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day51_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Lambda Expressions (Java 8)</div>
+                <div class="section"><b>Concepts:</b> functional interface, lambda syntax</div>
+                <div class="section"><b>Program:</b> Lambda for addition</div>
+                <div class="section"><b>Homework:</b> Lambda with comparator sorting</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day51_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day51_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day51_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day51_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 52</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day52_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Streams API (Java 8)</div>
+                <div class="section"><b>Concepts:</b> stream, filter, map, collect</div>
+                <div class="section"><b>Program:</b> Filter even numbers using streams</div>
+                <div class="section"><b>Homework:</b> Sort list using streams</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day52_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day52_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day52_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day52_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 53</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day53_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Optional Class + Date/Time API</div>
+                <div class="section"><b>Concepts:</b> Optional, LocalDate, LocalTime</div>
+                <div class="section"><b>Program:</b> Date difference calculation</div>
+                <div class="section"><b>Homework:</b> Print current date/time</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day53_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day53_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day53_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day53_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 54</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day54_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: JDBC Introduction</div>
+                <div class="section"><b>Concepts:</b> JDBC drivers, connection, statement, resultset</div>
+                <div class="section"><b>Program:</b> Connect Java with MySQL</div>
+                <div class="section"><b>Homework:</b> Insert data into table using JDBC</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day54_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day54_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day54_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day54_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 55</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day55_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: JDBC CRUD Operations</div>
+                <div class="section"><b>Concepts:</b> insert, update, delete, select queries</div>
+                <div class="section"><b>Program:</b> Fetch and display records from DB</div>
+                <div class="section"><b>Homework:</b> Update student marks using JDBC</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day55_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day55_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day55_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day55_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 56</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day56_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Mini Project Planning</div>
+                <div class="section"><b>Concepts:</b> project structure, classes, methods, DB design</div>
+                <div class="section"><b>Program:</b> Create project skeleton</div>
+                <div class="section"><b>Homework:</b> Draw flowchart for project</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day56_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day56_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day56_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day56_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 57</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day57_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Mini Project Implementation (Part 1)</div>
+                <div class="section"><b>Concepts:</b> apply OOP + collections</div>
+                <div class="section"><b>Program:</b> Add student record feature</div>
+                <div class="section"><b>Homework:</b> Add delete record feature</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day57_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day57_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day57_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day57_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 58</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day58_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Mini Project Implementation (Part 2)</div>
+                <div class="section"><b>Concepts:</b> search, update, display records</div>
+                <div class="section"><b>Program:</b> Add update record feature</div>
+                <div class="section"><b>Homework:</b> Add search feature</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day58_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day58_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day58_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day58_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 59</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day59_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Final Project Completion</div>
+                <div class="section"><b>Concepts:</b> finalize features, error handling, validation</div>
+                <div class="section"><b>Program:</b> Complete full project</div>
+                <div class="section"><b>Homework:</b> Add exception handling + file backup</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day59_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day59_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day59_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day59_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>Day 60</h3>
+                    <label><input type="checkbox" class="save-check" data-id="day60_completed"> Completed</label>
+                </div>
+                <div class="topic">Topic: Final Revision + Interview Questions</div>
+                <div class="section"><b>Concepts:</b> Java core recap, OOP recap, collections recap</div>
+                <div class="section"><b>Program:</b> Solve 5 coding problems</div>
+                <div class="section"><b>Homework:</b> Prepare resume Java skills + 20 interview Q&A</div>
+                <div class="checkboxes">
+                    <label><input type="checkbox" class="save-check" data-id="day60_theory"> Theory Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day60_program"> Program Done</label>
+                    <label><input type="checkbox" class="save-check" data-id="day60_homework"> Homework Done</label>
+                </div>
+                <div class="note-title">Notes:</div>
+                <textarea class="save-note" data-id="day60_notes" placeholder="Write your notes here..."></textarea>
+            </div>
+            <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+            <div class="footer">
+                <p>✅ Progress auto-saves to Firebase Firestore.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    <!-- FIREBASE CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDelVJHim-GKlaU2c-y7iTSiO7qy2fdZWI",
+            authDomain: "syllabus-77df7.firebaseapp.com",
+            projectId: "syllabus-77df7",
+            storageBucket: "syllabus-77df7.firebasestorage.app",
+            messagingSenderId: "119110461291",
+            appId: "1:119110461291:web:d6be3fc68ae09dd18c0e2e"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        let currentUser = null;
+
+        // GOOGLE LOGIN
+        function googleLogin() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .then(() => console.log("Google Login Successful"))
+                .catch(err => alert(err.message));
+        }
+
+        // LOGOUT
+        function logoutUser() {
+            auth.signOut().then(() => {
+                alert("Logged out");
+            });
+        }
+
+        // SAVE FUNCTION
+        async function saveData(key, value) {
+            if (!currentUser) return;
+
+            try {
+                console.log("Saving:", key, value);
+
+                await db.collection("javaPlanUsers").doc(currentUser.uid).set({
+                    [key]: value
+                }, { merge: true });
+
+                console.log("Saved Successfully ✅");
+            } catch (error) {
+                console.error("Save Error:", error);
+            }
+        }
+
+        // LOAD FUNCTION
+        async function loadData() {
+            if (!currentUser) return;
+
+            try {
+                const docRef = db.collection("javaPlanUsers").doc(currentUser.uid);
+                const docSnap = await docRef.get();
+
+                if (docSnap.exists) {
+                    const data = docSnap.data();
+                    console.log("Loaded Data:", data);
+
+                    document.querySelectorAll(".save-check").forEach(cb => {
+                        const id = cb.getAttribute("data-id");
+                        if (data[id] !== undefined) cb.checked = data[id];
+                    });
+
+                    document.querySelectorAll(".save-note").forEach(note => {
+                        const id = note.getAttribute("data-id");
+                        if (data[id] !== undefined) note.value = data[id];
+                    });
+                } else {
+                    console.log("No saved data found for this user.");
+                }
+            } catch (error) {
+                console.error("Load Error:", error);
+            }
+        }
+
+        // AUTH STATE
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                currentUser = user;
+
+                document.getElementById("authBox").classList.add("hidden");
+                document.getElementById("mainContent").classList.remove("hidden");
+
+                document.getElementById("userName").innerText =
+                    user.displayName + " (" + user.email + ")";
+
+                loadData();
+            } else {
+                currentUser = null;
+
+                document.getElementById("authBox").classList.remove("hidden");
+                document.getElementById("mainContent").classList.add("hidden");
+            }
+        });
+
+        // AUTO SAVE CHECKBOXES
+        document.addEventListener("change", function (e) {
+            if (e.target.classList.contains("save-check")) {
+                const id = e.target.getAttribute("data-id");
+                saveData(id, e.target.checked);
+            }
+        });
+
+        // AUTO SAVE NOTES
+        let typingTimer;
+        document.addEventListener("input", function (e) {
+            if (e.target.classList.contains("save-note")) {
+                clearTimeout(typingTimer);
+
+                typingTimer = setTimeout(() => {
+                    const id = e.target.getAttribute("data-id");
+                    saveData(id, e.target.value);
+                }, 500);
+            }
+        });
+    </script>
 </body>
 
 </html>

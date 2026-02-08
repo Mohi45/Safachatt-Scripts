@@ -1,0 +1,481 @@
+/* =========================
+   GLOBAL RESET + BODY
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f6fb;
+    color: #222;
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+    width: 100%;
+    background: linear-gradient(90deg, #4f46e5, #2563eb);
+    padding: 12px 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+/* RIGHT TITLE */
+.site-title-description {
+    text-align: center;
+}
+
+.site-title-description h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.site-title-description p {
+    margin-top: 4px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================
+   MAIN TITLE
+========================= */
+.main-title {
+    text-align: center;
+    margin: 25px 0 10px;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   USER INFO BAR
+========================= */
+#userInfo {
+    background: rgb(13, 154, 197);
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin: 18px auto;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#logoutBtn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+#logoutBtn:hover {
+    background: #dc2626;
+}
+
+/* =========================
+   WEEK TITLE
+========================= */
+.week-title {
+    margin-top: 30px;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+    background: linear-gradient(90deg, #1e40af, #2563eb);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   DAY CARD
+========================= */
+.day-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+}
+
+.day-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   DAY HEADER
+========================= */
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.day-header h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+/* Completed checkbox */
+.day-header label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =========================
+   TOPIC TEXT
+========================= */
+.topic {
+    margin-top: 8px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #2563eb;
+    text-align: left;
+}
+
+/* =========================
+   SECTION BOX
+========================= */
+.section {
+    margin-top: 10px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 15px;
+    color: #111827;
+}
+
+/* =========================
+   CHECKBOXES
+========================= */
+.checkboxes {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #eff6ff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.checkboxes label:hover {
+    background: #dbeafe;
+}
+
+/* =========================
+   INPUT CHECKBOX STYLE
+========================= */
+input[type="checkbox"] {
+    transform: scale(1.25);
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* =========================
+   NOTES TEXTAREA
+========================= */
+.note-title {
+    margin-top: 14px;
+    font-weight: 800;
+    color: #111827;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    resize: vertical;
+    min-height: 70px;
+    font-size: 15px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    outline: none;
+    transition: 0.2s;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0px 0px 0px 3px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* =========================
+   AUTH BOX
+========================= */
+#authBox {
+    max-width: 450px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+#authBox h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+#authBox p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 18px;
+}
+
+#authBox button {
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#authBox button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* =========================
+   HIDDEN
+========================= */
+.hidden {
+    display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .site-title-description {
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 1.6rem;
+    }
+
+    .day-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #userInfo {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+body.dark-mode .site-header {
+    background: linear-gradient(90deg, #111827, #1e293b);
+}
+
+body.dark-mode .week-title {
+    background: linear-gradient(90deg, #334155, #475569);
+}
+
+body.dark-mode .day-card {
+    background: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .section {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+}
+
+body.dark-mode .topic {
+    color: #60a5fa;
+}
+
+body.dark-mode textarea {
+    background: #0f172a;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0px 0px 0px 3px rgba(96, 165, 250, 0.25);
+}
+
+body.dark-mode .checkboxes label {
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .checkboxes label:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode #userInfo {
+    background: #1e293b;
+    color: white;
+}
+
+body.dark-mode .footer {
+    color: #cbd5e1;
+}
+
+/* ================= BUTTON ================= */
+.toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* =========================
+   PRINT MODE
+========================= */
+@media print {
+    body {
+        background: white;
+    }
+
+    .site-header,
+    #authBox,
+    #logoutBtn,
+    #userInfo {
+        display: none !important;
+    }
+
+    .day-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .week-title {
+        background: black !important;
+        color: white !important;
+    }
+}
