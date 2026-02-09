@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Java Syllabus Tracker</title>
+    <title>Admin - Java Syllabus Tracker Dashboard</title>
 
     <style>
         body {
@@ -28,13 +28,12 @@
             margin-bottom: 15px;
         }
 
-        select,
         input {
             padding: 10px;
             border-radius: 6px;
             border: 1px solid #ccc;
             font-size: 14px;
-            min-width: 250px;
+            min-width: 280px;
         }
 
         table {
@@ -66,6 +65,67 @@
             background: #f2f2f2;
         }
 
+        .progress-green {
+            font-weight: bold;
+            color: green;
+        }
+
+        .progress-red {
+            font-weight: bold;
+            color: red;
+        }
+
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .btn-view {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-close {
+            background: #dc3545;
+            color: white;
+        }
+
+        .container {
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding-top: 40px;
+        }
+
+        .modal-content {
+            background: white;
+            margin: auto;
+            padding: 20px;
+            width: 95%;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+
+        .modal h2 {
+            margin-top: 0;
+        }
+
         .status-yes {
             background: #d4edda;
             color: #155724;
@@ -85,74 +145,56 @@
             display: inline-block;
             min-width: 28px;
         }
-
-        .user-info {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .progress-box {
-            font-weight: bold;
-            color: #111;
-        }
-
-        .container {
-            overflow-x: auto;
-            border-radius: 10px;
-        }
-
-        .selected-user-box {
-            font-weight: bold;
-            font-size: 14px;
-            color: #333;
-            padding: 8px 12px;
-            border-radius: 6px;
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-        }
     </style>
 </head>
 
 <body>
 
-    <h1>📘 Admin - Java Syllabus Tracker (All Users)</h1>
+    <h1>📘 Admin Dashboard - Java Syllabus Tracker</h1>
 
     <div class="top-controls">
-        <div>
-            <label><b>Select User:</b></label><br>
-            <select id="userSelect" onchange="loadSelectedUser()">
-                <option value="">Loading users...</option>
-            </select>
-        </div>
-
-        <div>
-            <label><b>Search Day:</b></label><br>
-            <input type="number" id="daySearch" min="1" max="60" placeholder="Enter day number (1-60)"
-                oninput="filterDay()" />
-        </div>
-
-        <div class="progress-box" id="progressBox">
-            Progress: --
-        </div>
-
-        <div class="selected-user-box" id="selectedUserBox">
-            Selected User: --
-        </div>
+        <input type="text" id="searchUser" placeholder="Search user by name/email..." oninput="filterUsers()" />
+        <div><b>Total Users:</b> <span id="totalUsers">0</span></div>
     </div>
 
     <div class="container">
         <table>
             <thead>
                 <tr>
-                    <th>Day</th>
-                    <th>Theory</th>
-                    <th>Program</th>
-                    <th>Homework</th>
-                    <th>Completed</th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Completed Days</th>
+                    <th>Progress %</th>
+                    <th>Last Completed Day</th>
+                    <th>View Details</th>
                 </tr>
             </thead>
-            <tbody id="syllabusTable"></tbody>
+            <tbody id="usersTable"></tbody>
         </table>
+    </div>
+
+    <!-- MODAL -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">User Details</h2>
+            <button class="btn btn-close" onclick="closeModal()">Close</button>
+
+            <div class="container" style="margin-top:15px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Theory</th>
+                            <th>Program</th>
+                            <th>Homework</th>
+                            <th>Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detailsTable"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <!-- Firebase -->
@@ -177,8 +219,7 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
 
-        let allUsers = [];
-        let currentUserData = {};
+        let usersData = [];
 
         function yesNo(val) {
             return val === true
@@ -186,81 +227,104 @@
                 : `<span class="status-no">✘</span>`;
         }
 
-        async function loadUsersList() {
-            try {
-                const select = document.getElementById("userSelect");
-                select.innerHTML = `<option value="">Select User</option>`;
+        async function loadAllUsers() {
+            const snap = await getDocs(collection(db, "javaPlanUsers"));
+            usersData = [];
 
-                const snap = await getDocs(collection(db, "javaPlanUsers"));
-                console.log("Total Users Found:", snap.size);
+            snap.forEach(docSnap => {
+                const data = docSnap.data();
+                const uid = docSnap.id;
 
-                snap.forEach(docSnap => {
-                    const data = docSnap.data();
+                let completedDays = 0;
+                let lastCompletedDay = 0;
 
-                    const email = data.email || "No Email";
-                    const name = data.name || "No Name";
-
-                    allUsers.push(docSnap.id);
-
-                    const opt = document.createElement("option");
-                    opt.value = docSnap.id; // UID internally
-                    opt.textContent = `${email} (${name})`; // show email + name
-                    select.appendChild(opt);
-                });
-
-                if (allUsers.length > 0) {
-                    select.value = allUsers[0];
-                    loadSelectedUser();
+                for (let day = 1; day <= TOTAL_DAYS; day++) {
+                    if (data[`day${day}_completed`] === true) {
+                        completedDays++;
+                        lastCompletedDay = day;
+                    }
                 }
 
-            } catch (err) {
-                console.error("Firestore Read Error:", err);
-                alert("Firestore Error: " + err.message);
-            }
+                const progressPercent = Math.round((completedDays / TOTAL_DAYS) * 100);
+
+                usersData.push({
+                    uid,
+                    name: data.name || "No Name",
+                    email: data.email || "No Email",
+                    completedDays,
+                    progressPercent,
+                    lastCompletedDay
+                });
+            });
+
+            document.getElementById("totalUsers").innerText = usersData.length;
+            renderUsersTable(usersData);
         }
 
-        window.loadSelectedUser = async function () {
-            const uid = document.getElementById("userSelect").value;
-            if (!uid) return;
+        function renderUsersTable(list) {
+            const tbody = document.getElementById("usersTable");
+            tbody.innerHTML = "";
 
+            list.forEach((user, index) => {
+                const tr = document.createElement("tr");
+
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td><b>${user.name}</b></td>
+                    <td>${user.email}</td>
+                    <td>${user.completedDays} / ${TOTAL_DAYS}</td>
+                    <td class="${user.progressPercent >= 50 ? "progress-green" : "progress-red"}">
+                        ${user.progressPercent}%
+                    </td>
+                    <td>Day ${user.lastCompletedDay}</td>
+                    <td>
+                        <button class="btn btn-view" onclick="viewDetails('${user.uid}', '${user.email}')">
+                            View
+                        </button>
+                    </td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        window.filterUsers = function () {
+            const keyword = document.getElementById("searchUser").value.toLowerCase();
+
+            const filtered = usersData.filter(u =>
+                u.name.toLowerCase().includes(keyword) ||
+                u.email.toLowerCase().includes(keyword)
+            );
+
+            renderUsersTable(filtered);
+        };
+
+        window.viewDetails = async function (uid, email) {
             const docRef = doc(db, "javaPlanUsers", uid);
             const docSnap = await getDoc(docRef);
 
             if (!docSnap.exists()) {
-                alert("No syllabus data found!");
+                alert("No data found for this user!");
                 return;
             }
 
-            currentUserData = docSnap.data();
+            const data = docSnap.data();
 
-            const userEmail = currentUserData.email || "No Email";
-            const userName = currentUserData.name || "No Name";
+            document.getElementById("modalTitle").innerText =
+                `📌 User Details: ${email}`;
 
-            document.getElementById("selectedUserBox").innerHTML =
-                `Selected User: <span style="color:blue">${userEmail} (${userName})</span>`;
-
-            renderTable();
-        };
-
-        function renderTable() {
-            const tbody = document.getElementById("syllabusTable");
+            const tbody = document.getElementById("detailsTable");
             tbody.innerHTML = "";
 
-            let completedDays = 0;
-
             for (let day = 1; day <= TOTAL_DAYS; day++) {
-                const theory = currentUserData[`day${day}_theory`] || false;
-                const program = currentUserData[`day${day}_program`] || false;
-                const homework = currentUserData[`day${day}_homework`] || false;
-                const completed = currentUserData[`day${day}_completed`] || false;
-
-                if (completed === true) completedDays++;
+                const theory = data[`day${day}_theory`] || false;
+                const program = data[`day${day}_program`] || false;
+                const homework = data[`day${day}_homework`] || false;
+                const completed = data[`day${day}_completed`] || false;
 
                 const tr = document.createElement("tr");
-                tr.setAttribute("data-day", day);
-
                 tr.innerHTML = `
-                    <td class="user-info">Day ${day}</td>
+                    <td><b>Day ${day}</b></td>
                     <td>${yesNo(theory)}</td>
                     <td>${yesNo(program)}</td>
                     <td>${yesNo(homework)}</td>
@@ -270,27 +334,14 @@
                 tbody.appendChild(tr);
             }
 
-            const progressPercent = Math.round((completedDays / TOTAL_DAYS) * 100);
-            document.getElementById("progressBox").innerHTML =
-                `Progress: <span style="color:green">${completedDays}/${TOTAL_DAYS} (${progressPercent}%)</span>`;
-        }
-
-        window.filterDay = function () {
-            const dayValue = document.getElementById("daySearch").value.trim();
-            const rows = document.querySelectorAll("#syllabusTable tr");
-
-            rows.forEach(row => {
-                const rowDay = row.getAttribute("data-day");
-
-                if (!dayValue) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = rowDay === dayValue ? "" : "none";
-                }
-            });
+            document.getElementById("detailsModal").style.display = "block";
         };
 
-        // ✅ AUTH CHECK FIRST
+        window.closeModal = function () {
+            document.getElementById("detailsModal").style.display = "none";
+        };
+
+        // AUTH CHECK
         onAuthStateChanged(auth, (user) => {
             if (!user) {
                 alert("Admin not logged in. Please login first.");
@@ -303,7 +354,7 @@
                 return;
             }
 
-            loadUsersList();
+            loadAllUsers();
         });
 
     </script>
