@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Java Syllabus Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .top-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        select,
+        input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            min-width: 250px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:hover {
+            background: #f2f2f2;
+        }
+
+        .status-yes {
+            background: #d4edda;
+            color: #155724;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 6px;
+            display: inline-block;
+            min-width: 28px;
+        }
+
+        .status-no {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 6px;
+            display: inline-block;
+            min-width: 28px;
+        }
+
+        .user-info {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .progress-box {
+            font-weight: bold;
+            color: #111;
+        }
+
+        .container {
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        .selected-user-box {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📘 Admin - Java Syllabus Tracker (All Users)</h1>
+
+    <div class="top-controls">
+        <div>
+            <label><b>Select User:</b></label><br>
+            <select id="userSelect" onchange="loadSelectedUser()">
+                <option value="">Loading users...</option>
+            </select>
+        </div>
+
+        <div>
+            <label><b>Search Day:</b></label><br>
+            <input type="number" id="daySearch" min="1" max="60" placeholder="Enter day number (1-60)"
+                oninput="filterDay()" />
+        </div>
+
+        <div class="progress-box" id="progressBox">
+            Progress: --
+        </div>
+
+        <div class="selected-user-box" id="selectedUserBox">
+            Selected User: --
+        </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Theory</th>
+                    <th>Program</th>
+                    <th>Homework</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody id="syllabusTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+        import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDelVJHim-GKlaU2c-y7iTSiO7qy2fdZWI",
+            authDomain: "syllabus-77df7.firebaseapp.com",
+            projectId: "syllabus-77df7",
+            storageBucket: "syllabus-77df7.firebasestorage.app",
+            messagingSenderId: "119110461291",
+            appId: "1:119110461291:web:d6be3fc68ae09dd18c0e2e"
+        };
+
+        const ADMIN_EMAIL = "mk908990@gmail.com";
+        const TOTAL_DAYS = 60;
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let allUsers = [];
+        let currentUserData = {};
+
+        function yesNo(val) {
+            return val === true
+                ? `<span class="status-yes">✔</span>`
+                : `<span class="status-no">✘</span>`;
+        }
+
+        async function loadUsersList() {
+            try {
+                const select = document.getElementById("userSelect");
+                select.innerHTML = `<option value="">Select User</option>`;
+
+                const snap = await getDocs(collection(db, "javaPlanUsers"));
+                console.log("Total Users Found:", snap.size);
+
+                snap.forEach(docSnap => {
+                    const data = docSnap.data();
+
+                    const email = data.email || "No Email";
+                    const name = data.name || "No Name";
+
+                    allUsers.push(docSnap.id);
+
+                    const opt = document.createElement("option");
+                    opt.value = docSnap.id; // UID internally
+                    opt.textContent = `${email} (${name})`; // show email + name
+                    select.appendChild(opt);
+                });
+
+                if (allUsers.length > 0) {
+                    select.value = allUsers[0];
+                    loadSelectedUser();
+                }
+
+            } catch (err) {
+                console.error("Firestore Read Error:", err);
+                alert("Firestore Error: " + err.message);
+            }
+        }
+
+        window.loadSelectedUser = async function () {
+            const uid = document.getElementById("userSelect").value;
+            if (!uid) return;
+
+            const docRef = doc(db, "javaPlanUsers", uid);
+            const docSnap = await getDoc(docRef);
+
+            if (!docSnap.exists()) {
+                alert("No syllabus data found!");
+                return;
+            }
+
+            currentUserData = docSnap.data();
+
+            const userEmail = currentUserData.email || "No Email";
+            const userName = currentUserData.name || "No Name";
+
+            document.getElementById("selectedUserBox").innerHTML =
+                `Selected User: <span style="color:blue">${userEmail} (${userName})</span>`;
+
+            renderTable();
+        };
+
+        function renderTable() {
+            const tbody = document.getElementById("syllabusTable");
+            tbody.innerHTML = "";
+
+            let completedDays = 0;
+
+            for (let day = 1; day <= TOTAL_DAYS; day++) {
+                const theory = currentUserData[`day${day}_theory`] || false;
+                const program = currentUserData[`day${day}_program`] || false;
+                const homework = currentUserData[`day${day}_homework`] || false;
+                const completed = currentUserData[`day${day}_completed`] || false;
+
+                if (completed === true) completedDays++;
+
+                const tr = document.createElement("tr");
+                tr.setAttribute("data-day", day);
+
+                tr.innerHTML = `
+                    <td class="user-info">Day ${day}</td>
+                    <td>${yesNo(theory)}</td>
+                    <td>${yesNo(program)}</td>
+                    <td>${yesNo(homework)}</td>
+                    <td>${yesNo(completed)}</td>
+                `;
+
+                tbody.appendChild(tr);
+            }
+
+            const progressPercent = Math.round((completedDays / TOTAL_DAYS) * 100);
+            document.getElementById("progressBox").innerHTML =
+                `Progress: <span style="color:green">${completedDays}/${TOTAL_DAYS} (${progressPercent}%)</span>`;
+        }
+
+        window.filterDay = function () {
+            const dayValue = document.getElementById("daySearch").value.trim();
+            const rows = document.querySelectorAll("#syllabusTable tr");
+
+            rows.forEach(row => {
+                const rowDay = row.getAttribute("data-day");
+
+                if (!dayValue) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = rowDay === dayValue ? "" : "none";
+                }
+            });
+        };
+
+        // ✅ AUTH CHECK FIRST
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                alert("Admin not logged in. Please login first.");
+                window.location.href = "index.html";
+                return;
+            }
+
+            if (user.email !== ADMIN_EMAIL) {
+                alert("Access Denied! Not Admin.");
+                return;
+            }
+
+            loadUsersList();
+        });
+
+    </script>
+
+</body>
+
+</html>
