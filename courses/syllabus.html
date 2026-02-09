@@ -1212,9 +1212,10 @@
             if (!currentUser) return;
 
             try {
-                console.log("Saving:", key, value);
-
                 await db.collection("javaPlanUsers").doc(currentUser.uid).set({
+                    name: currentUser.displayName || "No Name",
+                    email: currentUser.email || "No Email",
+                    uid: currentUser.uid,
                     [key]: value
                 }, { merge: true });
 
@@ -1223,6 +1224,7 @@
                 console.error("Save Error:", error);
             }
         }
+
 
         // LOAD FUNCTION
         async function loadData() {
@@ -1254,9 +1256,15 @@
         }
 
         // AUTH STATE
-        auth.onAuthStateChanged(user => {
+        auth.onAuthStateChanged(async user => {
             if (user) {
                 currentUser = user;
+
+                await db.collection("javaPlanUsers").doc(user.uid).set({
+                    name: user.displayName || "No Name",
+                    email: user.email || "No Email",
+                    uid: user.uid
+                }, { merge: true });
 
                 document.getElementById("authBox").classList.add("hidden");
                 document.getElementById("mainContent").classList.remove("hidden");
@@ -1272,6 +1280,7 @@
                 document.getElementById("mainContent").classList.add("hidden");
             }
         });
+
 
         // AUTO SAVE CHECKBOXES
         document.addEventListener("change", function (e) {
