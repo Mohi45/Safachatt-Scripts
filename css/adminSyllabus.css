@@ -1,0 +1,248 @@
+/* ================= BODY ================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================= HEADER ================= */
+.site-header {
+    width: 100%;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 25px 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    margin: 0;
+}
+
+/* LOGO SECTION */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+/* LOGO TEXT */
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+/* MAIN TITLE */
+.site-header h1 {
+    margin: 10px 0 5px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* SUBTITLE */
+.site-header p {
+    margin: 0;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    padding: 20px;
+}
+
+/* ================= TOP CONTROLS ================= */
+.top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    min-width: 280px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2575fc;
+    box-shadow: 0px 0px 6px rgba(37, 117, 252, 0.4);
+}
+
+.total-users {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= TABLE ================= */
+.container {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 13px;
+}
+
+th {
+    background: #007bff;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+tr:hover {
+    background: #f2f2f2;
+}
+
+/* ================= PROGRESS COLORS ================= */
+.progress-green {
+    font-weight: bold;
+    color: green;
+}
+
+.progress-red {
+    font-weight: bold;
+    color: red;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-view {
+    background: #28a745;
+    color: white;
+}
+
+.btn-view:hover {
+    background: #218838;
+}
+
+.btn-close {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-close:hover {
+    background: #c82333;
+}
+
+/* ================= STATUS BADGES ================= */
+.status-yes {
+    background: #d4edda;
+    color: #155724;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 5px 10px;
+    display: inline-block;
+    min-width: 30px;
+}
+
+.status-no {
+    background: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 5px 10px;
+    display: inline-block;
+    min-width: 30px;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.55);
+    padding-top: 40px;
+}
+
+.modal-content {
+    background: white;
+    margin: auto;
+    padding: 20px;
+    width: 95%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.modal h2 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .site-header h1 {
+        font-size: 26px;
+    }
+
+    .site-header p {
+        font-size: 14px;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    input {
+        min-width: 100%;
+    }
+
+    .total-users {
+        width: 100%;
+        text-align: center;
+    }
+}
