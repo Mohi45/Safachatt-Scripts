@@ -43,6 +43,7 @@
                 <li><a href="#keywords">Java Keywords</a></li>
                 <li><a href="#throw-throws">throw vs throws</a></li>
                 <li><a href="#while-loop">Control statements</a></li>
+                <li><a href="#arrays">Arrays</a></li>
             </ul>
         </nav>
 
@@ -828,6 +829,168 @@
                         </tr>
                     </tbody>
                 </table>
+            </section>
+            <!--Arrays -->
+            <section id="arrays">
+                <h2>✅ Definition of Array</h2>
+                <p>An array is a collection of similar type elements stored in continuous memory locations under a
+                    single name.
+                    Each element is accessed using an index number.</p>
+                <example>int[] a = {10, 20, 30};</example>
+                <h2>✅ Characteristics / Features of Array</h2>
+                <p>
+                    <b>1.</b> Array stores multiple values in a single variable.<br>
+
+                    <b>2.</b> All elements must be of same datatype.<br>
+
+                    <b>3.</b> Array uses indexing (index starts from 0).<br>
+
+                    <b>4.</b> Array size is fixed once declared.<br>
+
+                    <b>5.</b> Arrays provide fast access to elements.<br>
+
+                    <b>6.</b> Array elements are stored in contiguous memory locations.<br>
+
+                    <b>7.</b> Arrays are treated as objects in Java.<br>
+                </p>
+
+                <!-- Table 1 -->
+                <h2>Arrays in Java</h2>
+
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+
+                    <tr>
+                        <td>Definition</td>
+                        <td>Array is a collection of similar datatype elements stored in continuous memory locations.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Data Type</td>
+                        <td>All elements must be of same datatype (int, float, char, etc.)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Indexing</td>
+                        <td>Array index starts from 0 and ends at n-1.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Size</td>
+                        <td>Array size is fixed (cannot change after creation).</td>
+                    </tr>
+
+                    <tr>
+                        <td>Memory Storage</td>
+                        <td>Stored in contiguous (continuous) memory locations.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Accessing Elements</td>
+                        <td>Elements are accessed using index like arr[0], arr[1].</td>
+                    </tr>
+
+                    <tr>
+                        <td>Length Property</td>
+                        <td>arr.length gives total number of elements.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Default Values</td>
+                        <td>Java assigns default values like 0, false, null etc.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Types of Arrays</td>
+                        <td>1D Array, 2D Array, Jagged Array.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Advantages</td>
+                        <td>Fast access, easy traversal, stores multiple values in one variable.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Disadvantages</td>
+                        <td>Fixed size, insertion/deletion difficult, same datatype only.</td>
+                    </tr>
+                </table>
+
+
+                <!-- Table 2 -->
+                <h2>Default Values in Java Array</h2>
+
+                <table>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Default Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>int</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>float</td>
+                        <td>0.0</td>
+                    </tr>
+
+                    <tr>
+                        <td>double</td>
+                        <td>0.0</td>
+                    </tr>
+
+                    <tr>
+                        <td>char</td>
+                        <td>'\u0000' (blank character)</td>
+                    </tr>
+
+                    <tr>
+                        <td>boolean</td>
+                        <td>false</td>
+                    </tr>
+
+                    <tr>
+                        <td>String / Object</td>
+                        <td>null</td>
+                    </tr>
+                </table>
+
+
+                <!-- Table 3 -->
+                <h2>Types of Arrays in Java</h2>
+
+                <table>
+                    <tr>
+                        <th>Type of Array</th>
+                        <th>Meaning</th>
+                        <th>Example</th>
+                    </tr>
+
+                    <tr>
+                        <td>1D Array</td>
+                        <td>Stores elements in a single row.</td>
+                        <td>int[] a = {1,2,3};</td>
+                    </tr>
+
+                    <tr>
+                        <td>2D Array</td>
+                        <td>Stores elements in rows and columns (matrix form).</td>
+                        <td>int[][] a = {{1,2},{3,4}};</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jagged Array</td>
+                        <td>Rows have different number of columns.</td>
+                        <td>int[][] a = {{1,2},{3,4,5}};</td>
+                    </tr>
+                </table>
+
             </section>
         </article>
     </main>
