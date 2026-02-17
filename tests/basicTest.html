@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Online Test</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #0b1220;
+            border: 1px solid #334155;
+        }
+
+        .question h3 {
+            margin-bottom: 10px;
+            color: #22c55e;
+        }
+
+        label {
+            display: block;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            background: #111827;
+            color: white;
+            outline: none;
+            margin-top: 10px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #0b1220;
+            border: 2px solid #38bdf8;
+            display: none;
+        }
+
+        .correct {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .wrong {
+            color: #ef4444;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📘 Java Online Test (Day 1 - Day 14)</h1>
+
+    <div class="container">
+
+        <h2>👤 Student Details</h2>
+        <label>Name:
+            <input type="text" id="studentName"
+                style="padding:8px;border-radius:8px;border:none;width:100%;margin-top:5px;">
+        </label>
+        <br>
+
+        <h2>📝 Section A: MCQ (20 Questions)</h2>
+
+        <form id="quizForm">
+
+            <div class="question">
+                <h3>1. Java is a ______ language.</h3>
+                <label><input type="radio" name="q1" value="A"> Procedural</label>
+                <label><input type="radio" name="q1" value="B"> Object-Oriented</label>
+                <label><input type="radio" name="q1" value="C"> Machine Level</label>
+                <label><input type="radio" name="q1" value="D"> Assembly</label>
+            </div>
+
+            <div class="question">
+                <h3>2. JVM stands for:</h3>
+                <label><input type="radio" name="q2" value="A"> Java Variable Machine</label>
+                <label><input type="radio" name="q2" value="B"> Java Virtual Machine</label>
+                <label><input type="radio" name="q2" value="C"> Java Verified Machine</label>
+                <label><input type="radio" name="q2" value="D"> Java Visual Machine</label>
+            </div>
+
+            <div class="question">
+                <h3>3. JDK contains:</h3>
+                <label><input type="radio" name="q3" value="A"> Only JVM</label>
+                <label><input type="radio" name="q3" value="B"> Only JRE</label>
+                <label><input type="radio" name="q3" value="C"> JRE + Development Tools</label>
+                <label><input type="radio" name="q3" value="D"> Only Compiler</label>
+            </div>
+
+            <div class="question">
+                <h3>4. Which is used to compile Java code?</h3>
+                <label><input type="radio" name="q4" value="A"> java</label>
+                <label><input type="radio" name="q4" value="B"> javac</label>
+                <label><input type="radio" name="q4" value="C"> javadoc</label>
+                <label><input type="radio" name="q4" value="D"> jar</label>
+            </div>
+
+            <div class="question">
+                <h3>5. Starting point of Java program execution?</h3>
+                <label><input type="radio" name="q5" value="A"> start()</label>
+                <label><input type="radio" name="q5" value="B"> main()</label>
+                <label><input type="radio" name="q5" value="C"> run()</label>
+                <label><input type="radio" name="q5" value="D"> init()</label>
+            </div>
+
+            <div class="question">
+                <h3>6. Correct main method syntax?</h3>
+                <label><input type="radio" name="q6" value="A"> public static void main(String args)</label>
+                <label><input type="radio" name="q6" value="B"> static public void main(String[] args)</label>
+                <label><input type="radio" name="q6" value="C"> public void main(String[] args)</label>
+                <label><input type="radio" name="q6" value="D"> Both A and B</label>
+            </div>
+
+            <div class="question">
+                <h3>7. Which data type stores decimal values?</h3>
+                <label><input type="radio" name="q7" value="A"> int</label>
+                <label><input type="radio" name="q7" value="B"> float</label>
+                <label><input type="radio" name="q7" value="C"> char</label>
+                <label><input type="radio" name="q7" value="D"> boolean</label>
+            </div>
+
+            <div class="question">
+                <h3>8. Size of int in Java is:</h3>
+                <label><input type="radio" name="q8" value="A"> 2 bytes</label>
+                <label><input type="radio" name="q8" value="B"> 4 bytes</label>
+                <label><input type="radio" name="q8" value="C"> 8 bytes</label>
+                <label><input type="radio" name="q8" value="D"> 1 byte</label>
+            </div>
+
+            <div class="question">
+                <h3>9. Logical AND operator is:</h3>
+                <label><input type="radio" name="q9" value="A"> &</label>
+                <label><input type="radio" name="q9" value="B"> &&</label>
+                <label><input type="radio" name="q9" value="C"> |</label>
+                <label><input type="radio" name="q9" value="D"> ||</label>
+            </div>
+
+            <div class="question">
+                <h3>10. Which operator compares two values?</h3>
+                <label><input type="radio" name="q10" value="A"> =</label>
+                <label><input type="radio" name="q10" value="B"> ==</label>
+                <label><input type="radio" name="q10" value="C"> !=</label>
+                <label><input type="radio" name="q10" value="D"> &lt;=</label>
+            </div>
+
+            <div class="question">
+                <h3>11. Output of: System.out.println(10 + 20 + "Java");</h3>
+                <label><input type="radio" name="q11" value="A"> 30Java</label>
+                <label><input type="radio" name="q11" value="B"> 1020Java</label>
+                <label><input type="radio" name="q11" value="C"> Java30</label>
+                <label><input type="radio" name="q11" value="D"> Error</label>
+            </div>
+
+            <div class="question">
+                <h3>12. Which class is used for input?</h3>
+                <label><input type="radio" name="q12" value="A"> Input</label>
+                <label><input type="radio" name="q12" value="B"> Reader</label>
+                <label><input type="radio" name="q12" value="C"> Scanner</label>
+                <label><input type="radio" name="q12" value="D"> System</label>
+            </div>
+
+            <div class="question">
+                <h3>13. Method used to take int input using Scanner?</h3>
+                <label><input type="radio" name="q13" value="A"> next()</label>
+                <label><input type="radio" name="q13" value="B"> nextLine()</label>
+                <label><input type="radio" name="q13" value="C"> nextInt()</label>
+                <label><input type="radio" name="q13" value="D"> nextChar()</label>
+            </div>
+
+            <div class="question">
+                <h3>14. If we use nextInt() then immediately nextLine(), what happens?</h3>
+                <label><input type="radio" name="q14" value="A"> Works fine</label>
+                <label><input type="radio" name="q14" value="B"> nextLine() skips input</label>
+                <label><input type="radio" name="q14" value="C"> Error occurs</label>
+                <label><input type="radio" name="q14" value="D"> Program stops</label>
+            </div>
+
+            <div class="question">
+                <h3>15. Which statement is used for multiple conditions?</h3>
+                <label><input type="radio" name="q15" value="A"> if</label>
+                <label><input type="radio" name="q15" value="B"> else</label>
+                <label><input type="radio" name="q15" value="C"> else-if</label>
+                <label><input type="radio" name="q15" value="D"> switch</label>
+            </div>
+
+            <div class="question">
+                <h3>16. Which loop is exit-controlled?</h3>
+                <label><input type="radio" name="q16" value="A"> for</label>
+                <label><input type="radio" name="q16" value="B"> while</label>
+                <label><input type="radio" name="q16" value="C"> do-while</label>
+                <label><input type="radio" name="q16" value="D"> none</label>
+            </div>
+
+            <div class="question">
+                <h3>17. Output of: int x=5; System.out.println(x++);</h3>
+                <label><input type="radio" name="q17" value="A"> 6</label>
+                <label><input type="radio" name="q17" value="B"> 5</label>
+                <label><input type="radio" name="q17" value="C"> Error</label>
+                <label><input type="radio" name="q17" value="D"> 4</label>
+            </div>
+
+            <div class="question">
+                <h3>18. Keyword used to stop loop completely?</h3>
+                <label><input type="radio" name="q18" value="A"> skip</label>
+                <label><input type="radio" name="q18" value="B"> continue</label>
+                <label><input type="radio" name="q18" value="C"> break</label>
+                <label><input type="radio" name="q18" value="D"> stop</label>
+            </div>
+
+            <div class="question">
+                <h3>19. Keyword used to skip current iteration?</h3>
+                <label><input type="radio" name="q19" value="A"> break</label>
+                <label><input type="radio" name="q19" value="B"> continue</label>
+                <label><input type="radio" name="q19" value="C"> skip</label>
+                <label><input type="radio" name="q19" value="D"> pass</label>
+            </div>
+
+            <div class="question">
+                <h3>20. Best loop when number of iterations is known?</h3>
+                <label><input type="radio" name="q20" value="A"> while</label>
+                <label><input type="radio" name="q20" value="B"> do-while</label>
+                <label><input type="radio" name="q20" value="C"> for</label>
+                <label><input type="radio" name="q20" value="D"> none</label>
+            </div>
+
+            <h2>💻 Section B: Coding Questions (Write Answer)</h2>
+
+            <div class="question">
+                <h3>21. Coding Question 1: Write a Java program to check Prime Number.</h3>
+                <textarea id="code1" placeholder="Write your Java code here..."></textarea>
+            </div>
+
+            <div class="question">
+                <h3>22. Coding Question 2: Write menu driven program using do-while and switch.</h3>
+                <textarea id="code2" placeholder="Write your Java code here..."></textarea>
+            </div>
+
+            <button type="button" onclick="submitQuiz()">Submit Test</button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+    <!-- FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // 🔥 PASTE YOUR FIREBASE CONFIG HERE
+        const firebaseConfig = {
+            apiKey: "AIzaSyAk444WOin22efLJzxUMLveC4tw9uVJbEE",
+            authDomain: "tests-8229d.firebaseapp.com",
+            projectId: "tests-8229d",
+            storageBucket: "tests-8229d.firebasestorage.app",
+            messagingSenderId: "1008201324570",
+            appId: "1:1008201324570:web:0f9e25ecd31b67b67699a3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const answers = {
+            q1: "B", q2: "B", q3: "C", q4: "B", q5: "B",
+            q6: "D", q7: "B", q8: "B", q9: "B", q10: "B",
+            q11: "A", q12: "C", q13: "C", q14: "B", q15: "C",
+            q16: "C", q17: "B", q18: "C", q19: "B", q20: "C"
+        };
+
+        window.submitQuiz = async function () {
+            let score = 0;
+            let total = 20;
+            let output = "";
+
+            let studentName = document.getElementById("studentName").value.trim();
+            let code1 = document.getElementById("code1").value.trim();
+            let code2 = document.getElementById("code2").value.trim();
+
+            if (studentName === "") {
+                alert("⚠️ Please enter your name!");
+                return;
+            }
+
+            if (code1 === "") {
+                alert("⚠️ Coding Question 1 is mandatory!");
+                document.getElementById("code1").focus();
+                return;
+            }
+
+            if (code2 === "") {
+                alert("⚠️ Coding Question 2 is mandatory!");
+                document.getElementById("code2").focus();
+                return;
+            }
+
+            let studentAnswers = {};
+
+            for (let q in answers) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+
+                if (selected) {
+                    studentAnswers[q] = selected.value;
+
+                    if (selected.value === answers[q]) {
+                        score++;
+                        output += `<p>${q.toUpperCase()} : <span class="correct">Correct ✅</span></p>`;
+                    } else {
+                        output += `<p>${q.toUpperCase()} : <span class="wrong">Wrong ❌</span> (Correct: ${answers[q]})</p>`;
+                    }
+                } else {
+                    studentAnswers[q] = "Not Attempted";
+                    output += `<p>${q.toUpperCase()} : <span class="wrong">Not Attempted ❌</span> (Correct: ${answers[q]})</p>`;
+                }
+            }
+
+            studentAnswers["q21"] = code1;
+            studentAnswers["q22"] = code2;
+
+            let percentage = (score / total) * 100;
+
+            // SAVE TO FIRESTORE
+            try {
+                await addDoc(collection(db, "results"), {
+                    studentName: studentName,
+                    score: score,
+                    total: total,
+                    percentage: percentage.toFixed(2),
+                    answers: studentAnswers,
+                    submittedAt: serverTimestamp()
+                });
+
+                alert("✅ Test Submitted Successfully! Saved in Database.");
+
+            } catch (error) {
+                console.error("Firebase Error:", error);
+                alert("❌ Error saving result. Check Firebase Config / Rules.");
+            }
+
+            let finalResult = `
+                <h2>🎉 Result for ${studentName}</h2>
+                <h3>Your Score: ${score} / ${total}</h3>
+                <h3>Percentage: ${percentage.toFixed(2)}%</h3>
+                <hr>
+                <h3>📌 Answer Review:</h3>
+                ${output}
+                <hr>
+                <h3 class="correct">💻 Coding Answers Submitted Successfully ✅</h3>
+            `;
+
+            document.getElementById("result").innerHTML = finalResult;
+            document.getElementById("result").style.display = "block";
+
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -12,22 +12,31 @@
 
     <header class="site-header">
         <div class="container header-container">
+
             <div class="logo-container">
                 <img src="../images/logo.jpg" class="logo-img" alt="Logo">
                 <a href="../index.html" class="logo-text">Safachatt Scripts</a>
             </div>
+
             <div class="site-title-description">
                 <h1>Java Complete Tutorial</h1>
                 <p>All-in-One Java Notes for Learning & Revision</p>
             </div>
-            <a href="../courses/syllabus.html" class="nav-link">
-                <button class="nav-btn">Syllabus Tracker </button>
-            </a>
-            <a href="../courses/codingQuestions.html" class="nav-link">
-                <button class="nav-btn">Coding Questions</button>
-            </a>
+
+            <!-- Dropdown Menu -->
+            <div class="dropdown">
+                <button class="dropbtn">Menu ⬇</button>
+                <div class="dropdown-content">
+                    <a href="../courses/syllabus.html">Syllabus Tracker</a>
+                    <a href="../courses/codingQuestions.html">Coding Questions</a>
+                    <a href="../tests/basicTest.html">Basic Test</a>
+                    <a href="../tests/testAdmin.html">Admin Page</a>
+                </div>
+            </div>
+
         </div>
     </header>
+
 
     <main>
         <nav>
@@ -990,6 +999,313 @@
                         <td>int[][] a = {{1,2},{3,4,5}};</td>
                     </tr>
                 </table>
+
+                <h2>How to declare an array in Java?</h2>
+                <p>In Java, here is how we can declare an array.</p>
+                <pre><code>dataType[] arrayName;</code></pre>
+                <p><b>✅dataType -</b> it can be primitive data types like int, char, double, byte, etc. or Java objects
+                </p>
+                <p><b>✅arrayName -</b> it is an identifier</p>
+                <h3>For example,</h3>
+                <pre><code>double[] data;</code></pre>
+                <h2>But, how many elements can array this hold?</h2>
+                <p>Good question! To define the number of elements that an array can hold, we have to allocate memory
+                    for the array in Java. For example,</p>
+                <pre><code>// declare an array
+double[] data;
+// allocate memory
+data = new double[10];</code></pre>
+
+                <h2>How to Initialize Arrays in Java?</h2>
+                <pre><code>//declare and initialize and array
+int[] age = {12, 4, 5, 2, 5};</code></pre>
+                <p>Here, we have created an array named age and initialized it with the values inside the curly
+                    brackets.
+
+                    Note that we have not provided the size of the array. In this case, the Java compiler automatically
+                    specifies the size by counting the number of elements in the array (i.e. 5).
+
+                    In the Java array, each memory location is associated with a number. The number is known as an array
+                    index. We can also initialize arrays in Java, using the index number. For example,</p>
+                <pre><code>// declare an array
+int[] age = new int[5];
+
+// initialize array
+age[0] = 12;
+age[1] = 4;
+age[2] = 5;</code></pre>
+
+                <h1>📌 Java Arrays - All Types Complete Table</h1>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Array Type</th>
+                            <th>Declaration</th>
+                            <th>Creation</th>
+                            <th>Initialization</th>
+                            <th>Example Code</th>
+                            <th>Description / Use</th>
+                        </tr>
+
+                        <tr>
+                            <td><b>Single Dimensional Array (1D)</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td><code>a = new int[5];</code></td>
+                            <td><code>a[0]=10;</code></td>
+                            <td>
+                                <pre>int[] a = new int[3];
+a[0] = 10;
+a[1] = 20;
+a[2] = 30;</pre>
+                            </td>
+                            <td>Stores values in one row (linear). Used for marks, numbers, etc.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>1D Direct Initialization</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td>Auto</td>
+                            <td><code>{}</code> used</td>
+                            <td>
+                                <pre>int[] a = {10, 20, 30};</pre>
+                            </td>
+                            <td>Best when values are already known.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>1D Using new Keyword</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td><code>new int[]{...}</code></td>
+                            <td>values given</td>
+                            <td>
+                                <pre>int[] a = new int[]{5, 10, 15};</pre>
+                            </td>
+                            <td>Used when initialization is required with <code>new</code>.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>String Array</b></td>
+                            <td><code>String[] s;</code></td>
+                            <td><code>new String[3];</code></td>
+                            <td>values assigned</td>
+                            <td>
+                                <pre>String[] s = {"Java", "C", "Python"};</pre>
+                            </td>
+                            <td>Stores multiple Strings. Used for names, words, etc.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Character Array</b></td>
+                            <td><code>char[] ch;</code></td>
+                            <td><code>new char[4];</code></td>
+                            <td>assigned values</td>
+                            <td>
+                                <pre>char[] ch = {'A','B','C'};</pre>
+                            </td>
+                            <td>Stores characters. Used in word processing.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Boolean Array</b></td>
+                            <td><code>boolean[] b;</code></td>
+                            <td><code>new boolean[3];</code></td>
+                            <td>default false</td>
+                            <td>
+                                <pre>boolean[] b = new boolean[3];
+b[0] = true;</pre>
+                            </td>
+                            <td>Stores True/False values. Used in conditions.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>2D Array (Matrix)</b></td>
+                            <td><code>int[][] a;</code></td>
+                            <td><code>new int[2][3];</code></td>
+                            <td><code>a[0][0]=10;</code></td>
+                            <td>
+                                <pre>int[][] a = new int[2][3];
+a[0][0] = 10;
+a[0][1] = 20;</pre>
+                            </td>
+                            <td>Stores data in rows & columns like a matrix/table.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>2D Direct Initialization</b></td>
+                            <td><code>int[][] a;</code></td>
+                            <td>Auto</td>
+                            <td><code>{}</code> used</td>
+                            <td>
+                                <pre>int[][] a = {
+ {1,2,3},
+ {4,5,6}
+};</pre>
+                            </td>
+                            <td>Used when matrix values are already known.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>3D Array</b></td>
+                            <td><code>int[][][] a;</code></td>
+                            <td><code>new int[2][2][2];</code></td>
+                            <td>assign values</td>
+                            <td>
+                                <pre>int[][][] a = new int[2][2][2];
+a[0][0][0] = 10;</pre>
+                            </td>
+                            <td>Stores cube-like data (layers). Used in science/graphics.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Jagged Array (Unequal Columns)</b></td>
+                            <td><code>int[][] a;</code></td>
+                            <td><code>new int[3][];</code></td>
+                            <td>each row different size</td>
+                            <td>
+                                <pre>int[][] a = new int[3][];
+a[0] = new int[2];
+a[1] = new int[3];
+a[2] = new int[1];</pre>
+                            </td>
+                            <td>Each row has different number of columns. Saves memory.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Jagged Direct Initialization</b></td>
+                            <td><code>int[][] a;</code></td>
+                            <td>Auto</td>
+                            <td><code>{}</code> used</td>
+                            <td>
+                                <pre>int[][] a = {
+ {1,2},
+ {3,4,5},
+ {6}
+};</pre>
+                            </td>
+                            <td>Best example of jagged array.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Array of Objects</b></td>
+                            <td><code>Student[] s;</code></td>
+                            <td><code>new Student[3];</code></td>
+                            <td>store objects</td>
+                            <td>
+                                <pre>Student[] s = new Student[2];
+s[0] = new Student();
+s[1] = new Student();</pre>
+                            </td>
+                            <td>Stores objects instead of primitives. Used in real apps.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Anonymous Array</b></td>
+                            <td>No variable name</td>
+                            <td>created directly</td>
+                            <td>values given</td>
+                            <td>
+                                <pre>printArray(new int[]{10,20,30});</pre>
+                            </td>
+                            <td>Used when array is required only once (temporary).</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Array with For-Each Loop</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td>any method</td>
+                            <td>values stored</td>
+                            <td>
+                                <pre>int[] a = {10,20,30};
+for(int x : a){
+ System.out.println(x);
+}</pre>
+                            </td>
+                            <td>Easy way to traverse array (no index needed).</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Array with For Loop</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td>any method</td>
+                            <td>values stored</td>
+                            <td>
+                                <pre>int[] a = {1,2,3};
+for(int i=0;i<a.length;i++){
+ System.out.println(a[i]);
+}</pre>
+                            </td>
+                            <td>Used when index is required.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Dynamic Input Array (Scanner)</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td><code>new int[n];</code></td>
+                            <td>user input</td>
+                            <td>
+                                <pre>Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int[] a = new int[n];
+
+for(int i=0;i<n;i++){
+ a[i] = sc.nextInt();
+}</pre>
+                            </td>
+                            <td>Used when size and values are taken from user.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Copy Array (clone)</b></td>
+                            <td><code>int[] b;</code></td>
+                            <td>new array created</td>
+                            <td>copied</td>
+                            <td>
+                                <pre>int[] a = {1,2,3};
+int[] b = a.clone();</pre>
+                            </td>
+                            <td>Creates duplicate array (backup).</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Copy Array (System.arraycopy)</b></td>
+                            <td><code>int[] b;</code></td>
+                            <td>new array created</td>
+                            <td>copied</td>
+                            <td>
+                                <pre>int[] a = {1,2,3};
+int[] b = new int[a.length];
+
+System.arraycopy(a,0,b,0,a.length);</pre>
+                            </td>
+                            <td>Fastest way to copy arrays.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Array Sorting</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td>any</td>
+                            <td>sorted</td>
+                            <td>
+                                <pre>int[] a = {5,2,9};
+Arrays.sort(a);</pre>
+                            </td>
+                            <td>Sorts elements in ascending order.</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Array Searching (Binary Search)</b></td>
+                            <td><code>int[] a;</code></td>
+                            <td>sorted array</td>
+                            <td>search element</td>
+                            <td>
+                                <pre>int[] a = {1,2,3,4};
+int idx = Arrays.binarySearch(a,3);</pre>
+                            </td>
+                            <td>Fast searching method but array must be sorted.</td>
+                        </tr>
+
+                    </table>
 
             </section>
         </article>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Java Test</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #334155;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #22c55e;
+            color: black;
+        }
+
+        td {
+            background: #0b1220;
+        }
+
+        .code-box {
+            text-align: left;
+            background: #111827;
+            padding: 10px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: #38bdf8;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ✅ PASSWORD PROTECTION -->
+    <script>
+        const adminPassword = "admin123";  // 🔥 Change password here
+
+        let enteredPassword = prompt("🔒 Enter Admin Password:");
+
+        if (enteredPassword !== adminPassword) {
+            alert("❌ Wrong Password! Access Denied.");
+            window.location.href = "../index.html"; // redirect to home page
+        }
+    </script>
+
+    <h1>📊 Admin Panel - Student Results</h1>
+
+    <div class="container">
+        <h2>All Student Submissions</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Score</th>
+                    <th>Percentage</th>
+                    <th>Submitted At</th>
+                    <th>Coding Question 1</th>
+                    <th>Coding question 2</th>
+                </tr>
+            </thead>
+
+            <tbody id="resultsTable"></tbody>
+        </table>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // 🔥 FIREBASE CONFIG
+        const firebaseConfig = {
+            apiKey: "AIzaSyAk444WOin22efLJzxUMLveC4tw9uVJbEE",
+            authDomain: "tests-8229d.firebaseapp.com",
+            projectId: "tests-8229d",
+            storageBucket: "tests-8229d.firebasestorage.app",
+            messagingSenderId: "1008201324570",
+            appId: "1:1008201324570:web:0f9e25ecd31b67b67699a3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadResults() {
+            const resultsTable = document.getElementById("resultsTable");
+            resultsTable.innerHTML = "";
+
+            const q = query(collection(db, "results"), orderBy("submittedAt", "desc"));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+
+                let dateText = "Not Available";
+                if (data.submittedAt) {
+                    dateText = new Date(data.submittedAt.seconds * 1000).toLocaleString();
+                }
+
+                resultsTable.innerHTML += `
+                    <tr>
+                        <td>${data.studentName}</td>
+                        <td>${data.score} / ${data.total}</td>
+                        <td>${data.percentage}%</td>
+                        <td>${dateText}</td>
+                        <td><div class="code-box">${data.answers?.q21 || "No Answer"}</div></td>
+                        <td><div class="code-box">${data.answers?.q22 || "No Answer"}</div></td>
+                    </tr>
+                `;
+            });
+        }
+
+        loadResults();
+    </script>
+
+</body>
+
+</html>
