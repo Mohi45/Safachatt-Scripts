@@ -206,92 +206,96 @@
             </div>
         </div>
 
-
     </section>
-
-
-    <div class="float-wrap">
-        <button class="course-float-btn" aria-label="Course Details" onclick="checkPassword('java-fundamentals.html')">
-            <!-- Book / Course SVG Icon -->
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 5C4 3.89543 4.89543 3 6 3H20V21H6C4.89543 21 4 20.1046 4 19V5Z" stroke="white"
-                    stroke-width="2" />
-                <path d="M4 6H20" stroke="white" stroke-width="2" />
-                <path d="M8 8H16M8 12H16M8 16H14" stroke="white" stroke-width="2" stroke-linecap="round" />
-            </svg>
-        </button>
-        <span class="tooltip">Course Details</span>
-    </div>
-
 
     <!-- Syllabus -->
     <section id="syllabus" class="syllabus container">
         <h2>Course Syllabus</h2>
+
+        <!-- 🔥 Google Login Box -->
+        <div class="login-box">
+            <button class="google-btn" onclick="googleLogin()">🔐 Login with Google</button>
+            <button class="logout-btn" onclick="logoutUser()">🚪 Logout</button>
+            <p id="userInfo">❌ Not Logged In</p>
+        </div>
+
         <div class="syllabus-cards">
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/java-fundamentals.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Java Fundamentals</h3>
                 <p>JVM, JDK, JRE, Data Types, Variables, Operators</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/java-fundamentals.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Control Statements</h3>
                 <p>if-else, switch, loops, break & continue</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/string.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Arrays & Strings</h3>
                 <p>Arrays, String, StringBuffer, StringBuilder</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/oop-concepts.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>OOP Concepts</h3>
                 <p>Encapsulation, Inheritance, Polymorphism, Abstraction</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/interfaces-packages.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Interfaces & Packages</h3>
                 <p>Interfaces, Abstract Classes, Access Modifiers</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/exception-handling.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Exception Handling</h3>
                 <p>try-catch, finally, throw, throws, Custom Exceptions</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/collections.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Collections Framework</h3>
                 <p>List, Set, Map, Iterator, Generics</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/multithreading.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Multithreading</h3>
                 <p>Thread Lifecycle, Synchronization, Concurrency</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/file-handling.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>File Handling</h3>
                 <p>I/O Streams, Serialization & Deserialization</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/java8.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Java 8 Features</h3>
                 <p>Lambda Expressions, Stream API, Functional Interfaces</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/utility-memory.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Utility & Memory</h3>
                 <p>Date-Time API, Wrapper Classes, Garbage Collection</p>
             </div>
 
-            <div class="card">
+            <div class="card locked" data-url="../courses/final-project.html" onclick="openLockedCard(this)">
+                <div class="lock-badge">🔒 Locked</div>
                 <h3>Final Project</h3>
                 <p>Real-world Core Java Application</p>
             </div>
 
         </div>
-    </section>
 
+    </section>
 
     <!-- Instructor -->
     <section id="instructor" class="instructor container">
@@ -353,27 +357,31 @@
                 "line_linked": { "enable": true, "distance": 150, "color": "#00ffe7", "opacity": 0.4, "width": 1 },
                 "move": { "enable": true, "speed": 2, "direction": "none", "straight": false }
             },
-            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 4 } } },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
             "retina_detect": true
         });
     </script>
 
+    <!-- Price Calculation -->
     <script>
-        // Get elements
         const oldPriceEl = document.getElementById('oldPrice');
         const newPriceEl = document.getElementById('newPrice');
         const discountEl = document.getElementById('discount');
 
-        // Extract old price number
         const oldPrice = parseFloat(oldPriceEl.textContent.replace(/[^0-9.]/g, ''));
-
-        // Extract discount percentage number from text
         const discountPercent = parseFloat(discountEl.textContent.replace(/[^0-9.]/g, ''));
 
-        // Calculate new price
         const newPrice = oldPrice - (oldPrice * discountPercent / 100);
-
-        // Update new price element
         newPriceEl.textContent = '₹' + newPrice.toLocaleString('en-IN', { maximumFractionDigits: 0 });
     </script>
 
@@ -387,18 +395,86 @@
             }, 800);
         });
     </script>
-    <script>
-        function checkPassword(url) {
-            const correctPassword = "12345"; // set your password here
-            const userPassword = prompt("Enter password to access this page:");
 
-            if (userPassword === correctPassword) {
-                // Redirect if password is correct
-                window.location.href = url;
-            } else {
-                alert("Incorrect password!");
-            }
+    <!-- ✅ Firebase Google Login CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+    <!-- 🔥 Google Login + Lock Unlock System -->
+    <script>
+        // 🔥 Replace with your Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyDelVJHim-GKlaU2c-y7iTSiO7qy2fdZWI",
+            authDomain: "syllabus-77df7.firebaseapp.com",
+            databaseURL: "https://syllabus-77df7-default-rtdb.firebaseio.com",
+            projectId: "syllabus-77df7",
+            storageBucket: "syllabus-77df7.firebasestorage.app",
+            messagingSenderId: "119110461291",
+            appId: "1:119110461291:web:d6be3fc68ae09dd18c0e2e"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        function googleLogin() {
+            auth.signInWithPopup(provider)
+                .then(() => {
+                    alert("✅ Login Successful!");
+                })
+                .catch((error) => {
+                    alert("❌ Error: " + error.message);
+                });
         }
+
+        function logoutUser() {
+            auth.signOut().then(() => {
+                alert("🚪 Logged Out Successfully!");
+            });
+        }
+
+        function unlockCards() {
+            document.querySelectorAll(".card.locked").forEach(card => {
+                card.classList.add("unlocked");
+                const badge = card.querySelector(".lock-badge");
+                if (badge) badge.innerHTML = "✅ Unlocked";
+            });
+        }
+
+        function lockCards() {
+            document.querySelectorAll(".card.locked").forEach(card => {
+                card.classList.remove("unlocked");
+                const badge = card.querySelector(".lock-badge");
+                if (badge) badge.innerHTML = "🔒 Locked";
+            });
+        }
+
+        function openLockedCard(card) {
+            const url = card.getAttribute("data-url");
+
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    window.location.href = url;
+                } else {
+                    alert("🔒 Please Login with Google to access premium course!");
+                }
+            });
+        }
+
+        auth.onAuthStateChanged((user) => {
+            const userInfo = document.getElementById("userInfo");
+            const logoutBtn = document.querySelector(".logout-btn");
+
+            if (user) {
+                unlockCards();
+                userInfo.innerHTML = `✅ Logged in as: ${user.displayName}`;
+                logoutBtn.style.display = "inline-block";
+            } else {
+                lockCards();
+                userInfo.innerHTML = "❌ Not Logged In";
+                logoutBtn.style.display = "none";
+            }
+        });
     </script>
 
 </body>

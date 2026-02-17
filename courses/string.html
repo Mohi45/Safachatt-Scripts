@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Strings Premium Notes (Hinglish)</title>
+    <link rel="stylesheet" href="../css/string.css">
+</head>
+
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header>
+        <a href="../courses/core-java.html" class="logo-text">Safachatt Scripts</a>
+        <h1>🔥 Java Strings Premium Notes</h1>
+        <p>Hinglish Explanation + Diagrams + Interview Q&A + Coding Programs</p>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <p class="mini">Search & Jump quickly</p>
+
+            <div class="toggleBox">
+                <span><b>🌙 Dark Mode</b></span>
+                <button onclick="toggleDarkMode()">Toggle</button>
+            </div>
+
+            <div class="searchBox">
+                <input type="text" id="searchInput" placeholder="Search topic... (pool, immutable, equals)">
+            </div>
+
+            <div id="navLinks">
+                <a href="#sec1">
+                    <div class="icon">1</div> String Intro
+                </a>
+                <a href="#sec2">
+                    <div class="icon">2</div> Why Special?
+                </a>
+                <a href="#sec3">
+                    <div class="icon">3</div> Create String
+                </a>
+                <a href="#sec4">
+                    <div class="icon">4</div> String Pool
+                </a>
+                <a href="#sec5">
+                    <div class="icon">5</div> Immutable
+                </a>
+                <a href="#sec6">
+                    <div class="icon">6</div> == vs equals
+                </a>
+                <a href="#sec7">
+                    <div class="icon">7</div> Methods
+                </a>
+                <a href="#sec8">
+                    <div class="icon">8</div> Builder vs Buffer
+                </a>
+                <a href="#sec9">
+                    <div class="icon">9</div> intern()
+                </a>
+                <a href="#sec10">
+                    <div class="icon">10</div> Programs
+                </a>
+                <a href="#sec11">
+                    <div class="icon">11</div> Advanced Programs
+                </a>
+                <a href="#sec12">
+                    <div class="icon">12</div> Interview Q&A
+                </a>
+                <a href="#sec13">
+                    <div class="icon">13</div> Quick Summary
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content" id="contentArea">
+
+            <!-- Section 1 -->
+            <details open id="sec1">
+                <summary>1️⃣ What is String in Java? <span>▼</span></summary>
+                <div class="card-body">
+                    <p>Java me <b>String</b> ek sequence of characters hota hai. String primitive datatype nahi hai, ye
+                        ek <b>class</b> hai.</p>
+
+                    <div class="note">
+                        <b>Hinglish:</b> String matlab characters ka group jaise "Safachatt Scripts", "Java",
+                        "Hello123".
+                    </div>
+
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String name = "Safachatt Scripts";
+System.out.println(name);
+                        </pre>
+                    </div>
+
+                    <p class="muted"><b>Package:</b> java.lang.String (auto import hota hai)</p>
+                </div>
+            </details>
+
+            <!-- Section 2 -->
+            <details id="sec2">
+                <summary>2️⃣ Why String is Special in Java? <span>▼</span></summary>
+                <div class="card-body">
+                    <ul>
+                        <li><b>String Pool</b> memory save karta hai</li>
+                        <li><b>Immutable</b> nature provides security</li>
+                        <li><b>Thread Safe</b> hota hai</li>
+                        <li>Hashing performance fast hoti hai</li>
+                    </ul>
+
+                    <div class="important">
+                        <b>Interview Line:</b> String special hai because it is immutable and stored in String Pool.
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 3 -->
+            <details id="sec3">
+                <summary>3️⃣ How to Create String? (2 Ways) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <h3>✅ 1. Using Literal</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s1 = "Java";
+                        </pre>
+                    </div>
+
+                    <div class="note">
+                        <b>Hinglish:</b> Ye String Pool me store hoti hai aur reuse hoti hai.
+                    </div>
+
+                    <h3>✅ 2. Using new Keyword</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s2 = new String("Java");
+                        </pre>
+                    </div>
+
+                    <div class="important">
+                        <b>Hinglish:</b> new keyword heap memory me alag object banata hai.
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 4 -->
+            <details id="sec4">
+                <summary>4️⃣ String Pool Diagram (Memory Concept) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <h3>Literal Strings Example</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String a = "Java";
+String b = "Java";
+System.out.println(a == b); // true
+                        </pre>
+                    </div>
+
+                    <div class="diagram">
+                        String Pool
+                        +------------+
+                        | "Java" |
+                        +------------+
+                        ^ ^
+                        | |
+                        a b
+                    </div>
+
+                    <h3>new Keyword Example</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String a = new String("Java");
+String b = new String("Java");
+System.out.println(a == b); // false
+                        </pre>
+                    </div>
+
+                    <div class="diagram">
+                        Heap Memory
+                        +------------+ +------------+
+                        | "Java" | | "Java" |
+                        +------------+ +------------+
+                        ^ ^
+                        | |
+                        a b
+
+                        String Pool
+                        +------------+
+                        | "Java" |
+                        +------------+
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 5 -->
+            <details id="sec5">
+                <summary>5️⃣ String is Immutable (Most Important) <span>▼</span></summary>
+                <div class="card-body">
+                    <p><b>Immutable</b> means String once created cannot be changed.</p>
+
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "Hello";
+s.concat(" World");
+System.out.println(s); // Hello
+                        </pre>
+                    </div>
+
+                    <div class="important">
+                        <b>Hinglish:</b> concat() new object banata hai, old object same rahta hai.
+                    </div>
+
+                    <div class="diagram">
+                        Before:
+                        s ---> "Hello"
+
+                        After:
+                        s ---> "Hello World"
+                        (old "Hello" still exists)
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 6 -->
+            <details id="sec6">
+                <summary>6️⃣ == vs equals() (Interview Favorite) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <h3>== (Reference Comparison)</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s1 = "Java";
+String s2 = "Java";
+System.out.println(s1 == s2); // true
+                        </pre>
+                    </div>
+
+                    <h3>equals() (Content Comparison)</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s1 = new String("Java");
+String s2 = new String("Java");
+
+System.out.println(s1.equals(s2)); // true
+System.out.println(s1 == s2);       // false
+                        </pre>
+                    </div>
+
+                    <div class="success">
+                        <b>Hinglish:</b> == address compare karta hai, equals() data compare karta hai.
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 7 -->
+            <details id="sec7">
+                <summary>7️⃣ Most Important String Methods <span>▼</span></summary>
+                <div class="card-body">
+
+                    <table>
+                        <tr>
+                            <th>Method</th>
+                            <th>Work</th>
+                            <th>Example</th>
+                            <th>Output</th>
+                        </tr>
+                        <tr>
+                            <td>length()</td>
+                            <td>Length find</td>
+                            <td>"Java".length()</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>charAt()</td>
+                            <td>Character at index</td>
+                            <td>"Java".charAt(1)</td>
+                            <td>a</td>
+                        </tr>
+                        <tr>
+                            <td>substring()</td>
+                            <td>Extract part</td>
+                            <td>"Java".substring(1,3)</td>
+                            <td>av</td>
+                        </tr>
+                        <tr>
+                            <td>replace()</td>
+                            <td>Replace char</td>
+                            <td>"abc".replace("a","x")</td>
+                            <td>xbc</td>
+                        </tr>
+                        <tr>
+                            <td>trim()</td>
+                            <td>Remove spaces</td>
+                            <td>" hi ".trim()</td>
+                            <td>"hi"</td>
+                        </tr>
+                        <tr>
+                            <td>contains()</td>
+                            <td>Check substring</td>
+                            <td>"hello".contains("he")</td>
+                            <td>true</td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
+
+            <!-- Section 8 -->
+            <details id="sec8">
+                <summary>8️⃣ String vs StringBuilder vs StringBuffer <span>▼</span></summary>
+                <div class="card-body">
+
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>String</th>
+                            <th>StringBuilder</th>
+                            <th>StringBuffer</th>
+                        </tr>
+                        <tr>
+                            <td>Mutable?</td>
+                            <td>No ❌</td>
+                            <td>Yes ✅</td>
+                            <td>Yes ✅</td>
+                        </tr>
+                        <tr>
+                            <td>Thread Safe?</td>
+                            <td>Yes</td>
+                            <td>No ❌</td>
+                            <td>Yes ✅</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td>Slow</td>
+                            <td>Fastest 🚀</td>
+                            <td>Medium</td>
+                        </tr>
+                    </table>
+
+                    <div class="note">
+                        <b>Hinglish:</b> StringBuilder fast hai but multi-thread me safe nahi.
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 9 -->
+            <details id="sec9">
+                <summary>9️⃣ intern() Method (String Pool Trick) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s1 = new String("Java");
+String s2 = s1.intern();
+
+String s3 = "Java";
+
+System.out.println(s2 == s3); // true
+                        </pre>
+                    </div>
+
+                    <div class="important">
+                        <b>Hinglish:</b> intern() heap object ko String Pool ke reference se connect kar deta hai.
+                    </div>
+                </div>
+            </details>
+
+            <!-- Section 10 -->
+            <details id="sec10">
+                <summary>🔟 Coding Programs (Most Asked) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <h3>✅ Reverse String</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "MJGroup";
+String rev = "";
+
+for(int i = s.length()-1; i >= 0; i--){
+    rev += s.charAt(i);
+}
+
+System.out.println(rev);
+// Output: puorGJM
+                        </pre>
+                    </div>
+
+                    <h3>✅ Palindrome Check</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "madam";
+String rev = "";
+
+for(int i = s.length()-1; i >= 0; i--){
+    rev += s.charAt(i);
+}
+
+if(s.equals(rev))
+    System.out.println("Palindrome");
+else
+    System.out.println("Not Palindrome");
+
+// Output: Palindrome
+                        </pre>
+                    </div>
+
+                    <h3>✅ Count Vowels</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "programming";
+int count = 0;
+
+for(char ch : s.toCharArray()){
+    if("aeiou".indexOf(ch) != -1){
+        count++;
+    }
+}
+
+System.out.println("Vowels = " + count);
+// Output: Vowels = 3
+                        </pre>
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- Section 11 -->
+            <details id="sec11">
+                <summary>1️⃣1️⃣ Advanced Interview Programs <span>▼</span></summary>
+                <div class="card-body">
+
+                    <h3>✅ First Non-Repeating Character</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "swiss";
+
+for(int i = 0; i < s.length(); i++){
+    char ch = s.charAt(i);
+
+    if(s.indexOf(ch) == s.lastIndexOf(ch)){
+        System.out.println("First Non-Repeating = " + ch);
+        break;
+    }
+}
+
+// Output: w
+                        </pre>
+                    </div>
+
+                    <h3>✅ Remove Duplicate Characters</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "programming";
+String result = "";
+
+for(int i = 0; i < s.length(); i++){
+    if(result.indexOf(s.charAt(i)) == -1){
+        result += s.charAt(i);
+    }
+}
+
+System.out.println(result);
+// Output: progamin
+                        </pre>
+                    </div>
+
+                    <h3>✅ String Compression (aaabbcccc -> a3b2c4)</h3>
+                    <div class="code-wrap">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+String s = "aaabbcccc";
+String result = "";
+int count = 1;
+
+for(int i = 0; i < s.length(); i++){
+    if(i < s.length()-1 && s.charAt(i) == s.charAt(i+1)){
+        count++;
+    }else{
+        result += s.charAt(i) + "" + count;
+        count = 1;
+    }
+}
+
+System.out.println(result);
+// Output: a3b2c4
+                        </pre>
+                    </div>
+
+                    <div class="important">
+                        <b>Hinglish:</b> Ye compression program FAANG interviews me bhi popular hai.
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- Section 12 -->
+            <details id="sec12">
+                <summary>1️⃣2️⃣ Interview Questions + Answers (Hinglish) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <div class="faq-item">
+                        <p><b>Q1:</b> String Pool kya hota hai?</p>
+                        <p><b>A:</b> String Pool ek memory area hai jaha same literal reuse hota hai memory save karne
+                            ke liye.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p><b>Q2:</b> String immutable kyu hoti hai?</p>
+                        <p><b>A:</b> Security aur thread safety ke liye + hashing performance improve hoti hai.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p><b>Q3:</b> equals() aur == me difference?</p>
+                        <p><b>A:</b> == reference compare karta hai, equals() content compare karta hai.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p><b>Q4:</b> new String("Java") me kitne objects banenge?</p>
+                        <p><b>A:</b> 2 objects banenge (1 String Pool me + 1 Heap me).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p><b>Q5:</b> StringBuilder aur StringBuffer difference?</p>
+                        <p><b>A:</b> Builder fast hai but thread safe nahi, Buffer thread safe hai but slow.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p><b>Q6:</b> intern() kya karta hai?</p>
+                        <p><b>A:</b> intern() String Pool wala reference return karta hai.</p>
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- Section 13 -->
+            <details id="sec13">
+                <summary>1️⃣3️⃣ Quick Summary (Final Revision Notes) <span>▼</span></summary>
+                <div class="card-body">
+
+                    <ul>
+                        <li>String ek class hai Java me.</li>
+                        <li>String Pool memory save karta hai.</li>
+                        <li>String immutable hoti hai.</li>
+                        <li>== reference compare karta hai.</li>
+                        <li>equals() content compare karta hai.</li>
+                        <li>StringBuilder fast hota hai.</li>
+                        <li>StringBuffer thread safe hota hai.</li>
+                    </ul>
+
+                    <div class="success">
+                        <b>Final Interview Line:</b> String is immutable and stored in String Pool for security and
+                        memory optimization.
+                    </div>
+
+                </div>
+            </details>
+
+        </div>
+    </div>
+
+    <footer>
+        <h2>🚀 Java Strings Premium Page Ready</h2>
+        <p>Made with ❤️ for Safachatt Scripts | Learn Daily & Crack Interviews</p>
+    </footer>
+
+    <button class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+    <script>
+        // Copy Code Function
+        function copyCode(btn) {
+            let code = btn.parentElement.querySelector("pre").innerText;
+            navigator.clipboard.writeText(code);
+
+            btn.innerText = "Copied ✅";
+            setTimeout(() => btn.innerText = "Copy", 1200);
+        }
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+
+        // Load dark mode
+        window.onload = function () {
+            if (localStorage.getItem("darkMode") === "true") {
+                document.body.classList.add("dark");
+            }
+        }
+
+        // Search Filter
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            let input = this.value.toLowerCase();
+            let sections = document.querySelectorAll("details");
+
+            sections.forEach(section => {
+                let text = section.innerText.toLowerCase();
+                section.style.display = text.includes(input) ? "block" : "none";
+            });
+        });
+
+        // Active link highlight
+        const navLinks = document.querySelectorAll(".sidebar a");
+        const sections = document.querySelectorAll("details");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+
+            // Progress Bar
+            let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+    </script>
+
+</body>
+
+</html>
