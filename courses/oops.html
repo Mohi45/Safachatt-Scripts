@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java OOP Concepts</title>
+    <link rel="stylesheet" href="../css/oops.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="../courses/core-java.html" class="logo-text">Safachatt Scripts</a>
+        </div>
+        <h1>Java OOP Concepts</h1>
+        <p>Learn the core principles of Object-Oriented Programming in Java</p>
+    </header>
+
+    <nav>
+        <a href="#object">Object</a>
+        <a href="#class">Class</a>
+        <div class="dropdown">
+            <a href="#inheritance">Inheritance</a>
+
+            <div class="dropdown-content">
+                <a href="#single-inheritance">Single Inheritance</a>
+                <a href="#multilevel-inheritance">Multilevel Inheritance</a>
+                <a href="#multiple-inheritance">Multiple Inheritance</a>
+                <a href="#hierarchical-inheritance">Hierarchical Inheritance</a>
+                <a href="#hybrid-inheritance">Hybrid Inheritance</a>
+            </div>
+        </div>
+        <a href="#polymorphism">Polymorphism</a>
+        <a href="#abstraction">Abstraction</a>
+        <a href="#encapsulation">Encapsulation</a>
+        <a href="#table">Inheritance Table</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="card" id="object">
+            <h2>Object</h2>
+            <p>An object is a real-world entity that has state and behavior. It is an instance of a class.</p>
+            <p>Also an Object in Java is an instance of a class that contains data (variables) and behavior (methods).
+            </p>
+            <h2>Syntax to Create an Object</h2>
+            <p>ClassName objectName = new ClassName();</p>
+
+            <pre>
+class Student {
+
+    String name;
+    int age;
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student(); // object creation
+
+        s1.name = "Rahul";
+        s1.age = 20;
+
+        s1.display();
+    }
+}
+</pre>
+            <h2>Types of Object Creation in Java</h2>
+            <p>1. Using new Keyword (Most Common)
+                Student s1 = new Student();<br>
+                2. Using newInstance()
+                Student s1 = Student.class.newInstance();<br>
+                3. Using clone()
+                Student s2 = (Student) s1.clone();</p>
+        </div>
+
+
+
+        <div class="card" id="class">
+            <h2>Class</h2>
+            <p>A class is a blueprint used to create objects. It defines variables and methods.</p>
+            <p> <b>Class = Blueprint </b> <br>
+                <b>Object = Instance of the class</b>
+            </p>
+
+            <pre>
+class Student {
+
+    String name;
+    int age;
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+
+        s1.name = "Rahul";
+        s1.age = 20;
+
+        s1.display();
+    }
+}
+</pre>
+            <h2>Components of a Class</h2>
+            <h3>Variables (Fields)</h3>
+            <p>Variables store data of the object.</p>
+            <h3>Methods</h3>
+            <p>Methods define behavior of the object.</p>
+            <h3>Constructor</h3>
+            <p>A constructor initializes objects.</p>
+            <h3>Blocks</h3>
+            <p>Blocks are used for initialization.</p>
+            <p><b>Static block</b> <br>
+                <b>Instance block
+                </b>
+            </p>
+            <h3>Nested Class</h3>
+            <p>A class inside another class.</p>
+        </div>
+
+
+
+
+        <div class="card" id="inheritance">
+            <h2>Inheritance</h2>
+            <p>Inheritance is an important concept of Object-Oriented Programming (OOP). It allows one class to acquire
+                the properties and methods of another class.</p>
+            <pre>
+class Animal {
+
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+
+}
+
+class Dog extends Animal {
+
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.eat();   // inherited method
+        d.bark();  // own method
+
+    }
+
+}
+</pre>
+            <h2>Why Inheritance is Used</h2>
+            <li>Code Reusability</li>
+
+            <li>Reducing redundancy</li>
+
+            <li>Improving maintainability</li>
+
+            <li>Implementing hierarchical relationships</li>
+            <h2>Types of Inheritance in Java</h2>
+            <p>Java <b>supports 5 types of inheritance</b> conceptually, <b>but 4 are implemented</b> using classes.</p>
+            <li>Single Inheritance</li>
+            <li>MultiLevel Inheritance</li>
+            <li>Hierarchical Inheritance</li>
+            <li>Multiple Inheritance</li>
+            <li>Hybrid Inheritance</li>
+        </div>
+        <div class="card" id="single-inheritance">
+            <h2>Single Inheritance</h2>
+            <p>Single inheritance is a type of inheritance where one child class inherits properties and methods from
+                one parent class.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>Single Inheritance ka matlab hai ki ek child class sirf ek hi parent class se properties aur methods
+                inherit karti hai.</p>
+            <pre>
+class Account {
+
+    void deposit() {
+        System.out.println("Money deposited");
+    }
+
+}
+
+class SavingsAccount extends Account {
+    void interest() {
+        System.out.println("Interest added");
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SavingsAccount s = new SavingsAccount();
+        s.deposit();
+        s.interest();
+
+    }
+
+}
+                </pre>
+            <h2>Advantages of Single Inheritance</h2>
+            <p>✔ Code reuse hota hai <br>
+                ✔ Code short ho jata hai <br>
+                ✔ Maintain karna easy hota hai <br>
+                ✔ Real world relationship represent karta hai</p>
+
+        </div>
+        <div class="card" id="multilevel-inheritance">
+            <h2>Multilevel Inheritance</h2>
+            <p>Multilevel inheritance is a type of inheritance where a class inherits from another class, which itself
+                inherits from another class.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>Multilevel Inheritance me ek class dusri class ko inherit karti hai aur fir third class us second class
+                ko inherit karti hai.</p>
+            <pre>
+class Animal {
+
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+
+}
+
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy is weeping");
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Puppy p = new Puppy();
+        p.eat();   // from Animal
+        p.bark();  // from Dog
+        p.weep();  // from Puppy
+
+    }
+
+}
+                </pre>
+        </div>
+
+        <div class="card" id="hierarchical-inheritance">
+            <h2>Hierarchical Inheritance</h2>
+            <p>Hierarchical inheritance is a type of inheritance where multiple child classes inherit from a single
+                parent class.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>Hierarchical Inheritance me ek parent class se multiple child classes inherit karti hain.</p>
+            <p><b>One Parent → Many Child Classes</b></p>
+            <pre>
+class Animal {
+
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        Cat c = new Cat();
+
+        d.eat();  
+        d.bark();
+
+        c.eat();  
+        c.meow();
+
+    }
+
+}
+            </pre>
+        </div>
+
+        <div class="card" id="multiple-inheritance">
+            <h2>Multiple Inheritance</h2>
+            <p>Multiple inheritance is a type of inheritance where one class inherits properties and methods from more
+                than one parent class. In Java, it is supported using interfaces but not with classes.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>Multiple Inheritance ka matlab hai ki ek class ek se zyada parent classes se properties aur methods
+                inherit kare.</p>
+            <p><b>One Child → Many Parent Classes</b></p>
+            <pre>
+class A {
+    void show() {
+        System.out.println("Class A");
+    }
+}
+
+class B {
+    void display() {
+        System.out.println("Class B");
+    }
+}
+
+class C extends A, B { }   // ❌ Not allowed in Java
+            </pre>
+            <h2>Reason – Diamond Problem</h2>
+            <p>Agar do parent classes me same method ho, to child class confuse ho jati hai ki kaunsa method use kare.
+            </p>
+
+            <h2>Multiple Inheritance Using Interfaces</h2>
+            <pre>
+interface Animal {
+
+    void eat();
+
+}
+
+interface Bird {
+
+    void fly();
+
+}
+
+class Bat implements Animal, Bird {
+
+    public void eat() {
+        System.out.println("Bat eats fruits");
+    }
+
+    public void fly() {
+        System.out.println("Bat can fly");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Bat b = new Bat();
+
+        b.eat();
+        b.fly();
+
+    }
+
+}
+            </pre>
+        </div>
+
+        <div class="card" id="hybrid-inheritance">
+            <h2>Hybrid Inheritance</h2>
+            <p>Hybrid inheritance is a combination of two or more types of inheritance. In Java it is implemented using
+                interfaces because multiple inheritance through classes is not supported.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>⚠️ Java me Hybrid inheritance directly classes ke through possible nahi hai
+                kyunki multiple inheritance classes me allowed nahi hai.
+                Lekin interfaces ka use karke Hybrid inheritance achieve kiya ja sakta hai.</p>
+            <pre>
+interface Camera {
+
+    void takePhoto();
+
+}
+
+interface Phone {
+
+    void call();
+
+}
+
+class Device {
+
+    void powerOn() {
+        System.out.println("Device is powered on");
+    }
+
+}
+
+class Smartphone extends Device implements Camera, Phone {
+
+    public void takePhoto() {
+        System.out.println("Taking photo");
+    }
+
+    public void call() {
+        System.out.println("Calling someone");
+    }
+
+}
+            </pre>
+            <h2>Output</h2>
+            <p>Device is powered on <br>
+                Taking photo <br>
+                Calling someone</p>
+            <h2>Advantages</h2>
+            <p> ✔ Flexible design <br>
+                ✔ Code reuse <br>
+                ✔ Multiple features ek class me <br>
+                ✔ Complex systems build karne me useful</p>
+
+            <h2>Disadvantages</h2>
+            <p>❌ Code complexity increase ho sakti hai <br>
+                ❌ Debugging difficult ho sakti hai</p>
+
+            <h2>Real Life Example</h2>
+            <p>Vehicle (Parent Class) <br>
+                <b>Common properties:</b> <br>
+                start() <br>
+                stop() <br>
+                speed <br>
+                <b>Car (Child Class)</b> <br>
+                airCondition() <br>
+                <b>Bike (Child Class)</b> <br>
+                kickStart() <br>
+                Dono Vehicle ke methods use kar sakte hain.
+            </p>
+
+        </div>
+
+        <div class="card" id="polymorphism">
+            <h2>Polymorphism</h2>
+            <p>Polymorphism is the ability of a method or object to take many forms. In Java it is achieved using method
+                overloading and method overriding.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p> <b>Polymorphism </b>ka meaning hai: <br>
+
+                <b>“One name, many forms”</b><br>
+                Matlab ek method ya function different ways me behave kar sakta hai.
+            </p>
+            <h2>Compile Time Polymorphism (Method Overloading)</h2>
+            <p>Jab same method name ho lekin parameters different ho, to use method overloading kehte hain.</p>
+            <pre>
+class MathOperation {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        MathOperation m = new MathOperation();
+
+        System.out.println(m.add(5, 10));
+        System.out.println(m.add(5, 10, 15));
+
+    }
+
+}
+            </pre>
+            <h2>Run Time Polymorphism (Method Overriding)</h2>
+            <p>Jab child class parent class ke method ko redefine karti hai, use method overriding kehte hain.</p>
+            <pre>
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+public class Main {
+
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+
+    }
+
+}
+</pre>
+        </div>
+
+        <div class="card" id="abstraction">
+            <h2>Abstraction</h2>
+            <p>Abstraction is the process of hiding implementation details and showing only essential functionality to
+                the user. In Java it is achieved using abstract classes and interfaces.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>Abstraction ka matlab hai: <br>
+
+                Important information ko show karna aur unnecessary details ko hide karna. <br>
+
+                <b>Simple words me: </b><br>
+
+                User ko sirf functionality dikhai deti hai <br>
+
+                Internal working hide hoti hai
+            </p>
+            <h2>Real Life Example</h2>
+            <p>
+                Jab aap ATM use karte ho: <br>
+
+                Card insert <br>
+
+                PIN enter <br>
+
+                Money withdraw <br>
+
+                Lekin ATM ka internal process (bank server communication, verification) user ko nahi dikhta. <br>
+
+                <b>Yahi Abstraction hai.</b>
+            </p>
+
+            <pre>
+abstract class Animal {
+
+    abstract void sound();
+
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+        d.eat();
+
+    }
+
+}
+</pre>
+            <h2>Advantages of Abstraction</h2>
+            <p>✔ Code security <br>
+                ✔ Complexity reduce hoti hai <br>
+                ✔ Code maintain karna easy <br>
+                ✔ Real world modeling possible</p>
+        </div>
+
+        <div class="card" id="encapsulation">
+            <h2>Encapsulation</h2>
+            <p>Encapsulation is the process of wrapping data and methods into a single unit and restricting direct
+                access to data using private variables.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p><b>Encapsulation</b> ka matlab hai: <br>
+
+                <b>Data (variables) aur methods ko ek single unit (class) me wrap karna aur data ko direct access se
+                    protect karna.</b> <br>
+
+                Simple words me: <br>
+
+                Data ko hide karna <br>
+
+                Access sirf methods ke through dena <br>
+
+                Isko Data Hiding bhi kehte hain.
+            </p>
+            <h2>Real Life Example</h2>
+            <p>
+                <b>Example: Bank Account</b> <br>
+
+                Bank account me: <br>
+
+                Balance → private hota hai <br>
+
+                Direct access nahi hota <br>
+
+                User balance change nahi kar sakta directly. <br>
+
+                User sirf methods use karta hai: <br>
+
+                deposit() <br>
+
+                withdraw() <br>
+
+                Ye hi <b>Encapsulation</b> hai.
+            </p>
+            <pre>
+class Student {
+
+    private String name;
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+}
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.setName("Mohit");
+
+        System.out.println(s.getName());
+
+    }
+
+}
+</pre>
+            <h2>Encapsulation Kaise Achieve Karte Hain</h2>
+            <p>Java me encapsulation 3 steps se achieve hota hai: <br>
+
+                1️⃣ Variables ko private declare karna <br>
+                2️⃣ Getter method banana (data read karne ke liye) <br>
+                3️⃣ Setter method banana (data update karne ke liye)</p>
+        </div>
+        <div class="card" id="interface">
+            <h2>Interface</h2>
+            <p>An interface in Java is a collection of abstract methods that a class must implement. It is used to
+                achieve abstraction and multiple inheritance.</p>
+            <p><b>Explained in Hindi</b></p>
+            <p>Interface Java me ek blueprint hota hai jo class ko batata hai ki kaun-kaun se methods implement karne
+                hain. <br>
+
+                <b>Simple words me:</b> <br>
+
+                Interface ek contract hota hai jo class ko follow karna padta hai. <br>
+
+                Interface me methods declare hote hain, lekin unki body nahi hoti (normally). <br>
+            </p>
+            <h2>Syntax of Interface</h2>
+            <pre>
+interface InterfaceName {
+    void method1();
+    void method2();
+
+}
+            </pre>
+            <h2>Example: </h2>
+            <pre>
+interface Animal {
+
+    void sound();
+
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+
+    }
+
+}</pre>
+            <h2>Advantages of Interface</h2>
+            <p>✔ Multiple inheritance support <br>
+                ✔ Loose coupling <br>
+                ✔ Better code design <br>
+                ✔ Abstraction achieve karta hai</p>
+            <h2>Real Life Example</h2>
+            Remote ek interface ki tarah hota hai. <br>
+
+            <b>Buttons:</b> <br>
+            power() <br>
+            volumeUp() <br>
+            volumeDown() <br>
+
+            <b>Different devices:</b> <br>
+            TV <br>
+            AC <br>
+            Music System <br>
+
+            Sab devices same interface follow karte hain.
+        </div>
+        <div class="table-container" id="table">
+            <table class="inheritance-table">
+                <thead>
+                    <tr>
+                        <th>Inheritance Type</th>
+                        <th>Structure</th>
+                        <th>Description</th>
+                        <th>Java Support</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Single Inheritance</td>
+                        <td>A → B</td>
+                        <td>One child class inherits from one parent class</td>
+                        <td class="yes">✔ Supported</td>
+                        <td>class Dog extends Animal</td>
+                    </tr>
+
+                    <tr>
+                        <td>Multilevel Inheritance</td>
+                        <td>A → B → C</td>
+                        <td>A class inherits from another class which itself inherits another class</td>
+                        <td class="yes">✔ Supported</td>
+                        <td>class Puppy extends Dog</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hierarchical Inheritance</td>
+                        <td>A → B, A → C</td>
+                        <td>Multiple child classes inherit from one parent class</td>
+                        <td class="yes">✔ Supported</td>
+                        <td>class Dog extends Animal<br>class Cat extends Animal</td>
+                    </tr>
+
+                    <tr>
+                        <td>Multiple Inheritance</td>
+                        <td>A, B → C</td>
+                        <td>One class inherits from multiple parent classes</td>
+                        <td class="no">❌ Using classes not supported</td>
+                        <td>class C implements A, B</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hybrid Inheritance</td>
+                        <td>Combination</td>
+                        <td>Combination of two or more inheritance types</td>
+                        <td class="no">❌ Using classes not supported</td>
+                        <td>Interface + Class combination</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Java OOP Concepts | By Safachatt Scripts</p>
+    </footer>
+
+</body>
+
+</html>l̥
